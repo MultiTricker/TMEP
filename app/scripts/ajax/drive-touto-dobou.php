@@ -43,7 +43,7 @@
   else
   {
 
-    require_once "../../language/".$l.".php";       // skript s jazykovou mutaci    
+    require_once "../language/".$l.".php";       // skript s jazykovou mutaci
 
   }
 
