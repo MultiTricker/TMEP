@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>TMEP v6.2</title>
+  <style type="text/css" media="all">
+  <!--
+    body{ font-family: verdana; font-size: 12px; line-height: 20px; vertical-align: center; background: #F3F2DD; }
+    h1, h2, h3, h4, a { color: darkred; }
+    img { border: 2px solid darkred; }
+  //-->
+  </style>
+  </head>
+  <body>
+
+  <h1>TMEP v6.2</h1>
+
+  <p>aplikace pro přehledné zobrazení výstupu z TME/TH2E pomocí metody HTTP GET<br></p>
+
+  <p><b>Autoři:</b><br>
+  Michal "MultiTricker" Ševčík, <a href="mailto:multi@tricker.cz">multi@tricker.cz</a>, <a href="http://multi.tricker.cz">http://multi.tricker.cz</a>,<br>
+  František "EFES" Ševčík, <a href="mailto:f.sevcik@seznam.cz">f.sevcik@seznam.cz</a></p>
+  
+  <p><b>Sponzor:</b><br>
+  <b>Papouch</b> - <a href="http://www.papouch.com">http://www.papouch.com</a>, výrobce těchto skvělých mašinek</p>
+
+  <hr>
+  
+  <h2>Obsah</h2>
+  
+  <ol>
+    <li><a href="#predstaveni">Představení</a></li>
+    <li><a href="#instalace">Instalace</a></li>
+    <li><a href="#aktualizace">Aktualizace na verzi 5/6.2</a></li>
+    <li><a href="#seznamzmen">Seznam změn</a></li>
+  </ol>
+
+  <hr>
+
+    <h2><a name="predstaveni">Představení</a></h2>
+
+ <p>Vážení přátelé,</p>
+ 
+  <p>dostala se Vám do rukou malá webová aplikace psaná v PHP, která za pomocí 
+databáze (typicky MySQL) a třídy JpGraph či Open flash chart pro generování 
+grafů, dokáže celkem šikovně zobrazit všelijaké statistiky z Vašeho 
+ethernetového teploměru/vlhkoměru.</p>
+
+  <p>Jak to celé funguje? Váš teploměr s přístupem na internet (aplikace samozřejmě 
+může fungovat i na lokální síti) odešle skriptu aktuální měření, ten jej zapíše
+do databáze a dále s ním pracuje.</p>
+
+  <p>Pro případné opravy, prosím, sledujte <a href="http://multi.tricker.cz">můj blog</a> nebo 
+ <a href="http://www.papouch.com">stránky Papoucha</a> a pokud to bude 
+v mých silách a možnostech, tak otázky/pochvaly pište na <a href="mailto:multi@tricker.cz">multi@tricker.cz</a></p>
+
+  <hr>
+
+    <h2><a name="instalace">Instalace</a></h2>
+
+  <p>Potřebné kroky k zprovoznění aplikace:</p>
+  
+  <h3>1) Nastavit TME/TH2E.</h3>
+
+<h4>Nastavení TH2E</h4>
+
+<a href="nastaveni-th2e.gif" target="_blank"><img src="nastaveni-th2e.gif" alt="Nastaveni" title="Nastaveni" border="0" height="120" width="160"></a>
+
+<p>Připojte se na webovou stránku TH2E a zvolte jeho konfiguraci. Je potřeba mít správně vyplněné parametry 
+na záložce Síť, zejména IP adresu, masku, bránu a DNS. Poté přistupte k nastavení na záložce "Odesílání". Vyplňte 
+adresu webového serveru, port webu (80), adresář skriptů na serveru, 
+periodu odesílání GETu (1, tedy jednou za minutu) a napište Název skriptu (index.php).</p>
+
+<p>Bude-li adresa Vašeho měření např. <i>http://moje.mereni.cz/aplikace/</i>, potom vyplníte:<br>
+<b>Adresa webového serveru:</b> moje.mereni.cz<br>
+<b>Port webu:</b> 80 (standardní port)<br>
+<b>Adresář skriptů na serveru:</b> aplikace/<br>
+<b>Perioda odesílání GETu:</b> 1<br>
+<b>Název skriptu:</b> index.php</p>
+
+<h4>Nastavení novějšího TME</h4>
+
+<a href="nastaveni-tme.gif" target="_blank"><img src="nastaveni-tme.gif" alt="Nastaveni" title="Nastaveni" border="0" height="120" width="160"></a>
+
+<p>Připojte se na webovou stránku TME a zvolte jeho konfiguraci. Je potřeba mít správně vyplněné parametry 
+na záložce Síť, zejména IP adresu, masku a bránu. Poté přistupte k nastavení na záložce "Odesílání". Vyplňte 
+IP adresu webového serveru, jméno webového serveru (www.neco.cz), port webu (80), adresář skriptů na serveru, 
+periodu odesílání (60 pro 60 vteřin, tedy jednou za minutu), zaškrtněte aktivaci odesílání HTTP GETu a 
+napište Název skriptu (index.php).</p>
+
+<p>Bude-li adresa Vašeho měření např. <i>http://moje.mereni.cz/aplikace/</i>, potom vyplníte:<br>
+<b>Adresa webového serveru:</b> <i>to zjistíte od poskytovatele Vašeho webhostingu nebo pingem na moje.mereni.cz</i><br>
+<b>Jméno webového serveru:</b> moje.mereni.cz<br>
+<b>Port webu:</b> 80 (standardní port)<br>
+<b>Adresář skriptů na serveru:</b> aplikace/<br>
+<b>Název skriptu:</b> index.php</p>
+
+<h4>Nastavení nejstaršího TME (1.6, 1.7)</h4>
+
+<a href="nastaveni-tme-stare.gif" target="_blank"><img src="nastaveni-tme-stare.gif" alt="Nastaveni" title="Nastaveni" border="0" height="120" width="160"></a>
+
+  <p>Připojte se do TME přes konfigurační utilitu od Papoucha. (Konfigurační software naleznete zde: 
+<a href="http://www.papouch.com/cz/shop/product/tme-ethernetovy-teplomer/">http://www.papouch.com/cz/shop/product/tme-ethernetovy-teplomer/</a>). 
+Na položce HTTP GET zaškrtněte "Zasílat teplotu na HTTP server",
+do URL cesty napište úplnou cestu kde bude umístěna webová aplikace a soubor
+index.php, tedy např.: http://www.lojzuvweb.cz/tme/index.php<br>
+  Do IP adresy vepište IP adresu webového serveru, kde je stránka umístěna. Tato
+adresa se dá velice jednoduše doplnit, když kliknete na zavináč, který je napravo
+od URL (webový server musí být dostupný).</p>
+
+  <p>Dále v nastavení zadejte periodu zasílání 60 sec (tedy každou minutu, s tímto 
+celá aplikace počítá) a do GUID si vymyslete jednou souvislé slovo bez 
+diakritiky, které budete za chvíli muset vepsat do konfiguračního souboru 
+aplikace.</p>
+
+  <p>V aplikaci pro nastavení TME zvolte dole "Nastavit", čímž se uloží naše 
+nastavení do teploměru.</p>
+
+
+  <h3>2) Konfigurace aplikace</h3>
+
+  <p>V adresáři "app" se nachází všechny potřebné soubory a je zde vedle 
+"index.php" také soubor "config.php", kde je potřeba nastavit údaje pro
+připojení k databázi, tedy server, jméno, heslo a samotný název DB. Tyto údaje
+byste měli dostat od poskytovatele Vašeho webhostingu, pokud to je možné. 
+Pokud používáte nejstarší TME, tak je zde nutné nastavit GUID a místo "teplota" doplnit vlastní 
+řetězec, který jste nastavili v nastavení TME přes utilitu. Volitelně je níže do $ip možné 
+doplnit IP adresu, ze které Váš teploměr odesílá požadavky za účelem jakéhosi 
+zabezpečení aplikace.</p>
+
+  <h3>3) Nastavení databáze</h3>
+
+  <p>Je potřeba vytvořit odpovídající tabulky v databázi, kam bude skript
+ukládat naměřené hodnoty. Přes jaký program/webovou aplikaci tak učiníte je
+již na Vás a možnostech Vašich/Vašeho webhostingu. SQL kód, který je potřeba na 
+databázi poslat aby se provedl naleznete v souboru "mysql-db-full.sql", který je 
+umístěn vedle souboru, který právě čtete.</p>
+
+  <h3>4) Nahrání aplikace na web</h3>
+
+  <p>Nahrajte webovou aplikaci (tedy obsah adresáře "app") na své místo na 
+internetu. Mj. musí odpovídat cesta k index.php s cestou zadanou v TME/TH2E přes 
+konfigurační utilitu.</p>
+
+  <p>Nyní by mělo být vše nastavené a uložené tak, jak má. Aplikace by měla 
+přijímat teploty a ty následně zobrazovat jak textově ve formě statistik, 
+tak i ve formě několika přehledových grafů.</p>
+
+  <p>Děkuji za pozornost a přeji příjemnou zábavu!</p>
+
+  <hr>
+
+    <h2><a name="aktualizace">Aktualizace na verzi 5/6.2</a></h2>
+
+ <p>Jak aktualizovat aplikaci TMEP na verzi 5/6.2.</p>
+
+  <p>Je to velice jednoduchý proces, je třeba:</p>
+
+  <p><b>1)</b> Aktualizovat databázové schéma. Abyste to udělali, stačí jen spustit "mysql-db-update-v5.sql" 
+nad Vaší databází přes nějakého správce databáze, např. přes Adminer - http://www.adminer.org.</p>
+
+  <p><b>2)</b> Přepsat staré soubory aplikace kromě "config.php" novými soubory, které se nachází 
+v adresáři "app" v archivu, který jste stáhli společně s tímto souborem s instrukcemi pro aktualizaci.
+Pokud jste provedli nějaké změny ve starých souborech, tak je bude třeba provést znovu (např. pokud 
+jste upravovali styly CSS apod.). Přejmenujte soubor "nastaveni.php" na "config.php". 
+Do souboru "config.php" přidejte řádek s "$vlhkomer" pro definování, 
+zda chcete zobrazovat naměřenou vlhkost (pokud nemáte vlkoměr, tak to nemusíte dělat).</p>
+
+  <p><b>3)</b> Smažte adresář "cache" ve staré aplikaci. Nyní již není třeba.</p>
+  
+  <p><b>4)</b> Je potřeba dopočítat řadu údajů za všechny měřené dny kromě aktuálního. Spouštějte v internetovém prohlížeči 
+  soubor "scripts/dopocitat.php" v umístění aplikace na webu postupně tak dlouho, dokud nevypíše, že jsou data dopočítána. Postupně 
+  se budou zobrazovat dopočítávané dny. Tato operace může na pomalých serverech s velkým množstvím naměřených 
+  hodnot trvat delší dobu. K dopočítávání dochází stejně tak při otevírání úvodní stránky TMEPu.
+  U mě konkrétně dopočítání více jak tří let měření zabralo jen několik minut.</p>
+
+  <hr>
+
+    <h2><a name="seznamzmen">Seznam změn</a></h2>
+
+    <h3>verze 6.2 (2013-02-27)</h3>
+
+    <ul>
+      <li>Optimalizace SQL dotazů - stránky se nyní načítají rychleji a některé operace jsou nesrovnatelně rychlejší. Konzultaci a řešení poskytl databázový guru Radek Trubnyj - velice Ti děkuji!</li>
+      <li>Opraveno zobrazení nej počtu naměřených hodnot na měsíčních statistikách (měření bez vlhkoměru).</li>
+      <li>Opraveno zobrazení min/max teplot a vlhkostí za daný den, pokud je max. teplota 0.</li>
+      <li>Úprava "nejstudenější" za "nejchladnější" u měsíčních měření.</li>
+    </ul>
+
+    <h3>verze 6.1 (2013-02-02)</h3>
+
+    <ul>
+      <li>Doplněn polský překlad. Za jeho vytvoření děkuji obchodu <a href="http://www.meteoshop.cz" target="_blank">www.meteoshop.cz</a>.</li>
+      <li>Do mobilní verze přidán přehled nej teplot (a vlhkostí) za aktuální den.</li>
+      <li>Upraveno přesměrování na mobily - pokud se nepoužívá, tak se kvůli němu nenačítá patřičná knihovna (která funguje na PHP 5 nebo vyšším).</li>
+      <li>Optimalizace některých SQL dotazů.</li>
+      <li>Opraveno chybné vložení javascriptového souboru v mobilní verzi.</li>
+    </ul>
+
+    <h3>verze 6 (2012-12-01)</h3>
+
+    <ul>
+      <li>Integrován jQuery FancyBox pro zobrazení dalších oken se statistikami a grafy (viz co je možné zobrazit níže).</li>
+      <li>Na záložce "Aktuálně" přibyl řádek s minimální, průměrnou a maximální teplotou (a vlhkostí) za aktuální den.</li>
+      <li>Možnost zobrazit delší historii (31 dní) pro "Dříve touto dobou" a to i pro konkrétní čas a včetně grafu.</li>
+      <li>Možnost zobrazit 15 dnů s rekordní nejmenší a nejvyšší teplotou (i průměrnou).</li>
+      <li>Možnost zobrazit přehled dnů s nejméně a nejvíce naměřenými hodnotami.</li>
+      <li>Možnost zobrazit nový rozptylový graf pro denní a měsíční statistiku teploty a vlhkosti.</li>
+      <li>Možnost zobrazit delší historii nej. rekordů u měsíců.</li>
+      <li>Možnost zobrazit delší historii u denní doby.</li>
+      <li>Možnost zobrazit vývoj teploty a vlhkosti za celý rok po dnech.</li>
+      <li>Další pročištění kódu.</li>
+      <li>Opravena francouzština.</li>
+    </ul>
+
+    <h3>verze 5 (2012-10-28)</h3>
+
+    <ul>
+      <li>Grafy nově tvořené Highcharts JS (http://www.highcharts.com/). OFCH a JpGraph jakožto generátory grafů zcela vypuštěny. Grafy jsou nyní výrazně lepší, jendodušší, dostupnější...</li>
+      <li>Teplota, vlhkost i rosný bod jsou nyní v jednom grafu.</li>
+      <li>Vylepšená detekce mobilních zařízení (pomocí PHP knihovny Mobile_Redirect - http://code.google.com/p/php-mobile-detect/). Tablety nejsou přesměrovávány na mobilní verzi.</li>
+      <li>Úpravy pro nevypsání nuly v případě nenaměřené hodnoty.</li>
+      <li>Možnost správně zapsat hodnotu "null" do tabulky tme_denni.</li>
+      <li>V grafech u hodnot je přímo uvedena jednotka (dříve nebylo možné).</li>
+      <li>Doplněna ikona refreshe a plné verze v mobilní verzi.</li>
+      <li>Opraveno vložení grafů do mobilní verze.</li>
+      <li>Čištění a optimalizace kódu. Spousta nepoužívaných a zbytečných řádků kódu je pryč, zrušeny či sloučeny dotazy na databázi.</li>
+      <li>Doplněno chybějící “ajax-loader.png” a “icons-18-white.png”, které se prohlížeč snaží otevřít při pokusu o otevření mobilní verze.</li>
+      <li>Aktualizované zdroje jQuery mobile</li>
+      <li>Skripty jednotně kódované v UTF-8.</li>
+    </ul>
+
+    <h3>verze 4.2 (2011-08-08)</h3>
+
+    <ul>
+      <li>Nová mobilní verze stránky a automatické přesměrováni na ni. Využívá knihovnu jQuery Mobile, optimalizováno především pro iPhone a Android (Cyrille David - <a href="mailto:cyrille@david-gooris.com">cyrille@david-gooris.com</a>).</li>
+      <li>Aktualizován francouzský překlad a některé typografické chyby (Cyrille David - <a href="mailto:cyrille@david-gooris.com">cyrille@david-gooris.com</a>).</li>
+      <li>Do menu přidána ikonka pro přechod na mobilní verzi (Cyrille David - <a href="mailto:cyrille@david-gooris.com">cyrille@david-gooris.com</a>).</li>
+    </ul>
+
+    <h3>verze 4.1.1 (2011-07-01)</h3>
+
+    <ul>
+      <li>Přidána francouzština od uživatele Dominique Stussi - <a href="mailto:d.stussi@swch.name">d.stussi@swch.name</a>.</li>
+    </ul>
+
+    <h3>verze 4.1 (2011-03-26)</h3>
+
+    <ul>
+      <li>Rosný bod (TH2E).</li>
+      <li>Kombinované grafy pro teplotu a vlhkost vzduchu (TH2E).</li>
+      <li>Malé kosmetické úpravy.</li>
+    </ul>
+
+    <h3>verze 4 (2011-03-10)</h3>
+
+    <ul>
+      <li>Plná podpora pro TH2E! Nyní aplikace může zobrazovat rovněž naměřenou vlhkost (je třeba povolit v souboru s nastavením aplikace).</li>
+      <li>Krom aktuální vlhkosti a vlkhosti za poslední dny (načítané rovněž periodicky AJAXem) přibyly nové grafy pro vlhkost a také byly rozšířeny stránky se statistikami o tyto údaje.</li>
+      <li>Nová záložka "historie" pro zobrazení dřívějších měření.</li>
+      <li>Aplikace umí bez problému zpracovávat data jak ze starého TME, tak z nového TME a TH2E.</li>
+      <li>Soubor s informacemi o aplikaci byl rozšířen o návod pro nastavení starého TME, aktuálního TME a TH2E.</li>
+      <li>Utilita pro nastavení nejstaršího TME byla vyhozena z balíku TMEPu (neměla tam moc velké opodstatnění).</li>
+    </ul>
+
+    <h3>verze 3 (2011-01-14)</h3>
+      
+    <ul>
+      <li>Lepší rozdělení stránky na několik záložek. Nové záložky "Denní statistiky", "Měsíční statistiky" a "Roční statistiky" se spoustou dalších údajů o naměřených teplotách.</li>
+      <li>V poli "aktuální teplota" je šipkami znázorněn vývoj teploty (ochlazení, oteplení, beze změny) po pěti minutách.</li>
+      <li>Pole "aktuální teplota", "dříve touto dobou" a "počet měření" (vše v hlavičce stránky) jsou načítána pravidelně každou minutu AJAXem (načtení nového údaje do stránky bez nutnosti načtení celé stránky).</li>
+      <li>U měsíční teploty je nyní zobrazována i nejvyšší a nejnižší teplota zaznamenaná v daném měsíci (nejen průměrná).</li>
+      <li>JpGraph aktualizováno na verzi 3.0.7.</li>
+      <li>Readme u aplikace nově v HTML souboru pro lepší přehlednost.</li>
+      <li>Odstraněn adresář "Cache", nyní není třeba a celá aplikace je navzdory rozšířené funkcionalitě rychlejší.</li>
+      <li>Upraveno databázové schéma pro jednodušší a zároveň rychlé výpisy mnoha informací.</li>
+      <li>Aktualizována utilita pro nastavení TME od Papoucha, která je v rámci zjednodušení distribuována společně s TMEP, i když pro nové verze TME není třeba (ty lze nastavit přímo přes webové rozhraní).</li>
+    </ul>
+
+    <h3>verze 2</h3>
+    
+    <ul>
+      <li>Inovovaný přehlednější vzhled bez zbytečných položek.</li>
+      <li>Možnost přepínat mezi statickými grafy generovanými pomocí JpGraph a dynamickými flashovými grafy generovanými pro změnu pomocí Open flash chart.</li>
+      <li>Možnost přepínat mezi jazykovými mutacemi (nyní čeština, angličtina a němčina - překlad svépomocí, malá korektůra by byla jen k dobru).</li>
+      <li>Možnost přepínat mezi různými jednotkami - od Celsiuse, přes Fahrenheita a Kelvina až po např. Delisle (čerpáno z Wikipedie).</li>
+      <li>Malinkatá mobilní verze (mobile.php).</li>
+      <li>Rozšířené možnosti jednoduchého nastavení skrze "config.php" (výchozí jazyk, jednotka a typ grafů, zda a po kolika vteřinách se má stránka obnovovat, zda bude umožněno přepínání jazyků atd.).</li>
+      <li>A pár drobností...</li>
+    </ul>
+
+    <h3>verze 1</h3>
+
+    <ul>
+      <li>Prvotní vydání</li>
+    </ul>
+
+  </body>
+</html>

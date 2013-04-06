@@ -1,0 +1,119 @@
+ /*************************************************************************
+ ***  Systém pro TME/TH2E - TMEP                                        ***
+ ***  (c) Michal Ševčík - multi@tricker.cz                              ***
+ ***  Kaskadove styly / CSS styles                                      *** 
+ *************************************************************************/
+
+/* telo */
+body{ background: url(../images/pozadi.jpg) repeat rgb(242,242,225); color: rgb(60,58,23); font-family: Verdana, Arial, Times, serif; font-size: 13px; margin: 15px 0px; padding: 0px; text-align: center; }
+
+/* hlavni */
+#hlavni { width: 950px; height: auto; background: url(../images/prechod4.gif) repeat-x top center rgb(243,242,221); border: 2px solid rgb(70,68,28); vertical-align: middle; text-align: center; -webkit-box-shadow: 0 0 8px black; -moz-box-shadow: 0 0 8px black; box-shadow: 0 0 8px black; }
+#hlavni table tr td { border-bottom: 1px solid rgb(221,220,170); }
+.tabulkaVHlavicce { border: 1px solid #a2a181; }
+.mobilniIkona { vertical-align: middle; }
+
+/* aktualne */
+.aktualne { width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 74px; color: white; font-weight: bold; line-height: 26px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
+.aktualnejen { width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 114px; color: white; font-weight: bold; line-height: 42px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
+.aktua { color: white; font-size: 24px; font-weight: bold; }
+.aktualnemensi { font-size: 11px; margin: 1px 4px 0px 0px; float: left; width: 106px; border: 2px solid rgb(70,68,28); background: url("../images/prechod3.gif") repeat-x center center #2E2D0E; height: 44px; color: white; font-weight: bold; line-height: 21px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
+.aktuamens { color: white; font-size: 16px; font-weight: bold; }
+
+/* teplota */
+.teplejsi { background: url("../images/teplejsi.jpg") repeat-x center center #3C3A14; }
+.studenejsi { background: url("../images/studenejsi.jpg") repeat-x center center #3C3A14; }
+.stejne { background: url("../images/stejne.jpg") repeat-x center center #3C3A14; }
+
+/* vlhkost */
+.teplejsim { background: url("../images/teplejsi-min.jpg") repeat-x center center #2E2D0E; }
+.studenejsim { background: url("../images/studenejsi-min.jpg") repeat-x center center #2E2D0E; }
+.stejnem { background: url("../images/stejne-min.jpg") repeat-x center center #2E2D0E; }
+
+/* Highcharts */
+.graf { width: 900px; margin: 15px 0px; }
+.grafModal { width: 840px; margin: 15px 0px; }
+.grafMobile { width: 420px; }
+
+/* radky */
+.radek { background: url(../images/prechod2.gif) repeat-x top center #E3E2A9; color: #585441; }
+.radekVelky { background: url(../images/prechod2.gif) repeat-x top center #E3E2A9; color: #585441; line-height: 18px; vertical-align: center; font-size: 14px; color: black; }
+.radekVetsi { background: url(../images/prechod2.gif) repeat-x top center #E3E2A9; color: #585441; line-height: 20px; vertical-align: center; font-size: 12px; }
+.radekStat td { border-right: 1px solid rgb(221,220,170); }
+.radekStat:hover td { background: #f3f2dd; }
+.radekStatModal td { border-right: 1px solid rgb(221,220,170); border-bottom: 1px solid rgb(221,220,170); }
+.radekStatModal:hover td { background: #e8e5c6; }
+
+/* typo */
+h1{ color: #F9F8E6; background: url(../images/prechod1.gif) repeat-x top center #2E2D0E; font-size: 20px; line-height: 30px; height: 60px; font-weight: bold; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; width: 950px; vertical-align: middle; }
+h1 font { font-size: 12px; }
+h1 font a { color: white; }
+h1 font a:hover { text-decoration: none; }
+h2 { color: #F9F8E6; background: url(../images/prechod1.gif) repeat-x top center #2E2D0E; font-size: 11px; line-height: 25px; height: 25px; font-weight: bold; padding: 0px 0px 0px 0px; margin: 10px 0px 0px 0px; width: 950px; border-top: 2px solid rgb(70,68,28); vertical-align: middle; }
+h2 a { color: white; }
+h2 a:hover { text-decoration: none; }
+h3 { color: #F9F8E6; font-size: 20px; line-height: 30px; height: 50px; overflow: hidden; font-weight: bold; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; vertical-align: middle; }
+br { line-height: 1.5em; }
+.mensi { font-size: 11px; }
+a { color: rgb(60,58,23); }
+a:hover { text-decoration: none; }
+
+/* zadny ramecky! */
+img{ border: 0px; }
+
+/* sloupecky */
+#tri { width: 940px; overflow: hidden; margin: 10px 0px 30px 0px; }
+#levej { width: 411px; float: left; margin: 0px 0px 0px 20px; }
+#pravejsi { width: 269px; float: left; text-align: center; }
+#pravej { width: 236px; float: right; text-align: center; }
+#dva { width: 850px; overflow: hidden; display: block; margin: 10px 0px 30px 0px; border: none; }
+#levejVelikan { width: 390px; overflow: hidden; display: block; float: left; text-align: center; border: none; }
+#pravejVelikan { width: 390px; overflow: hidden; display: block; float: right; text-align: center; border: none; }
+
+/* tabs */
+#oblastzalozek { width: 940px; }
+ul.tabs { margin: 0 !important; padding:0; height:30px; border-bottom:1px solid #3B3913; }
+ul.tabs li { float:left; padding:0; margin:0; list-style-type:none; }
+ul.tabs a { font-weight: bold; float:left; font-size:13px; display:block; padding:5px 25px; text-decoration:none; border:1px solid #3B3913; border-bottom:0px; height:18px; background-color:#e1dddd; color:#777; margin-right:2px; position:relative; top:1px; outline:0; -moz-border-radius:4px 4px 0 0; }
+ul.tabs a:hover { background-color:#cfcc94; color:#333; }
+ul.tabs a.current { background-color:#e7e5c5; border-bottom:1px solid #e7e5c5; color:#000; cursor:default; }
+.panely > div { display:none; border:1px solid #3B3913; border-width:0 1px 1px 1px; min-height:80px; padding:5px 10px; background-color:#e7e5c5; }
+
+/* formular na strance historie */
+form{ font-weight: bold; }
+.submit input{margin-left: 4.5em; }
+input{color: black;background: white;border: 1px solid #24230C; width: 80px; padding: 2px; }
+.submit {color: #000;background: white;border: 2px outset #24230C; }
+fieldset{border: 1px solid #24230C; width: 300px; }
+legend{color: black;background: #F3F2DD;border: 1px solid #24230C;padding: 2px 6px; }
+
+/* ColorBox Core Style */
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width: none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+/* ColorBox User Style */
+#cboxOverlay{background:#000;}
+#colorbox{}
+#cboxContent{margin-top:20px;}
+.cboxIframe{background:#fff;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxLoadedContent{border:5px solid #000; background:#fff;}
+#cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
+#cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
+#cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
+#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url(../images/controls.png) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
+#cboxPrevious:hover{background-position:bottom left;}
+#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url(../images/controls.png) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
+#cboxNext:hover{background-position:bottom right;}
+#cboxLoadingOverlay{background:#000;}
+#cboxLoadingGraphic{background:url(../images/loading.gif) no-repeat center center;}
+#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url(../images/controls.png) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+#cboxClose:hover{background-position:bottom center;}
