@@ -2,7 +2,7 @@
 
  /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2012 - multi@tricker.cz                    ***
+ ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
  *************************************************************************/
 
   echo "<h1"; if($zobrazitNastaveni == 0){ echo " style='height: 30px;'"; } echo ">".$lang['hlavninadpis'];

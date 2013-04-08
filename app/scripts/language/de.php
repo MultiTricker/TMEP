@@ -2,7 +2,7 @@
 
  /*************************************************************************
  ***  System für TME - TMEP                                             ***
- ***  (c) Michal Ševčík 2007-2012 - multi@tricker.cz                    ***
+ ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
  ***  Deutsche übersetzung - Michal Ševčík, Papouch.com                 ***
  *************************************************************************/
 

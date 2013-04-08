@@ -2,7 +2,7 @@
 
  /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2012 - multi@tricker.cz                    ***
+ ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
  *************************************************************************/
 
   if(isset($ydata)){ unset($ydata); unset($ydata2); unset($ydata3); unset($labels); }

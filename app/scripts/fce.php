@@ -2,7 +2,7 @@
 
  /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2012 - multi@tricker.cz                    ***
+ ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
  ***  Soubor s funkcemi / File with functions (surprisingly :)          ***
  *************************************************************************/
 
@@ -10,11 +10,11 @@
  //// FUNKCE / FUNCTIONS
  //////////////////////////////////////////////////////////////////////////
 
-  /*
-   * formatData();
-   * input: timestamp   
-   * return: formated date
-   */
+/**
+ * formatData() vrací datum a čas
+ * @param $datum
+ * @return string
+ */
 
   function formatData($datum)
   {
@@ -25,10 +25,10 @@
     return $den.".".$mesic.".".substr($datum, 0, 4)." ".substr($datum, 11, 2).":".substr($datum, 14, 2);
   } 
 
-  /*
-   * formatDnu();
-   * input: timestamp   
-   * return: formated date
+  /**
+   * formatDnu() vrací datum
+   * @param $datum
+   * @return string
    */
   
   function formatDnu($datum)
@@ -38,12 +38,13 @@
     if(substr($datum, 5, 1) == 0){ $mesic = substr($datum, 6, 1); }else{ $mesic = substr($datum, 5, 2); }
 
     return $den.". ".$mesic.". ".substr($datum, 0, 4);
-  } 
+  }
 
-  /*
-   * fahrenheit();
-   * input: float (temp in Celsius)
-   */
+  /**
+  * fahrenheit();
+  * @param $teplota
+  * @return float
+  */
   function fahrenheit($teplota)
   {
     
@@ -51,9 +52,10 @@
 
   }
 
-  /*
+  /**
    * kelvin();
-   * input: float (temp in Celsius)
+   * @param $teplota
+   * @return float
    */
   function kelvin($teplota)
   {
@@ -62,9 +64,10 @@
 
   }
 
-  /*
+  /**
    * rankine();
-   * input: float (temp in Celsius)
+   * @param $teplota
+   * @return float
    */
   function rankine($teplota)
   {
@@ -73,9 +76,10 @@
 
   }
 
-  /*
+  /**
    * delisle();
-   * input: float (temp in Celsius)
+   * @param $teplota
+   * @return float
    */
   function delisle($teplota)
   {
@@ -84,9 +88,10 @@
 
   }
 
-  /*
+  /**
    * newton();
-   * input: float (temp in Celsius)
+   * @param $teplota
+   * @return float
    */
   function newton($teplota)
   {
@@ -95,9 +100,10 @@
 
   }
 
-  /*
+  /**
    * reaumur();
-   * input: float (temp in Celsius)
+   * @param $teplota
+   * @return float
    */
   function reaumur($teplota)
   {
@@ -106,9 +112,10 @@
 
   }
 
-  /*
+  /**
    * romer();
-   * input: float (temp in Celsius)
+   * @param $teplota
+   * @return float
    */
   function romer($teplota)
   {
@@ -117,17 +124,18 @@
 
   }
 
-  /*
-   * kolik();
-   * input: string, string, string   
-   * return: no. rows
-   */
+/**
+ * kolik();
+ * @param string $co
+ * @param string $kde
+ * @param string $podminky
+ * @return int
+ */
 
 function kolik($co, $kde, $podminky="")
  {
 
-   // nechame pocitat databazi
-   $k = MySQL_query("SELECT COUNT($co) AS pocet 
+   $k = MySQL_query("SELECT COUNT($co) AS pocet
                      FROM $kde $podminky");
    $k = MySQL_fetch_assoc($k);
 
@@ -135,27 +143,30 @@ function kolik($co, $kde, $podminky="")
 
  } // konec funkce
 
-  /*
+  /**
    * kolikRadek();
-   * input: string, string, string   
-   * return: no. rows
+   * @param string $co
+   * @param string $kde
+   * @param string $podminky
+   * @return int
    */
 
 function kolikRadek($co, $kde, $podminky="")
  {
 
-   // nechame pocitat databazi
-   $k = MySQL_query("SELECT $co AS pocet 
+   $k = MySQL_query("SELECT $co AS pocet
                      FROM $kde $podminky");
 
    return MySQL_num_rows($k);
 
  } // konec funkce
 
-  /*
+  /**
    * jednotkaTeploty();
-   * input: float, char, int
-   * return: temp in fahrenheit
+   * @param int|string $teplota
+   * @param string $jednotka
+   * @param int $znak
+   * @return string
    */
 
   function jednotkaTeploty($teplota="", $jednotka="C", $znak=0)
@@ -240,11 +251,10 @@ function kolikRadek($co, $kde, $podminky="")
 
   }
 
-
-  /*
-   * jeVikend();
-   * input: date(time)
-   * return: 1 if weekend, else 0
+  /**
+   * jeVikend() - podle date urci typ dne
+   * @param date $datum
+   * @return int
    */
 
   function jeVikend($datum)
@@ -262,11 +272,11 @@ function kolikRadek($co, $kde, $podminky="")
 
   }
 
-
-  /*
+  /**
    * rosnyBod();
-   * input: float(teplota), float(vlhkost)
-   * return: float(rosny bod)
+   * @param float $teplota
+   * @param float $vlhkost
+   * @return float
    */
 
   function rosnyBod($teplota, $vlhkost)
