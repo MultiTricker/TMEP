@@ -297,3 +297,16 @@ function kolikRadek($co, $kde, $podminky="")
 
     
   }
+
+/**
+ * Funkce vrátí datetime z MySQL naformátované do tvaru,
+ * který je v xml-export.php
+ *
+ * @param datetime $datetime
+ * @return string
+ */
+
+function datetimeToPapouch($datetime)
+{
+ return substr($datetime, 5, 2)."/".substr($datetime, 8, 2)."/".substr($datetime, 0, 4)." ".substr($datetime, 11, 2).":".substr($datetime, 14, 2).":".substr($datetime, 17, 2);
+}
