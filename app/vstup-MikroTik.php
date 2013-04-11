@@ -11,6 +11,11 @@ require "./scripts/db.php";     // skript s databazi
 //// Zpracovani hodnoty a jeji ulozeni
 //////////////////////////////////////////////////////////////////////////
 
+// Predavame ID teplomeru?
+if(isset($_GET['do']))
+{
+  $_GET['do'] = "tm_".$_GET['do'].".dat";
+
 // Skript z MikroTiku vola pres "do" nazev souboru, ktery uploadnul - existuje?
 if(is_file("./".$_GET['do']))
 {
@@ -39,7 +44,6 @@ if(is_file("./".$_GET['do']))
 
     }
 
-    echo $teplota;
     // Mame posledni teplotu? Sup s ni do databaze
     if(is_numeric($teplota))
     {
@@ -73,4 +77,10 @@ if(is_file("./".$_GET['do']))
 else
 {
   echo "Stranku nevola teplomer.";
+}
+
+}
+else
+{
+  echo "Je potreba predat ID teplomeru.";
 }
