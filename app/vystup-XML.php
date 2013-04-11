@@ -24,13 +24,19 @@ $nejvyssi = MySQL_fetch_assoc($dotaz);
 $dotaz = MySQL_query("SELECT kdy, teplota FROM tme ORDER BY teplota ASC LIMIT 1");
 $nejnizsi = MySQL_fetch_assoc($dotaz);
 
-// Nejvyssi namerena vlhkost
-$dotaz = MySQL_query("SELECT kdy, vlhkost FROM tme ORDER BY vlhkost DESC LIMIT 1");
-$nejvyssiVlhkost = MySQL_fetch_assoc($dotaz);
+// Mame vlkhomer?
+if($vlhkomer == 1)
+{
 
-// Nejnizsi namerena vlhkost
-$dotaz = MySQL_query("SELECT kdy, vlhkost FROM tme ORDER BY vlhkost ASC LIMIT 1");
-$nejnizsiVlhkost = MySQL_fetch_assoc($dotaz);
+  // Nejvyssi namerena vlhkost
+  $dotaz = MySQL_query("SELECT kdy, vlhkost FROM tme ORDER BY vlhkost DESC LIMIT 1");
+  $nejvyssiVlhkost = MySQL_fetch_assoc($dotaz);
+
+  // Nejnizsi namerena vlhkost
+  $dotaz = MySQL_query("SELECT kdy, vlhkost FROM tme ORDER BY vlhkost ASC LIMIT 1");
+  $nejnizsiVlhkost = MySQL_fetch_assoc($dotaz);
+
+}
 
 // Nastavime hlavicku
 header ("Content-Type:text/xml");
@@ -42,16 +48,16 @@ header ("Content-Type:text/xml");
 // Nemame vlhkomer?
 if($vlhkomer == 0)
 {
-  echo '<?xml version="1.0" encoding="iso-8859-1"?> '; ?>
-<root xmlns="http://www.papouch.com/xml/tme/freshdata">
+  echo '<?xml version="1.0" encoding="UTF-8"?> '; ?>
+<root xmlns="http://www.papouch.com/xml/TME/act">
   <sns location="<?php echo $umisteni; ?>" status="0" hi="0" lo="0" unit="0" val="<?php echo round($posledni['teplota'], 1)*10; ?>" min="-9999" max="9999"/>
 </root>
 <?php
-  }
-  else
-  {
-  // Mame vlhkomer
-  echo '<?xml version="1.0" encoding="iso-8859-1"?> '; ?>
+}
+else
+{
+// Mame vlhkomer
+echo '<?xml version="1.0" encoding="iso-8859-1"?> '; ?>
 
 <root xmlns="http://www.papouch.com/xml/th2e/act">
   <sns id="1" type="1" status="0" unit="0" val="<?php echo round($posledni['teplota'], 1); ?>" w-min="" w-max="" e-min-val=" <?php echo round($nejnizsi['teplota'], 1); ?>" e-max-val=" <?php echo round($nejvyssi['teplota'], 1); ?>" e-min-dte="<?php echo datetimeToPapouch($nejnizsi['kdy']); ?>" e-max-dte="<?php echo datetimeToPapouch($nejvyssi['kdy']); ?>"/>
@@ -61,4 +67,4 @@ if($vlhkomer == 0)
 </root>
 
 <?php
-  }
+}

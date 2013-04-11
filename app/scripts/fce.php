@@ -300,7 +300,7 @@ function kolikRadek($co, $kde, $podminky="")
 
 /**
  * Funkce vrátí datetime z MySQL naformátované do tvaru,
- * který je v xml-export.php
+ * který je v vystup-XML.php
  *
  * @param datetime $datetime
  * @return string
