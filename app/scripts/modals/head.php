@@ -23,8 +23,9 @@
   {
 
     // jazyk
-    if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR 
-       $_GET['ja'] == "de" OR $_GET['ja'] == 'fr'))
+    if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR
+      $_GET['ja'] == "de" OR $_GET['ja'] == 'fr' OR $_GET['ja'] == 'pl') OR
+      $_GET['ja'] == 'fi' OR $_GET['ja'] == 'sv')
     {
       $l = $_GET['ja'];
     }
