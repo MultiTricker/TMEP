@@ -17,7 +17,9 @@
             <a href='".$_SERVER['PHP_SELF']."?ja=en&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img src='images/en.gif' border='0' title='EN' alt='EN'></a>
             <a href='".$_SERVER['PHP_SELF']."?ja=de&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img src='images/de.gif' border='0' title='DE' alt='DE'></a> 
             <a href='".$_SERVER['PHP_SELF']."?ja=pl&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img src='images/pl.gif' border='0' title='PL' alt='PL'></a> 
-            <a href='".$_SERVER['PHP_SELF']."?ja=fr&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img src='images/fr.gif' border='0' title='FR' alt='FR'></a> | 
+            <a href='".$_SERVER['PHP_SELF']."?ja=fr&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img src='images/fr.gif' border='0' title='FR' alt='FR'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=fi&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img src='images/fi.gif' border='0' title='FI' alt='FI'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=sv&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img src='images/sv.gif' border='0' title='SV' alt='SV'></a> |
           ".$lang['jednotka'].":
             <a href='".$_SERVER['PHP_SELF']."?je=C&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Celsius'>Celsius</a>,
             <a href='".$_SERVER['PHP_SELF']."?je=F&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Fahrenheit'>Fahrenheit</a>, 
