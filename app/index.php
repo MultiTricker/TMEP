@@ -107,7 +107,8 @@
     // jazyk
     if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR 
        $_GET['ja'] == "de" OR $_GET['ja'] == 'fr' OR $_GET['ja'] == 'pl') OR
-      $_GET['ja'] == 'fi' OR $_GET['ja'] == 'sv')
+       $_GET['ja'] == 'fi' OR $_GET['ja'] == 'sv' OR $_GET['ja'] == 'sk' OR
+       $_GET['ja'] == 'ru')
     {
       $l = $_GET['ja'];
     }
