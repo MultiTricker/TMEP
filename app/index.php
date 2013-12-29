@@ -62,13 +62,13 @@
       // kontrolujeme IP a sedi
       if(isset($ip) AND $ip != "" AND $ip == $_SERVER['REMOTE_ADDR'])
       {
-        MySQL_query("INSERT INTO tme(kdy, teplota, vlhkost) VALUES(now(), '{$teplota}', {$vlhkost})");
+        MySQLi_query($GLOBALS["DBC"], "INSERT INTO tme(kdy, teplota, vlhkost) VALUES(now(), '{$teplota}', {$vlhkost})");
       }
       // nekontrolujeme IP
       elseif($ip == "")
       {
-        MySQL_query("INSERT INTO tme(kdy, teplota, vlhkost) VALUES(now(), '{$teplota}', {$vlhkost})");
-        print mysql_error();
+        MySQLi_query($GLOBALS["DBC"], "INSERT INTO tme(kdy, teplota, vlhkost) VALUES(now(), '{$teplota}', {$vlhkost})");
+        print mysqli_error($GLOBALS["DBC"]);
       }
       // problem? zrejme pozadavek z jine nez z povolene IP
       else

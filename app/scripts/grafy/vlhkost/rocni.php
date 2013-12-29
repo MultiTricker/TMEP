@@ -8,16 +8,16 @@
   if(isset($ydata)){ unset($ydata); unset($ydata2); unset($ydata3); unset($labels); }
 
    // nacteme mesicni teploty      
-   $dotaz = MySQL_query("SELECT den, prumer_vlhkost as prumer, nejnizsi_vlhkost as nejnizsi, nejvyssi_vlhkost as nejvyssi
+   $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den, prumer_vlhkost as prumer, nejnizsi_vlhkost as nejnizsi, nejvyssi_vlhkost as nejvyssi
                          FROM tme_denni 
                          WHERE nejnizsi_vlhkost > 0 AND den LIKE '".intval($_GET['rok'])."-%' 
                          ORDER BY den DESC");
 
-    if(MySQL_num_rows($dotaz) > 0)
+    if(MySQLi_num_rows($dotaz) > 0)
     {
 
    // hodime do pole
-   while($data = MySQL_fetch_assoc($dotaz))
+   while($data = MySQLi_fetch_assoc($dotaz))
    {
 
     if(round($data['nejnizsi']) > 0)

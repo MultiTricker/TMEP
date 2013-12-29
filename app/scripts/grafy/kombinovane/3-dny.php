@@ -16,12 +16,12 @@
   $do = date("Y-m-d H:m:s");
 
   // Posledni zaznamy vcera
-  $q = MySQL_query("SELECT kdy, teplota, vlhkost FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
 
   // budeme brat kazdy 5ty zaznam
   $a = 8;
 
-    while($t = MySQL_fetch_assoc($q))
+    while($t = MySQLi_fetch_assoc($q))
     {
 
     // budeme za tu dobu, aktualne 10 minut, pocitat prumernou teplotu,

@@ -6,13 +6,13 @@
  *************************************************************************/
 
    // nacteme mesicni teploty      
-   $dotaz = MySQL_query("SELECT den, prumer, nejnizsi, nejvyssi 
+   $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den, prumer, nejnizsi, nejvyssi
                          FROM tme_denni 
                          WHERE den LIKE '".intval($_GET['rok'])."-%'  
                          ORDER BY den DESC");
 
    // hodime do pole
-   while($data = MySQL_fetch_assoc($dotaz))
+   while($data = MySQLi_fetch_assoc($dotaz))
    {
 
      if(round($data['nejvyssi'], 2) == 0){ $ydata[] = "0"; }

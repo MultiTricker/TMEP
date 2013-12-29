@@ -26,27 +26,27 @@
   $vcera = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")-1, date("Y")));
 
   // Nejdriv najdeme posledni dopocitany den krome dnesniho
-  $q = MySQL_query("SELECT MAX(den) AS den FROM tme_denni");
-  $h = MySQL_fetch_assoc($q);
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT MAX(den) AS den FROM tme_denni");
+  $h = MySQLi_fetch_assoc($q);
 
   // je potreba neco dopocitavat?
-  if(MySQL_num_rows($q) == 0 OR $h['den'] != $vcera)
+  if(MySQLi_num_rows($q) == 0 OR $h['den'] != $vcera)
   {
 
     // takova hloupost...cheme dalsi den :)
     if($h['den'] != ""){ $h['den2'] = $h['den']." 23:59:59"; }
 
-    $q = MySQL_query("SELECT kdy 
+    $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy
                       FROM tme 
                       WHERE kdy > '{$h['den2']}' AND kdy < '".date("Y-m-d")."' 
                       GROUP BY year(kdy),month(kdy),day(kdy) 
                       ORDER BY kdy ASC");
 
     // Mame co dopocitavat?
-    if(MySQL_num_rows($q) > 0)
+    if(MySQLi_num_rows($q) > 0)
     {
 
-    while($t = MySQL_fetch_assoc($q))
+    while($t = MySQLi_fetch_assoc($q))
     {
 
       // vytahneme den z datetime
@@ -56,21 +56,21 @@
       // nejdrive naplnime tabulku cache, kde budou radky jen pro dopocitavany den
       // a tu potrapime radou dotazu misto toho, abysme ty dotazy vykonavali nad 
       // tabulkou se vsemi merenimi, ktera mohou jit do milionu zaznamu
-      MySQL_query("INSERT INTO tme_cache(id, kdy, teplota, vlhkost)
-                   SELECT id, kdy, teplota, vlhkost 
-                   FROM tme 
-                   WHERE kdy >= CAST('{$den} 00:00:00' AS datetime)
-                     AND kdy <= CAST('{$den} 23:59:59' AS datetime)");
+      MySQLi_query($GLOBALS["DBC"], "INSERT INTO tme_cache(id, kdy, teplota, vlhkost)
+                                     SELECT id, kdy, teplota, vlhkost
+                                     FROM tme
+                                     WHERE kdy >= CAST('{$den} 00:00:00' AS datetime)
+                                       AND kdy <= CAST('{$den} 23:59:59' AS datetime)");
       
       // mereni za den
-      $qV = MySQL_query("SELECT COUNT(id) AS pocet, 
-                                MIN(teplota) AS minteplota, MAX(teplota) AS maxteplota, AVG(teplota) AS avgteplota,
-                                MIN(vlhkost) AS minvlh, MAX(vlhkost) AS maxvlh, AVG(vlhkost) AS avgvlh
-                         FROM tme_cache 
-                         WHERE kdy >= CAST('{$den} 00:00:00' AS datetime)
-                           AND kdy <= CAST('{$den} 23:59:59' AS datetime)");
+      $qV = MySQLi_query($GLOBALS["DBC"], "SELECT COUNT(id) AS pocet,
+                                                  MIN(teplota) AS minteplota, MAX(teplota) AS maxteplota, AVG(teplota) AS avgteplota,
+                                                  MIN(vlhkost) AS minvlh, MAX(vlhkost) AS maxvlh, AVG(vlhkost) AS avgvlh
+                                           FROM tme_cache
+                                           WHERE kdy >= CAST('{$den} 00:00:00' AS datetime)
+                                             AND kdy <= CAST('{$den} 23:59:59' AS datetime)");
 
-      $qVhod = MySQL_fetch_assoc($qV);
+      $qVhod = MySQLi_fetch_assoc($qV);
 
       $hod['mereni'] = $qVhod['pocet'];
       $hod['nejnizsi'] = $qVhod['minteplota'];
@@ -96,14 +96,14 @@
         (strlen($a) == 1 ? $c = "0".$a : $c = $a);
 
         // mereni za danou hodinu
-        $qV = MySQL_query("SELECT COUNT(id) AS pocet, 
-                                  MIN(teplota) AS minteplota, MAX(teplota) AS maxteplota, AVG(teplota) AS avgteplota,
-                                  MIN(vlhkost) AS minvlh, MAX(vlhkost) AS maxvlh, AVG(vlhkost) AS avgvlh
-                           FROM tme_cache 
-                           WHERE kdy >= CAST('{$den} {$c}:00:00' AS datetime)
-                             AND kdy <= CAST('{$den} {$c}:59:59' AS datetime)");
+        $qV = MySQLi_query($GLOBALS["DBC"], "SELECT COUNT(id) AS pocet,
+                                                    MIN(teplota) AS minteplota, MAX(teplota) AS maxteplota, AVG(teplota) AS avgteplota,
+                                                    MIN(vlhkost) AS minvlh, MAX(vlhkost) AS maxvlh, AVG(vlhkost) AS avgvlh
+                                             FROM tme_cache
+                                             WHERE kdy >= CAST('{$den} {$c}:00:00' AS datetime)
+                                               AND kdy <= CAST('{$den} {$c}:59:59' AS datetime)");
 
-        $qVhod = MySQL_fetch_assoc($qV);
+        $qVhod = MySQLi_fetch_assoc($qV);
         
         // Mame vubec nejaka mereni?
         if($qVhod['pocet'] == 0)
@@ -134,7 +134,7 @@
 
       }
 
-      MySQL_query("INSERT INTO tme_denni (den, mereni, nejnizsi, nejvyssi, prumer, nejnizsi_vlhkost, nejvyssi_vlhkost, prumer_vlhkost, 
+      MySQLi_query($GLOBALS["DBC"], "INSERT INTO tme_denni (den, mereni, nejnizsi, nejvyssi, prumer, nejnizsi_vlhkost, nejvyssi_vlhkost, prumer_vlhkost,
                                      0mereni, 0nejnizsi, 0nejvyssi, 0prumer, 0nejnizsi_vlhkost, 0nejvyssi_vlhkost, 0prumer_vlhkost, 
                                      1mereni, 1nejnizsi, 1nejvyssi, 1prumer, 1nejnizsi_vlhkost, 1nejvyssi_vlhkost, 1prumer_vlhkost,
                                      2mereni, 2nejnizsi, 2nejvyssi, 2prumer, 2nejnizsi_vlhkost, 2nejvyssi_vlhkost, 2prumer_vlhkost,
@@ -185,13 +185,13 @@
                      {$hod['22mereni']}, {$hod['22nejnizsi']}, {$hod['22nejvyssi']}, {$hod['22prumer']}, {$hod['22nejnizsivlh']}, {$hod['22nejvyssivlh']}, {$hod['22prumervlh']},
                      {$hod['23mereni']}, {$hod['23nejnizsi']}, {$hod['23nejvyssi']}, {$hod['23prumer']}, {$hod['23nejnizsivlh']}, {$hod['23nejvyssivlh']}, {$hod['23prumervlh']})");
 
-      echo mysql_error();
+      echo mysqli_error($GLOBALS["DBC"]);
 
       // smazeme docasne zaznamy
-      mysql_query("TRUNCATE tme_cache;");
+      MySQLi_query($GLOBALS["DBC"], "TRUNCATE tme_cache;");
 
       // mame stale pripojeni na MySQL server?
-      if (!mysql_ping()) {
+      if (!mysqli_ping($GLOBALS["DBC"])) {
         echo "<p style='font-weight; color: darkred;'>Skript skončil předčasně. Spusťte jej znovu pro dopočítání dalších dní.";
         echo "Script ended early. Run it again to calculate more data for past days.</p>";
         exit;

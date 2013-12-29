@@ -18,10 +18,10 @@
   $tep = 0;
 
   // Posledni zaznamy
-  $q = MySQL_query("SELECT kdy, vlhkost FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, vlhkost FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
       $a = 5;
       $fr = 1;
-        while($t = MySQL_fetch_assoc($q))
+        while($t = MySQLi_fetch_assoc($q))
         {
           $tep = $tep+$t['vlhkost'];
           if($a == 5)

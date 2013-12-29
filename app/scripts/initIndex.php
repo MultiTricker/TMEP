@@ -6,24 +6,24 @@
  *************************************************************************/
 
   // Pocet mereni
-  $dotaz = MySQL_query("SELECT count(id) AS pocet, MIN(kdy) AS kdy FROM tme");
-  $pocetMereni = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT count(id) AS pocet, MIN(kdy) AS kdy FROM tme");
+  $pocetMereni = MySQLi_fetch_assoc($dotaz);
 
   // Posledni mereni
-  $dotaz = MySQL_query("SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 1");
-  $posledni = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 1");
+  $posledni = MySQLi_fetch_assoc($dotaz);
 
   // Starsi mereni
-  $dotaz = MySQL_query("SELECT kdy, teplota FROM tme ORDER BY kdy DESC LIMIT 5, 1");
-  $starsi = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme ORDER BY kdy DESC LIMIT 5, 1");
+  $starsi = MySQLi_fetch_assoc($dotaz);
 
   // Nejvyssi namerena teplota
-  $dotaz = MySQL_query("SELECT kdy, teplota FROM tme ORDER BY teplota DESC LIMIT 1");
-  $nejvyssi = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme ORDER BY teplota DESC LIMIT 1");
+  $nejvyssi = MySQLi_fetch_assoc($dotaz);
 
   // Nejnizsi namerena teplota
-  $dotaz = MySQL_query("SELECT kdy, teplota FROM tme ORDER BY teplota ASC LIMIT 1");
-  $nejnizsi = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme ORDER BY teplota ASC LIMIT 1");
+  $nejnizsi = MySQLi_fetch_assoc($dotaz);
 
   // vyvoj teploty
   if($posledni['teplota'] > $starsi['teplota'])

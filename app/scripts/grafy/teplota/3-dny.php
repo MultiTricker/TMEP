@@ -18,10 +18,10 @@
   $tep = 0;
 
   // Posledni zaznamy
-  $q = MySQL_query("SELECT kdy, teplota FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
       $a = 5;
       $fr = 1;
-        while($t = MySQL_fetch_assoc($q))
+        while($t = MySQLi_fetch_assoc($q))
         {
           $tep = $tep+$t['teplota'];
           if($a == 5)

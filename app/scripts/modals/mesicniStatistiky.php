@@ -12,14 +12,14 @@
  $dny = Array();
  $minmax = Array();
 
- $dotaz = MySQL_query("SELECT den as mesic, MIN(nejnizsi) as nejnizsi, MAX(nejvyssi) as nejvyssi 
+ $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den as mesic, MIN(nejnizsi) as nejnizsi, MAX(nejvyssi) as nejvyssi
                        FROM tme_denni 
                        GROUP BY year(den), month(den) 
                        ORDER BY den DESC
                        LIMIT 1, 60");
 
  // hodime do pole
- while($data = MySQL_fetch_assoc($dotaz))
+ while($data = MySQLi_fetch_assoc($dotaz))
  {
 
    if(round($data['nejvyssi'], 2) == 0){ $vysoka = "0"; }
@@ -38,13 +38,13 @@
   require "../grafy/teplota/mesicniRozptyl.php";
 
    // nacteme
-  $qStat = MySQL_query("SELECT den, AVG(prumer) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer) as prumer
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY prumer DESC
                         LIMIT 50");
 
-  if(MySQL_num_rows($qStat) > 2)
+  if(MySQLi_num_rows($qStat) > 2)
   {
 
   ///////////////////////////
@@ -63,7 +63,7 @@
             <td class='radek' align='center'><b>{$lang['prumernateplota']}</b></td>
           </tr>";
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -88,13 +88,13 @@
           </tr>";
 
   // nacteme
-  $qStat = MySQL_query("SELECT den, AVG(prumer) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer) as prumer
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY prumer ASC
                         LIMIT 50");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -110,7 +110,7 @@
   if($vlhkomer == 1)
   {
 
-  $qStat = MySQL_query("SELECT den, AVG(prumer_vlhkost) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer_vlhkost) as prumer
                         FROM tme_denni 
                         WHERE prumer_vlhkost > 0
                         GROUP BY year(den),month(den)
@@ -127,7 +127,7 @@
             <td class='radek' align='center'><b>{$lang['prumernavlhkost']}</b></td>
           </tr>";
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -152,14 +152,14 @@
           </tr>";
 
   // nacteme
-  $qStat = MySQL_query("SELECT den, AVG(prumer_vlhkost) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer_vlhkost) as prumer
                         FROM tme_denni 
                         WHERE prumer_vlhkost > 0
                         GROUP BY year(den),month(den)
                         ORDER BY prumer ASC
                         LIMIT 50");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -188,13 +188,13 @@
   ///////////////////////////
   // nacteme nejvice mereni
   ///////////////////////////
-  $qStat = MySQL_query("SELECT den, mereni
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY mereni DESC
                         LIMIT 50");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -220,13 +220,13 @@
   ///////////////////////////
   // nacteme nejmene mereni
   ///////////////////////////
-  $qStat = MySQL_query("SELECT den, mereni
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY mereni ASC
                         LIMIT 50");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>

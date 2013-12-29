@@ -17,13 +17,13 @@
     $tabulka .= "</tr>";
 
     // Nacteme dny a teploty
-    $q = MySQL_query("SELECT den, mereni 
+    $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni
                       FROM tme_denni 
                       WHERE mereni IS NOT null
                       ORDER BY mereni ASC 
                       LIMIT 50");
 
-    while($r = MySQL_fetch_assoc($q))
+    while($r = MySQLi_fetch_assoc($q))
     {
 
       // zelene = vikend
@@ -51,12 +51,12 @@
     $tabulka .= "</tr>";
 
     // Nacteme dny a teploty
-    $q = MySQL_query("SELECT den, mereni 
+    $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni
                       FROM tme_denni 
                       WHERE mereni IS NOT null
                       ORDER BY mereni DESC 
                       LIMIT 50");
-    while($r = MySQL_fetch_assoc($q))
+    while($r = MySQLi_fetch_assoc($q))
     {
 
       // zelene = vikend

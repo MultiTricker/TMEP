@@ -13,28 +13,28 @@ require "./scripts/fce.php";       // skript s nekolika funkcemi
 //////////////////////////////////////////////////////////////////////////
 
 // Posledni mereni
-$dotaz = MySQL_query("SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 1");
-$posledni = MySQL_fetch_assoc($dotaz);
+$dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 1");
+$posledni = MySQLi_fetch_assoc($dotaz);
 
 // Nejvyssi namerena teplota
-$dotaz = MySQL_query("SELECT kdy, teplota FROM tme ORDER BY teplota DESC LIMIT 1");
-$nejvyssi = MySQL_fetch_assoc($dotaz);
+$dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme ORDER BY teplota DESC LIMIT 1");
+$nejvyssi = MySQLi_fetch_assoc($dotaz);
 
 // Nejnizsi namerena teplota
-$dotaz = MySQL_query("SELECT kdy, teplota FROM tme ORDER BY teplota ASC LIMIT 1");
-$nejnizsi = MySQL_fetch_assoc($dotaz);
+$dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme ORDER BY teplota ASC LIMIT 1");
+$nejnizsi = MySQLi_fetch_assoc($dotaz);
 
 // Mame vlkhomer?
 if($vlhkomer == 1)
 {
 
   // Nejvyssi namerena vlhkost
-  $dotaz = MySQL_query("SELECT kdy, vlhkost FROM tme ORDER BY vlhkost DESC LIMIT 1");
-  $nejvyssiVlhkost = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, vlhkost FROM tme ORDER BY vlhkost DESC LIMIT 1");
+  $nejvyssiVlhkost = MySQLi_fetch_assoc($dotaz);
 
   // Nejnizsi namerena vlhkost
-  $dotaz = MySQL_query("SELECT kdy, vlhkost FROM tme ORDER BY vlhkost ASC LIMIT 1");
-  $nejnizsiVlhkost = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, vlhkost FROM tme ORDER BY vlhkost ASC LIMIT 1");
+  $nejnizsiVlhkost = MySQLi_fetch_assoc($dotaz);
 
 }
 

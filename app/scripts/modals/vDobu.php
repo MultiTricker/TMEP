@@ -32,7 +32,7 @@
     ///////////////////////////
     // nejnizsi
     ///////////////////////////
-    $q = MySQL_query("SELECT den, {$_GET['doba']}nejnizsi 
+    $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$_GET['doba']}nejnizsi
                       FROM tme_denni 
                       WHERE {$_GET['doba']}nejnizsi IS NOT NULL
                       ORDER BY {$_GET['doba']}nejnizsi ASC 
@@ -42,7 +42,7 @@
             <td colspan='2' class='radek' align='center'><b>{$lang['nejnizsiteploty']}</b></td>
           </tr>";
 
-    while($r = MySQL_fetch_assoc($q))
+    while($r = MySQLi_fetch_assoc($q))
     {
       echo "<tr>
               <td align='center'>".formatDnu($r['den'])."</td>
@@ -53,7 +53,7 @@
     ///////////////////////////
     // nejvyssi
     ///////////////////////////
-    $q = MySQL_query("SELECT den, {$_GET['doba']}nejvyssi 
+    $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$_GET['doba']}nejvyssi
                       FROM tme_denni 
                       ORDER BY {$_GET['doba']}nejvyssi DESC 
                       LIMIT 25");
@@ -65,7 +65,7 @@
               <td colspan='2' class='radek' align='center'><b>{$lang['nejvyssiteploty']}</b></td>
             </tr>";
 
-    while($r = MySQL_fetch_assoc($q))
+    while($r = MySQLi_fetch_assoc($q))
     {
       echo "<tr>
               <td align='center'>".formatDnu($r['den'])."</td>
@@ -86,7 +86,7 @@
       ///////////////////////////
       // nejnizsi
       ///////////////////////////
-      $q = MySQL_query("SELECT den, {$_GET['doba']}nejnizsi_vlhkost 
+      $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$_GET['doba']}nejnizsi_vlhkost
                         FROM tme_denni 
                         WHERE {$_GET['doba']}nejnizsi_vlhkost > 0 
                         ORDER BY {$_GET['doba']}nejnizsi_vlhkost ASC 
@@ -95,7 +95,7 @@
               <td colspan='2' class='radek' align='center'><b>{$lang['nejnizsivlhkost']}</b></td>
             </tr>";
 
-      while($r = MySQL_fetch_assoc($q))
+      while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
                 <td align='center'>".formatDnu($r['den'])."</td>
@@ -106,7 +106,7 @@
       ///////////////////////////
       // nejvyssi
       ///////////////////////////
-      $q = MySQL_query("SELECT den, {$_GET['doba']}nejvyssi_vlhkost 
+      $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$_GET['doba']}nejvyssi_vlhkost
                         FROM tme_denni 
                         ORDER BY {$_GET['doba']}nejvyssi_vlhkost DESC 
                         LIMIT 25");
@@ -118,7 +118,7 @@
               <td colspan='2' class='radek' align='center'><b>{$lang['nejvyssivlhkost']}</b></td>
             </tr>";
 
-      while($r = MySQL_fetch_assoc($q))
+      while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
                 <td align='center'>".formatDnu($r['den'])."</td>

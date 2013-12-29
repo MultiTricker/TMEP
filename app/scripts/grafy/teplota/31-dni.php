@@ -9,8 +9,8 @@
   require "./scripts/init.php";
 
   // maximalni teplota dany den
-  $qj = MySQL_query("SELECT den, nejvyssi, nejnizsi, prumer FROM tme_denni ORDER BY den DESC LIMIT 0, 31");
-  while($hod = MySQL_fetch_assoc($qj))
+  $qj = MySQLi_query($GLOBALS["DBC"], "SELECT den, nejvyssi, nejnizsi, prumer FROM tme_denni ORDER BY den DESC LIMIT 0, 31");
+  while($hod = MySQLi_fetch_assoc($qj))
   {
     // popisek
     $labels[] = formatDnu($hod['den']);

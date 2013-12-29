@@ -135,9 +135,9 @@
 function kolik($co, $kde, $podminky="")
  {
 
-   $k = MySQL_query("SELECT COUNT($co) AS pocet
+   $k = MySQLi_query($GLOBALS["DBC"], "SELECT COUNT($co) AS pocet
                      FROM $kde $podminky");
-   $k = MySQL_fetch_assoc($k);
+   $k = MySQLi_fetch_assoc($k);
 
    return $k['pocet'];
 
@@ -154,10 +154,10 @@ function kolik($co, $kde, $podminky="")
 function kolikRadek($co, $kde, $podminky="")
  {
 
-   $k = MySQL_query("SELECT $co AS pocet
+   $k = MySQLi_query($GLOBALS["DBC"], "SELECT $co AS pocet
                      FROM $kde $podminky");
 
-   return MySQL_num_rows($k);
+   return MySQLi_num_rows($k);
 
  } // konec funkce
 

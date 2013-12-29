@@ -9,13 +9,13 @@
   require "./scripts/init.php";
 
   // Posledni zaznamy
-  $q = MySQL_query("SELECT kdy, teplota FROM tme ORDER BY kdy DESC LIMIT 1440");
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme ORDER BY kdy DESC LIMIT 1440");
 
   // budeme brat kazdy 40ty zaznam, abychom se do grafu rozumne vesli
   $a = 10;
   $count = 0;
 
-    while($t = MySQL_fetch_assoc($q))
+    while($t = MySQLi_fetch_assoc($q))
     {
 
     // budeme za tu dobu, aktualne 40 minut, pocitat prumernou teplotu,

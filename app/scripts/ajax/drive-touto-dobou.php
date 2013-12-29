@@ -65,12 +65,12 @@
     for($a = 0; $a < count($dny2); $a++)
     {
 
-      $dotaz = MySQL_query("SELECT kdy, teplota, vlhkost 
+      $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost
                             FROM tme 
                             WHERE kdy >= CAST('".substr($dny2[$a], 0, 14)."0' AS datetime)
                                   AND kdy <= CAST('".substr($dny2[$a], 0, 14)."9' AS datetime)
                             LIMIT 1");
-      $hod = MySQL_fetch_assoc($dotaz);
+      $hod = MySQLi_fetch_assoc($dotaz);
 
       echo "<tr>
               <td align='center'>".formatDnu($dny2[$a])."</td>

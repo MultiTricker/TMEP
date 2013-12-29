@@ -18,8 +18,8 @@
  //////////////////////////////////////////////////////////////////////////
 
   // Posledni mereni
-  $dotaz = MySQL_query("SELECT kdy, teplota, vlhkost FROM tme ORDER BY id DESC LIMIT 1");
-  $posledni = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost FROM tme ORDER BY id DESC LIMIT 1");
+  $posledni = MySQLi_fetch_assoc($dotaz);
   
   $d = explode(" ", formatData($posledni['kdy']));
   echo "|".$d[0]."|".$d[1]."|";

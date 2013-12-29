@@ -6,13 +6,13 @@
  *************************************************************************/
 
   // nacteme teploty do tabulky pro poslednich dny
-  $qStat = MySQL_query("SELECT den, mereni, nejnizsi, nejvyssi, prumer 
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, nejnizsi, nejvyssi, prumer
                     FROM tme_denni 
                     ORDER BY den DESC 
                     LIMIT 50");
 
   // mame dost zaznamu k zobrazeni?
-  if(MySQL_num_rows($qStat) > 5)
+  if(MySQLi_num_rows($qStat) > 5)
   {
 
   echo "<div class='graf' id='graf-31-dni-teplota'>"; require './scripts/grafy/teplota/31-dni.php'; echo "</div>";
@@ -41,7 +41,7 @@
       ///////////////////////////
       // nejnizsi
       ///////////////////////////
-      $q = MySQL_query("SELECT den, {$a}nejnizsi 
+      $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$a}nejnizsi
                         FROM tme_denni 
                         WHERE {$a}nejnizsi IS NOT NULL
                         ORDER BY {$a}nejnizsi ASC 
@@ -51,7 +51,7 @@
               <td colspan='2' class='radek' align='center'><b>{$lang['nejnizsiteploty']}</b></td>
             </tr>";
   */
-      while($r = MySQL_fetch_assoc($q))
+      while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
                 <td align='center'><b>{$lang['min2']}</b></td>
@@ -63,7 +63,7 @@
       ///////////////////////////
       // nejvyssi
       ///////////////////////////
-      $q = MySQL_query("SELECT den, {$a}nejvyssi 
+      $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$a}nejvyssi
                         FROM tme_denni 
                         ORDER BY {$a}nejvyssi DESC 
                         LIMIT 1");
@@ -72,7 +72,7 @@
               <td colspan='2' class='radek' align='center'><b>{$lang['nejvyssiteploty']}</b></td>
             </tr>";
   */
-      while($r = MySQL_fetch_assoc($q))
+      while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
                 <td align='center'><b>{$lang['max2']}</b></td>
@@ -115,7 +115,7 @@
             <td align='center'><b>{$lang['mereni']}</b></td>
           </tr>";
 
-          while($r = MySQL_fetch_assoc($qStat))
+          while($r = MySQLi_fetch_assoc($qStat))
           {
 
             $vikend = jeVikend($r['den']);
@@ -142,7 +142,7 @@
     {
 
   // nacteme teploty do tabulky pro poslednich dny
-  $qStat = MySQL_query("SELECT den, mereni, nejnizsi_vlhkost, nejvyssi_vlhkost, prumer_vlhkost 
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, nejnizsi_vlhkost, nejvyssi_vlhkost, prumer_vlhkost
                     FROM tme_denni 
                     WHERE nejnizsi_vlhkost > 0
                     ORDER BY den DESC 
@@ -177,7 +177,7 @@
       ///////////////////////////
       // nejnizsi
       ///////////////////////////
-      $q = MySQL_query("SELECT den, {$a}nejnizsi_vlhkost 
+      $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$a}nejnizsi_vlhkost
                         FROM tme_denni 
                         WHERE {$a}nejnizsi_vlhkost > 0 
                         ORDER BY {$a}nejnizsi_vlhkost ASC 
@@ -187,7 +187,7 @@
               <td colspan='2' class='radek' align='center'><b>{$lang['nejnizsivlhkost']}</b></td>
             </tr>";
   */
-      while($r = MySQL_fetch_assoc($q))
+      while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
                 <td align='center'><b>{$lang['min2']}</b></td>
@@ -199,7 +199,7 @@
       ///////////////////////////
       // nejvyssi
       ///////////////////////////
-      $q = MySQL_query("SELECT den, {$a}nejvyssi_vlhkost 
+      $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, {$a}nejvyssi_vlhkost
                         FROM tme_denni 
                         ORDER BY {$a}nejvyssi_vlhkost DESC 
                         LIMIT 1");
@@ -208,7 +208,7 @@
               <td colspan='3' class='radek' align='center'><b>{$lang['nejvyssivlhkost']}</b></td>
             </tr>";
   */
-      while($r = MySQL_fetch_assoc($q))
+      while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
                 <td align='center'><b>{$lang['max2']}</b></td>
@@ -247,7 +247,7 @@
             <td align='center' width='80'><b>{$lang['max2']}</b></td>
           </tr>";
 
-          while($r = MySQL_fetch_assoc($qStat))
+          while($r = MySQLi_fetch_assoc($qStat))
           {
 
             $vikend = jeVikend($r['den']);

@@ -9,13 +9,13 @@
   require "./scripts/init.php";
 
   // Posledni zaznamy
-  $q = MySQL_query("SELECT kdy, vlhkost FROM tme ORDER BY kdy DESC LIMIT 240");
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, vlhkost FROM tme ORDER BY kdy DESC LIMIT 240");
 
       // budeme pocitat kazdy osmy zaznam, tedy kazdou osmou minutu
       $a = 8;
       $count = 0;
 
-        while($t = MySQL_fetch_assoc($q))
+        while($t = MySQLi_fetch_assoc($q))
         {
 
         // budeme pocitat prumernou teplotu za poslednich osm minut... vypada to lepe

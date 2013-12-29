@@ -27,7 +27,7 @@
   if(isset($_GET['odeslani']) && $_GET['typ'] == 0)
   {
 
-    $q = MySQL_query("SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer), 
+    $q = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer),
                            MIN(nejnizsi_vlhkost), MAX(nejvyssi_vlhkost), AVG(prumer_vlhkost), 
                            MIN(0nejnizsi), MAX(0nejvyssi), AVG(0prumer),
                            MIN(1nejnizsi), MAX(1nejvyssi), AVG(1prumer),
@@ -81,14 +81,14 @@
                       WHERE den = '{$_GET['jenden']}' 
                       GROUP BY den;");
 
-    if(MySQL_num_rows($q) == 0)
+    if(MySQLi_num_rows($q) == 0)
     {
       echo "<p><b>{$lang['nenalezenyzaznam']}</b></p>";
     }
     else
     {
 
-      $r = MySQL_fetch_assoc($q);
+      $r = MySQLi_fetch_assoc($q);
 
       echo "<br>
         <table class='tabulkaVHlavicce' width='900'>
@@ -104,13 +104,13 @@
           <td class='radekVelky' align='center' colspan='5'><b>{$lang['namerenehodnotyvprubehulet']}</b></td>
         </tr>";
 
-        $qL = MySQL_query("SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer), 
+        $qL = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer),
                            MIN(nejnizsi_vlhkost), MAX(nejvyssi_vlhkost), AVG(prumer_vlhkost) 
                       FROM tme_denni 
                       WHERE den LIKE '%-".substr($_GET['jenden'], 5, 6)."' 
                       GROUP BY den;");
 
-        while($t = MySQL_fetch_assoc($qL))
+        while($t = MySQLi_fetch_assoc($qL))
         {
 
         echo "<tr class='radek'>

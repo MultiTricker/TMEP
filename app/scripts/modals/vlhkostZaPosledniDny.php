@@ -16,7 +16,7 @@
   echo "<h3>{$lang['vlhkostzaposlednidny']} (%)</h3>";
 
   // nacteme teploty do tabulky pro poslednich dny
-  $qStat = MySQL_query("SELECT den, mereni, nejnizsi_vlhkost, nejvyssi_vlhkost, prumer_vlhkost 
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, nejnizsi_vlhkost, nejvyssi_vlhkost, prumer_vlhkost
                     FROM tme_denni 
                     WHERE nejnizsi_vlhkost > 0
                     ORDER BY den DESC 
@@ -33,7 +33,7 @@
         <td align='center'><b>{$lang['mereni']}</b></td>
       </tr>";
 
-      while($r = MySQL_fetch_assoc($qStat))
+      while($r = MySQLi_fetch_assoc($qStat))
       {
 
         $vikend = jeVikend($r['den']);

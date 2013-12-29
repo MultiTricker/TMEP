@@ -9,7 +9,7 @@
   require "./scripts/init.php";
 
    // nacteme mesicni teploty      
-   $dotaz = MySQL_query("SELECT den as mesic, AVG(prumer_vlhkost) as prumer, MIN(nejnizsi_vlhkost) as nejnizsi, MAX(nejvyssi_vlhkost) as nejvyssi 
+   $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den as mesic, AVG(prumer_vlhkost) as prumer, MIN(nejnizsi_vlhkost) as nejnizsi, MAX(nejvyssi_vlhkost) as nejvyssi
                          FROM tme_denni 
                          WHERE nejnizsi_vlhkost > 0 
                          GROUP BY year(den), month(den) 
@@ -17,7 +17,7 @@
                          LIMIT 1, 36");
 
    // hodime do pole
-   while($data = MySQL_fetch_assoc($dotaz))
+   while($data = MySQLi_fetch_assoc($dotaz))
    {
 
      if(round($data['nejvyssi'], 2) == 0){ $ydata[] = "0"; }

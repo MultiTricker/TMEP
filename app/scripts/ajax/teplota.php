@@ -49,11 +49,11 @@
   // Vycteni hodnot
 
   // Posledni mereni
-  $dotaz = MySQL_query("SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 1");
-  $posledni = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 1");
+  $posledni = MySQLi_fetch_assoc($dotaz);
   // Starsi mereni
-  $dotaz = MySQL_query("SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 5, 1");
-  $starsi = MySQL_fetch_assoc($dotaz);
+  $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost FROM tme ORDER BY kdy DESC LIMIT 5, 1");
+  $starsi = MySQLi_fetch_assoc($dotaz);
 
   // vyvoj teploty
   if($posledni['teplota'] > $starsi['teplota'])

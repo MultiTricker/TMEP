@@ -11,14 +11,14 @@
   for($a = 0; $a < 24; $a++)
   {
 
-    $q = MySQL_query("SELECT kdy, teplota 
+    $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota
                       FROM tme 
                       WHERE kdy >= CAST('{$_GET['jenden']} ".(strlen($a) == 1 ? "0".$a : $a).":00:00' AS datetime) 
                         AND kdy <= CAST('{$_GET['jenden']} ".(strlen($a) == 1 ? "0".$a : $a).":59:59' AS datetime) 
                       ORDER BY kdy ASC 
                       LIMIT 1");
 
-    $t = MySQL_fetch_assoc($q);
+    $t = MySQLi_fetch_assoc($q);
 
     // pridame teplotu do pole
     if($t['teplota'] == ""){ $ydata[] = "0"; }

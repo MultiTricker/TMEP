@@ -5,25 +5,25 @@
  ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
  *************************************************************************/
 
-  $q = MySQL_query("SELECT den 
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT den
                     FROM tme_denni 
                     GROUP BY year(den) 
                     ORDER BY den DESC");
 
-  if(MySQL_num_rows($q) > 1)
+  if(MySQLi_num_rows($q) > 1)
   {
 
-    while($t = MySQL_fetch_assoc($q))
+    while($t = MySQLi_fetch_assoc($q))
     {
 
       $rok = substr($t['den'], 0, 4);
 
-      $qStat = MySQL_query("SELECT MIN(nejnizsi), MAX(nejvyssi), AVG(prumer), 
+      $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT MIN(nejnizsi), MAX(nejvyssi), AVG(prumer),
                                    MIN(nejnizsi_vlhkost), MAX(nejvyssi_vlhkost), AVG(prumer_vlhkost)
                             FROM tme_denni 
                             WHERE den LIKE '{$rok}-%'
                             LIMIT 1");
-      $r = MySQL_fetch_assoc($qStat);
+      $r = MySQLi_fetch_assoc($qStat);
 
       echo "<center>
             <table class='tabulkaVHlavicce'>
@@ -60,13 +60,13 @@
               </tr>";
     
       // nacteme
-      $qStat = MySQL_query("SELECT den, nejvyssi
+      $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, nejvyssi
                             FROM tme_denni 
                             WHERE den LIKE '{$rok}-%' 
                             ORDER BY nejvyssi DESC
                             LIMIT 6");
     
-        while($r = MySQL_fetch_assoc($qStat))
+        while($r = MySQLi_fetch_assoc($qStat))
         {
           echo "<tr>
                   <td align='center'><b>".formatDnu($r['den'])."</b></td>
@@ -90,13 +90,13 @@
               </tr>";
 
       // nacteme
-      $qStat = MySQL_query("SELECT den, nejnizsi
+      $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, nejnizsi
                             FROM tme_denni 
                             WHERE den LIKE '{$rok}-%' 
                             ORDER BY nejnizsi ASC
                             LIMIT 6");
 
-        while($r = MySQL_fetch_assoc($qStat))
+        while($r = MySQLi_fetch_assoc($qStat))
         {
           echo "<tr>
                   <td align='center'><b>".formatDnu($r['den'])."</b></td>
@@ -120,14 +120,14 @@
               </tr>";
     
       // nacteme
-      $qStat = MySQL_query("SELECT den, AVG(prumer) as prumer
+      $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer) as prumer
                             FROM tme_denni 
                             WHERE den LIKE '{$rok}-%' 
                             GROUP BY year(den),month(den)
                             ORDER BY prumer DESC
                             LIMIT 6");
     
-        while($r = MySQL_fetch_assoc($qStat))
+        while($r = MySQLi_fetch_assoc($qStat))
         {
           echo "<tr>
                   <td align='center'><b>".$lang['mesic'.substr($r['den'], 5, 2)]."</b></td>
@@ -151,14 +151,14 @@
               </tr>";
     
       // nacteme
-      $qStat = MySQL_query("SELECT den, AVG(prumer) as prumer
+      $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer) as prumer
                             FROM tme_denni 
                             WHERE den LIKE '{$rok}-%' 
                             GROUP BY year(den),month(den)
                             ORDER BY prumer ASC
                             LIMIT 6");
     
-        while($r = MySQL_fetch_assoc($qStat))
+        while($r = MySQLi_fetch_assoc($qStat))
         {
           echo "<tr>
                   <td align='center'><b>".$lang['mesic'.substr($r['den'], 5, 2)]."</b></td>
@@ -186,13 +186,13 @@
           ////////////////////////////////
 
           // nacteme
-          $qStat = MySQL_query("SELECT den, nejvyssi_vlhkost
+          $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, nejvyssi_vlhkost
                                 FROM tme_denni 
                                 WHERE den LIKE '{$rok}-%' AND nejvyssi_vlhkost > 0
                                 ORDER BY nejvyssi_vlhkost DESC
                                 LIMIT 6");
     
-          if(MySQL_num_rows($qStat) > 0)
+          if(MySQLi_num_rows($qStat) > 0)
           {
     
             echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
@@ -204,7 +204,7 @@
                     <td class='radek' align='center'><b>{$lang['vlhkost']}</b></td>
                   </tr>";
         
-            while($r = MySQL_fetch_assoc($qStat))
+            while($r = MySQLi_fetch_assoc($qStat))
             {
               echo "<tr>
                       <td align='center'><b>".formatDnu($r['den'])."</b></td>
@@ -221,13 +221,13 @@
           ////////////////////////////////
 
           // nacteme
-          $qStat = MySQL_query("SELECT den, nejnizsi_vlhkost
+          $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, nejnizsi_vlhkost
                                 FROM tme_denni 
                                 WHERE den LIKE '{$rok}-%' AND nejnizsi_vlhkost > 0
                                 ORDER BY nejnizsi_vlhkost ASC
                                 LIMIT 6");
 
-          if(MySQL_num_rows($qStat) > 0)
+          if(MySQLi_num_rows($qStat) > 0)
           {
 
             echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
@@ -240,7 +240,7 @@
                   </tr>";
     
         
-            while($r = MySQL_fetch_assoc($qStat))
+            while($r = MySQLi_fetch_assoc($qStat))
             {
               echo "<tr>
                       <td align='center'><b>".formatDnu($r['den'])."</b></td>
@@ -257,14 +257,14 @@
           ////////////////////////////////
         
           // nacteme
-          $qStat = MySQL_query("SELECT den, AVG(prumer_vlhkost) as prumer
+          $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer_vlhkost) as prumer
                                 FROM tme_denni 
                                 WHERE den LIKE '{$rok}-%' AND prumer_vlhkost > 0
                                 GROUP BY year(den),month(den)
                                 ORDER BY prumer DESC
                                 LIMIT 6");
     
-          if(MySQL_num_rows($qStat) > 0)
+          if(MySQLi_num_rows($qStat) > 0)
           {
 
     
@@ -277,7 +277,7 @@
                     <td class='radek' align='center'><b>{$lang['prumer']}</b></td>
                   </tr>";
         
-            while($r = MySQL_fetch_assoc($qStat))
+            while($r = MySQLi_fetch_assoc($qStat))
             {
               echo "<tr>
                       <td align='center'><b>".$lang['mesic'.substr($r['den'], 5, 2)]."</b></td>
@@ -295,14 +295,14 @@
     
         
           // nacteme
-          $qStat = MySQL_query("SELECT den, AVG(prumer_vlhkost) as prumer
+          $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer_vlhkost) as prumer
                                 FROM tme_denni 
                                 WHERE den LIKE '{$rok}-%'  AND prumer_vlhkost > 0
                                 GROUP BY year(den),month(den)
                                 ORDER BY prumer ASC
                                 LIMIT 6");
 
-          if(MySQL_num_rows($qStat) > 0)
+          if(MySQLi_num_rows($qStat) > 0)
           {
 
             echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
@@ -315,7 +315,7 @@
                   </tr>";
 
 
-            while($r = MySQL_fetch_assoc($qStat))
+            while($r = MySQLi_fetch_assoc($qStat))
             {
               echo "<tr>
                       <td align='center'><b>".$lang['mesic'.substr($r['den'], 5, 2)]."</b></td>

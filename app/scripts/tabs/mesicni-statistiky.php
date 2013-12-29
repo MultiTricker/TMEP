@@ -6,13 +6,13 @@
  *************************************************************************/
 
   // nacteme
-  $qStat = MySQL_query("SELECT den, AVG(prumer) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer) as prumer
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY prumer DESC
                         LIMIT 10");
 
-  if(MySQL_num_rows($qStat) > 2)
+  if(MySQLi_num_rows($qStat) > 2)
   {
 
   ///////////////////////////
@@ -38,7 +38,7 @@
             <td class='radek' align='center'><b>{$lang['prumernateplota']}</b></td>
           </tr>";
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -63,13 +63,13 @@
           </tr>";
 
   // nacteme
-  $qStat = MySQL_query("SELECT den, AVG(prumer) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer) as prumer
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY prumer ASC
                         LIMIT 10");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -85,7 +85,7 @@
   if($vlhkomer == 1)
   {
 
-  $qStat = MySQL_query("SELECT den, AVG(prumer_vlhkost) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer_vlhkost) as prumer
                         FROM tme_denni 
                         WHERE prumer_vlhkost > 0
                         GROUP BY year(den),month(den)
@@ -103,7 +103,7 @@
             <td class='radek' align='center'><b>{$lang['prumernavlhkost']}</b></td>
           </tr>";
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -128,14 +128,14 @@
           </tr>";
 
   // nacteme
-  $qStat = MySQL_query("SELECT den, AVG(prumer_vlhkost) as prumer
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer_vlhkost) as prumer
                         FROM tme_denni 
                         WHERE prumer_vlhkost > 0
                         GROUP BY year(den),month(den)
                         ORDER BY prumer ASC
                         LIMIT 10");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -164,13 +164,13 @@
   ///////////////////////////
   // nacteme nejvice mereni
   ///////////////////////////
-  $qStat = MySQL_query("SELECT den, AVG(mereni) as mereni 
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(mereni) as mereni
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY mereni DESC
                         LIMIT 11");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -196,13 +196,13 @@
   ///////////////////////////
   // nacteme nejmene mereni
   ///////////////////////////
-  $qStat = MySQL_query("SELECT den, AVG(mereni) as mereni 
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(mereni) as mereni
                         FROM tme_denni 
                         GROUP BY year(den),month(den)
                         ORDER BY mereni ASC
                         LIMIT 11");
 
-    while($r = MySQL_fetch_assoc($qStat))
+    while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
               <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
@@ -223,7 +223,7 @@
   // Statistiky 0-24h pro az 12 mesicu dozadu
   // do pole si nacteme poslednich 12 mesicu
   //////////////////////////////////////////////////////
-  $qStat = MySQL_query("SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer), 
+  $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer),
                            MIN(nejnizsi_vlhkost), MAX(nejvyssi_vlhkost), AVG(prumer_vlhkost), 
                            MIN(0nejnizsi), MAX(0nejvyssi), AVG(0prumer),
                            MIN(1nejnizsi), MAX(1nejvyssi), AVG(1prumer),
@@ -278,10 +278,10 @@
                       ORDER BY den DESC
                       LIMIT 3"); 
 
-    if(MySQL_num_rows($q) > 0)
+    if(MySQLi_num_rows($q) > 0)
     {
 
-      while($r = MySQL_fetch_assoc($qStat))
+      while($r = MySQLi_fetch_assoc($qStat))
       {
 
         echo "<table class='tabulkaVHlavicce' width='900' style='margin: 15px 0px 15px 0px;'>
