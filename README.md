@@ -9,6 +9,8 @@ TMEP use Highcharts JS for graph generation ([highcharts.com](http://www.highcha
 
 Application demo: [roudnice.eu](http://www.roudnice.eu)
 
+Read tmep-info-en.html or tmep-info-cz.html for more information.
+
   * **Version 6.3 released at 2013-06-27** (Finnish, Swedish, Russian and Slovakia translations, XML export for Win 7 gadget, input script for MikroTik, typos, bugfixes)
   * Version 6.2 released at 2013-02-27 (Optimalized SQL queries and some minor changes and bugfixes)
   * Version 6.1 released at 2013-02-02 (Polish translation and some minor changes and bugfixes)
