@@ -50,12 +50,9 @@
     <title><?php echo $lang['titulekstranky']; ?></title>
     <meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
     <link rel="stylesheet" href="../../css/css.css" type="text/css">
-    <link rel="stylesheet" href="../../css/jquery-ui.css" type="text/css">
     <meta NAME="description" CONTENT="<?php echo $lang['popisstranky']; ?>">
     <meta NAME="author" CONTENT="Michal Ševčík (http://multi.tricker.cz), František Ševčík (f.sevcik@seznam.cz)">
-    <script src="../js/jquery.tools.ui.timer.colorbox.tmep.js" type="text/javascript"></script>
-    <script src="../js/highcharts.js" type="text/javascript"></script>
-    <script src="../js/highcharts-more.js" type="text/javascript"></script>
+    <script src="../js/jquery.tools.ui.timer.colorbox.tmep.highcharts.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="../../images/favicon.ico">
     <style type="text/css">body{ background: url("../../images/modal-bcg.png") top center repeat-x #f4f3e5; }</style>
   </head>

@@ -103,12 +103,10 @@
     <title><?php echo $lang['titulekstranky']; ?></title>
     <meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/css.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
     <meta NAME="description" CONTENT="<?php echo $lang['popisstranky']; ?>">
     <?php if($obnoveniStranky != 0 and  is_numeric($obnoveniStranky)){ echo '    <meta http-equiv="refresh" content="'.$obnoveniStranky.'">'; } ?>
     <meta NAME="author" CONTENT="Michal Ševčík (http://multi.tricker.cz), František Ševčík (f.sevcik@seznam.cz)">
-    <script src="scripts/js/jquery.tools.ui.timer.colorbox.tmep.js" type="text/javascript"></script>
-    <script src="scripts/js/highcharts.js" type="text/javascript"></script>
+    <script src="scripts/js/jquery.tools.ui.timer.colorbox.tmep.highcharts.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function(){
      // po urcitem case AJAXove nacteni hodnot
