@@ -13,22 +13,36 @@ body{ background: url(../images/pozadi.jpg) repeat rgb(242,242,225); color: rgb(
 .tabulkaVHlavicce { border: 1px solid #a2a181; }
 .mobilniIkona { vertical-align: middle; }
 
+/* vlajky */
+.vlajka { background: url("../images/vlajky.png") top center no-repeat; width: 16px; height: 11px; display: inline; border: none; }
+.sk { background-position: 0px -11px; }
+.en { background-position: 0px -22px; }
+.de { background-position: 0px -33px; }
+.ru { background-position: 0px -44px; }
+.pl { background-position: 0px -55px; }
+.fr { background-position: 0px -66px; }
+.fi { background-position: 0px -77px; }
+.sv { background-position: 0px -88px; }
+
 /* aktualne */
-.aktualne { width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 74px; color: white; font-weight: bold; line-height: 26px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
-.aktualnejen { width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 114px; color: white; font-weight: bold; line-height: 42px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
+.aktualne { background: url("../images/stavy.jpg") no-repeat top left #3C3A14; width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 74px; color: white; font-weight: bold; line-height: 26px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
+.aktualnejen { background: url("../images/stavy.jpg") no-repeat top left #3C3A14; width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 104px; color: white; font-weight: bold; line-height: 36px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
 .aktua { color: white; font-size: 24px; font-weight: bold; }
-.aktualnemensi { font-size: 11px; margin: 1px 4px 0px 0px; float: left; width: 106px; border: 2px solid rgb(70,68,28); background: url("../images/prechod3.gif") repeat-x center center #2E2D0E; height: 44px; color: white; font-weight: bold; line-height: 21px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
+.aktualnemensi { background: url("../images/stavy.jpg") no-repeat top left #2E2D0E;  font-size: 11px; margin: 1px 4px 0px 0px; float: left; width: 106px; border: 2px solid rgb(70,68,28); height: 44px; color: white; font-weight: bold; line-height: 21px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
 .aktuamens { color: white; font-size: 16px; font-weight: bold; }
 
 /* teplota */
-.teplejsi { background: url("../images/teplejsi.jpg") repeat-x center center #3C3A14; }
-.studenejsi { background: url("../images/studenejsi.jpg") repeat-x center center #3C3A14; }
-.stejne { background: url("../images/stejne.jpg") repeat-x center center #3C3A14; }
+.teplejsi { background-position: -5px -126px; }
+.studenejsi { background-position: -5px -232px; }
+.stejne { background-position: -5px -15px; }
+.teplejsijen { background-position: -5px -110px; }
+.studenejsijen { background-position: -5px -216px; }
+.stejnejen { background-position: -5px 0px; }
 
 /* vlhkost */
-.teplejsim { background: url("../images/teplejsi-min.jpg") repeat-x center center #2E2D0E; }
-.studenejsim { background: url("../images/studenejsi-min.jpg") repeat-x center center #2E2D0E; }
-.stejnem { background: url("../images/stejne-min.jpg") repeat-x center center #2E2D0E; }
+.teplejsim { background-position: -7px -384px; }
+.studenejsim { background-position: -7px -440px; }
+.stejnem { background-position: -5px -328px; }
 
 /* Highcharts */
 .graf { width: 900px; margin: 15px 0px; }
