@@ -8,25 +8,24 @@
   echo "<br>
         <font>
           ".$lang['jazyk'].":
-            <a href='".$_SERVER['PHP_SELF']."?ja=cz&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka\" title='CZ' alt='CZ'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=sk&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka sk\" title='SK' alt='SK'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=en&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka en\" title='EN' alt='EN'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=de&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka de\" title='DE' alt='DE'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=ru&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka ru\" title='RU' alt='RU'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=pl&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka fl\" title='PL' alt='PL'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=fr&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka fr\" title='FR' alt='FR'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=fi&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka fi\" title='FI' alt='FI'></a>
-            <a href='".$_SERVER['PHP_SELF']."?ja=sv&amp;je=".$_GET['je']."&amp;nemobile=".$_GET['nemobile']."'><img class=\"vlajka sv\" title='SV' alt='SV'></a> |
+            <a href='".$_SERVER['PHP_SELF']."?ja=cz&amp;je=".$_GET['je']."'><img class=\"vlajka\" title='CZ' alt='CZ'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=sk&amp;je=".$_GET['je']."'><img class=\"vlajka sk\" title='SK' alt='SK'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=en&amp;je=".$_GET['je']."'><img class=\"vlajka en\" title='EN' alt='EN'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=de&amp;je=".$_GET['je']."'><img class=\"vlajka de\" title='DE' alt='DE'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=ru&amp;je=".$_GET['je']."'><img class=\"vlajka ru\" title='RU' alt='RU'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=pl&amp;je=".$_GET['je']."'><img class=\"vlajka fl\" title='PL' alt='PL'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=fr&amp;je=".$_GET['je']."'><img class=\"vlajka fr\" title='FR' alt='FR'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=fi&amp;je=".$_GET['je']."'><img class=\"vlajka fi\" title='FI' alt='FI'></a>
+            <a href='".$_SERVER['PHP_SELF']."?ja=sv&amp;je=".$_GET['je']."'><img class=\"vlajka sv\" title='SV' alt='SV'></a> |
           ".$lang['jednotka'].":
-            <a href='".$_SERVER['PHP_SELF']."?je=C&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Celsius'>Celsius</a>,
-            <a href='".$_SERVER['PHP_SELF']."?je=F&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Fahrenheit'>Fahrenheit</a>, 
-            <a href='".$_SERVER['PHP_SELF']."?je=K&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Kelvin'>Kelvin</a>, 
-            <a href='".$_SERVER['PHP_SELF']."?je=R&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Rankine'>Rankine</a>, 
-            <a href='".$_SERVER['PHP_SELF']."?je=D&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Delisle'>Delisle</a>, 
-            <a href='".$_SERVER['PHP_SELF']."?je=N&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Newton'>Newton</a>, 
-            <a href='".$_SERVER['PHP_SELF']."?je=Re&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Reaumur'>Reaumur</a>, 
-            <a href='".$_SERVER['PHP_SELF']."?je=Ro&amp;ja=".$_GET['ja']."&amp;nemobile=".$_GET['nemobile']."' title='Romer'>Romer</a> |
-            <a href='mobile.php'><img src='images/mobilni-verze.png' border='0' alt='Mobile' title='Mobile' width='16' height='16' class='mobilniIkona'></a>
+            <a href='".$_SERVER['PHP_SELF']."?je=C&amp;ja=".$_GET['ja']."' title='Celsius'>Celsius</a>,
+            <a href='".$_SERVER['PHP_SELF']."?je=F&amp;ja=".$_GET['ja']."' title='Fahrenheit'>Fahrenheit</a>,
+            <a href='".$_SERVER['PHP_SELF']."?je=K&amp;ja=".$_GET['ja']."' title='Kelvin'>Kelvin</a>,
+            <a href='".$_SERVER['PHP_SELF']."?je=R&amp;ja=".$_GET['ja']."' title='Rankine'>Rankine</a>,
+            <a href='".$_SERVER['PHP_SELF']."?je=D&amp;ja=".$_GET['ja']."' title='Delisle'>Delisle</a>,
+            <a href='".$_SERVER['PHP_SELF']."?je=N&amp;ja=".$_GET['ja']."' title='Newton'>Newton</a>,
+            <a href='".$_SERVER['PHP_SELF']."?je=Re&amp;ja=".$_GET['ja']."' title='Reaumur'>Reaumur</a>,
+            <a href='".$_SERVER['PHP_SELF']."?je=Ro&amp;ja=".$_GET['ja']."' title='Romer'>Romer</a>
           </font>";
 
   }

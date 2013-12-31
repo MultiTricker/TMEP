@@ -14,22 +14,6 @@
   require "./scripts/fce.php";       // skript s nekolika funkcemi
 
  //////////////////////////////////////////////////////////////////////////
- //// PRESMEROVANI NA MOBILNI VERZI, zaslal Cyrille David
- //////////////////////////////////////////////////////////////////////////
-
- // Prichazime z mobilni stranky a nechceme presmerovat?
- if($_GET['nemobile'] != 1){ $_GET['nemobile'] == 0; }
-
- // Vylepsena detekce mobilu (tablety nepresmerovavame)
- if($presmerovavatMobily == 1)
- { 
-   require "./scripts/mobileDetect.php";  // skript na detekci mobilnich zarizeni
-   $detect = new Mobile_Detect();
-   if ($detect->isMobile() AND !$detect->isTablet() AND $_GET['nemobile'] == 0)
-   { header('Location: mobile.php') ; exit(); }
- }
-
- //////////////////////////////////////////////////////////////////////////
  //// ZAPIS DO DATABAZE ANEB VLOZENI HODNOTY Z TME
  //////////////////////////////////////////////////////////////////////////
 
@@ -121,7 +105,7 @@
     <link rel="stylesheet" href="css/css.css" type="text/css">
     <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
     <meta NAME="description" CONTENT="<?php echo $lang['popisstranky']; ?>">
-<?php if($obnoveniStranky != 0 and  is_numeric($obnoveniStranky)){ echo '    <meta http-equiv="refresh" content="'.$obnoveniStranky.'">'; } ?>
+    <?php if($obnoveniStranky != 0 and  is_numeric($obnoveniStranky)){ echo '    <meta http-equiv="refresh" content="'.$obnoveniStranky.'">'; } ?>
     <meta NAME="author" CONTENT="Michal Ševčík (http://multi.tricker.cz), František Ševčík (f.sevcik@seznam.cz)">
     <script src="scripts/js/jquery.tools.ui.timer.colorbox.tmep.js" type="text/javascript"></script>
     <script src="scripts/js/highcharts.js" type="text/javascript"></script>
@@ -153,9 +137,7 @@
 
 <body>
 
-<center>
-
-  <div id='hlavni'>
+  <div id='hlavni' class="container">
 
     <?php
     
@@ -190,8 +172,6 @@
 ?>
 
   </div> <!-- konec hlavni -->
-
-</center>
 
 </body>
 </html>

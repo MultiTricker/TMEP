@@ -16,7 +16,6 @@
             <legend>{$lang['zobrazitden']}</legend>
             <input type='hidden' name='ja' value='{$_GET['ja']}'>
             <input type='hidden' name='je' value='{$_GET['je']}'>
-            <input type='hidden' name='nemobile' value='{$_GET['nemobile']}'>
             <input type='hidden' name='typ' value='0'>
             <p><label for='jenden'>{$lang['den']}:</label> <input type='text' name='jenden' id='jenden' value='{$_GET['jenden']}'>
             <input type='submit' class='submit' name='odeslani' value='{$lang['zobrazit']}'></p>
