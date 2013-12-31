@@ -202,4 +202,16 @@ jQuery(function(a){a.datepicker.regional["en"]={closeText:"Done",prevText:"Prev"
  *  JS pro TMEP v6
  */
 $(document).ready(function()
-{ $("ul.tabs").tabs("div.panely > div"); $('a.modal').colorbox({iframe:true, width: "890px", height: "90%"}); });
+{
+  $("ul.tabs").tabs("div.panely > div");
+});
+
+$(document).on("click", "a.modal", function (event){
+  event.preventDefault();
+  $.colorbox({
+    href: $(this).attr("href"),
+    iframe:true,
+    width: "890px",
+    height: "90%"
+  });
+});

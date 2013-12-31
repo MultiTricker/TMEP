@@ -1,9 +1,10 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
+  // INIT
+  require_once dirname(__FILE__)."/../../config.php";
+  require_once dirname(__FILE__)."/../db.php";
+  require_once dirname(__FILE__)."/../fce.php";
+  require_once dirname(__FILE__)."/../variableCheck.php";
 
   // nacteme teploty do tabulky pro poslednich dny
   $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, nejnizsi, nejvyssi, prumer
@@ -15,7 +16,7 @@
   if(MySQLi_num_rows($qStat) > 5)
   {
 
-  echo "<div class='graf' id='graf-31-dni-teplota'>"; require './scripts/grafy/teplota/31-dni.php'; echo "</div>";
+  echo "<div class='graf' id='graf-31-dni-teplota'>";  require dirname(__FILE__).'/../grafy/teplota/31-dni.php'; echo "</div>";
 
   ///////////////////////////
   // prvotni tabulkove rozdeleni na dva sloupce
@@ -152,7 +153,7 @@
   // prvotni tabulkove rozdeleni na dva sloupce
   echo "<hr>";
   
-  echo "<div class='graf' id='graf-31-dni-vlhkost'>"; require './scripts/grafy/vlhkost/31-dni.php'; echo "</div>";
+  echo "<div class='graf' id='graf-31-dni-vlhkost'>"; require dirname(__FILE__).'/../grafy/vlhkost/31-dni.php'; echo "</div>";
 
   
         echo "<table width='780'>

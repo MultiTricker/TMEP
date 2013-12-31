@@ -1,12 +1,7 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
   // INIT
-  require "./scripts/init.php";
+  require dirname(__FILE__)."/../../init.php";
 
   // Posledni zaznamy
   $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme ORDER BY kdy DESC LIMIT 240");

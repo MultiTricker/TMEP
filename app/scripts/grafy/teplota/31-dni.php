@@ -1,12 +1,7 @@
 ﻿<?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
   // INIT
-  require "./scripts/init.php";
+  require dirname(__FILE__)."/../../init.php";
 
   // maximalni teplota dany den
   $qj = MySQLi_query($GLOBALS["DBC"], "SELECT den, nejvyssi, nejnizsi, prumer FROM tme_denni ORDER BY den DESC LIMIT 0, 31");

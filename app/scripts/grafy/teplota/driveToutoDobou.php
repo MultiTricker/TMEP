@@ -1,12 +1,7 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
   // INIT
-  require "../init.php";
+  require dirname(__FILE__)."/../../init.php";
 
   // abychom ziskali spravnou posloupnoust udaju, tak pole obratime
   $ydata = array_reverse($teplotaGraf);

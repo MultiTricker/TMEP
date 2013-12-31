@@ -2,8 +2,7 @@
 
  /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- ***  Hlavni vseobjimajici soubor / main file                           ***
+ ***  (c) Michal Ševčík 2007-2014 - multi@tricker.cz                    ***
  *************************************************************************/
 
  //////////////////////////////////////////////////////////////////////////
@@ -100,34 +99,7 @@
  //// JAZYK A JEDNOTKA
  //////////////////////////////////////////////////////////////////////////
 
-  // pokud je povolene vlastni nastaveni...
-  if($zobrazitNastaveni == 1)
-  {
-
-    // jazyk
-    if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR 
-       $_GET['ja'] == "de" OR $_GET['ja'] == 'fr' OR $_GET['ja'] == 'pl') OR
-       $_GET['ja'] == 'fi' OR $_GET['ja'] == 'sv' OR $_GET['ja'] == 'sk' OR
-       $_GET['ja'] == 'ru')
-    {
-      $l = $_GET['ja'];
-    }
-
-    require_once "./scripts/language/".$l.".php";       // skript s jazykovou mutaci    
-
-    // jednotka
-    if(isset($_GET['je']) AND ($_GET['je'] == 'C' OR $_GET['je'] == 'F' OR
-     $_GET['je'] == 'K' OR $_GET['je'] == 'R' OR $_GET['je'] == 'D' OR 
-     $_GET['je'] == 'N' OR $_GET['je'] == 'Ro' OR $_GET['je'] == 'Re'))
-    {
-      $u = $_GET['je'];
-    }
-
-  }
-  else
-  {
-    require_once "./scripts/language/".$l.".php";       // skript s jazykovou mutaci    
-  }
+  require_once "scripts/variableCheck.php";
 
  //////////////////////////////////////////////////////////////////////////
  //// NACTENI ZAKLADNICH HODNOT NEJEN PRO HLAVICKU
@@ -140,8 +112,7 @@
  //////////////////////////////////////////////////////////////////////////
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
   <head>
@@ -168,6 +139,14 @@
      $("#jenden").datepicker($.datepicker.regional[ "<?php echo $l;  ?>" ]);
      $.datepicker.setDefaults({dateFormat: "yy-mm-dd", maxDate: -1, minDate: new Date(<?php echo substr($pocetMereni['kdy'], 0, 4).", ".(substr($pocetMereni['kdy'], 5, 2)-1).", ".substr($pocetMereni['kdy'], 8, 2); ?>), changeMonth: true, changeYear: true});
     });
+    var loadingImage = '<p><img src="img/loading.gif"></p>';
+    function loadTab(tab){
+      if($("#" + tab).html() == "")
+      {
+        $("#" + tab).html(loadingImage);
+        $.get("scripts/tabs/" + tab + ".php<?php echo "?ja={$l}&je={$u}"; ?>", function(data) { $("#" + tab).html(data);});
+      }
+    }
     </script>
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
@@ -189,18 +168,18 @@
     <div id=\"oblastzalozek\">
     <ul class=\"tabs\">
       <li><a href=\"#aktualne\">{$lang['aktualne']}</a></li>
-      <li><a href=\"#denni\">{$lang['dennistatistiky']}</a></li>
-      <li><a href=\"#mesicni\">{$lang['mesicnistatistiky']}</a></li>
-      <li><a href=\"#rocni\">{$lang['rocnistatistiky']}</a></li>
+      <li><a href=\"#denni\" onclick=\"loadTab('denni-statistiky');\">{$lang['dennistatistiky']}</a></li>
+      <li><a href=\"#mesicni\" onclick=\"loadTab('mesicni-statistiky');\">{$lang['mesicnistatistiky']}</a></li>
+      <li><a href=\"#rocni\" onclick=\"loadTab('rocni-statistiky');\">{$lang['rocnistatistiky']}</a></li>
       <li><a href=\"#historie\">{$lang['historie']}</a></li>
     </ul>
 
     <div class=\"panely\">";
-      echo "<div>"; require "scripts/tabs/aktualne.php"; echo "</div>";
-      echo "<div>"; require "scripts/tabs/denni-statistiky.php"; echo "</div>";
-      echo "<div>"; require "scripts/tabs/mesicni-statistiky.php"; echo "</div>";
-      echo "<div>"; require "scripts/tabs/rocni-statistiky.php"; echo "</div>";
-      echo "<div>"; require "scripts/tabs/historie.php"; echo "</div>";
+      echo "<div id=\"aktualneTab\">"; require "scripts/tabs/aktualne.php"; echo "</div>";
+      echo "<div id=\"denni-statistiky\"></div>";
+      echo "<div id=\"mesicni-statistiky\"></div>";
+      echo "<div id=\"rocni-statistiky\"></div>";
+      echo "<div id=\"historieTab\">"; require "scripts/tabs/historie.php"; echo "</div>";
       echo "</div>
     </div>
     </center>";

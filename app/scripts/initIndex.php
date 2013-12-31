@@ -1,10 +1,5 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
   // Pocet mereni
   $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT count(id) AS pocet, MIN(kdy) AS kdy FROM tme");
   $pocetMereni = MySQLi_fetch_assoc($dotaz);

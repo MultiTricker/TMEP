@@ -1,9 +1,10 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
+  // INIT
+  require_once dirname(__FILE__)."/../../config.php";
+  require_once dirname(__FILE__)."/../db.php";
+  require_once dirname(__FILE__)."/../fce.php";
+  require_once dirname(__FILE__)."/../variableCheck.php";
 
   $q = MySQLi_query($GLOBALS["DBC"], "SELECT den
                     FROM tme_denni 

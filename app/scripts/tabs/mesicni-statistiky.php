@@ -1,9 +1,10 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
+  // INIT
+  require_once dirname(__FILE__)."/../../config.php";
+  require_once dirname(__FILE__)."/../db.php";
+  require_once dirname(__FILE__)."/../fce.php";
+  require_once dirname(__FILE__)."/../variableCheck.php";
 
   // nacteme
   $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer) as prumer
@@ -19,11 +20,11 @@
   // rozdeleni na dva sloupce
   echo "<center>";
 
-  if(kolikRadek("den", "tme_denni", "GROUP BY year(den), month(den)") > 2) { echo "<div class='graf' id='graf-mesicni-teplota'>"; require './scripts/grafy/teplota/mesicni.php'; echo "</div>"; }
+  if(kolikRadek("den", "tme_denni", "GROUP BY year(den), month(den)") > 2) { echo "<div class='graf' id='graf-mesicni-teplota'>"; require dirname(__FILE__).'/../grafy/teplota/mesicni.php'; echo "</div>"; }
 
   if($vlhkomer == 1)
   {
-    if(kolikRadek("den", "tme_denni", "GROUP BY year(den), month(den)") > 2) { echo "<div class='graf' id='graf-mesicni-vlhkost'>"; require './scripts/grafy/vlhkost/mesicni.php'; echo "</div>"; }
+    if(kolikRadek("den", "tme_denni", "GROUP BY year(den), month(den)") > 2) { echo "<div class='graf' id='graf-mesicni-vlhkost'>"; require dirname(__FILE__).'/../grafy/vlhkost/mesicni.php'; echo "</div>"; }
   }
 
   echo "<table><tr>";

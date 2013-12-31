@@ -1,11 +1,6 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
-   // nacteme mesicni teploty      
+   // nacteme mesicni teploty
    $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den, prumer, nejnizsi, nejvyssi
                          FROM tme_denni 
                          WHERE den LIKE '".intval($_GET['rok'])."-%'  

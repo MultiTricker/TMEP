@@ -1,10 +1,5 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
   // obratime pole
   $ydata = array_reverse($minmax);
   $labels = array_reverse($dny);

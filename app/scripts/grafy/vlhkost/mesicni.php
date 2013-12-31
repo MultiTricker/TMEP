@@ -1,12 +1,7 @@
 ﻿<?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
   // INIT
-  require "./scripts/init.php";
+  require dirname(__FILE__)."/../../init.php";
 
    // nacteme mesicni teploty      
    $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den as mesic, AVG(prumer_vlhkost) as prumer, MIN(nejnizsi_vlhkost) as nejnizsi, MAX(nejvyssi_vlhkost) as nejvyssi
