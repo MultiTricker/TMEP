@@ -63,14 +63,14 @@ td { text-align: center; }
 
 /* typo */
 .hlava{ background: #1f1e0a;background: -moz-linear-gradient(top,  #1f1e0a 1%, #3d3714 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#1f1e0a), color-stop(100%,#3d3714));background: -webkit-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -o-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -ms-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: linear-gradient(to bottom,  #1f1e0a 1%,#3d3714 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f1e0a', endColorstr='#3d3714',GradientType=0 ); padding: 0px; margin: 0px; width: 100%; vertical-align: middle; }
-.hlava h1 { color: #F9F8E6; font-size: 20px; margin: 0px; padding: 10px 0px 0px 0px; }
-.hlava p { font-size: 12px; color: #F9F8E6; font-weight: bold; margin: 0px; padding: 12px 0px 8px 0px;}
+.hlava h1 { color: #F9F8E6; font-size: 20px; margin: 0px; padding: 10px 5px 0px 5px; }
+.hlava p { font-size: 12px; color: #F9F8E6; font-weight: bold; margin: 0px; padding: 12px 5px 8px 5px;}
 .hlava p a { color: white; }
 .hlava p a:hover { text-decoration: none; }
 .nohy p { color: #F9F8E6; background: #1f1e0a;background: -moz-linear-gradient(top,  #1f1e0a 1%, #3d3714 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#1f1e0a), color-stop(100%,#3d3714));background: -webkit-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -o-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -ms-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: linear-gradient(to bottom,  #1f1e0a 1%,#3d3714 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f1e0a', endColorstr='#3d3714',GradientType=0 ); font-size: 11px; line-height: 25px; font-weight: bold; padding: 0px; margin: 10px 0px 0px 0px; width: 100%; border-top: 2px solid rgb(70,68,28); vertical-align: middle; }
 .nohy p a { color: white; }
 .nohy p a:hover { text-decoration: none; }
-h3 { color: #F9F8E6; font-size: 20px; line-height: 50px; height: 50px; overflow: hidden; font-weight: bold; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; vertical-align: middle; }
+h3 { color: #F9F8E6; font-size: 20px; line-height: 50px; height: 50px; overflow: hidden; font-weight: bold; padding: 0px 5px 0px 5px; margin: 0px 0px 0px 0px; vertical-align: middle; }
 br { line-height: 1.5em; }
 .mensi { font-size: 11px; }
 a { color: rgb(60,58,23); }
