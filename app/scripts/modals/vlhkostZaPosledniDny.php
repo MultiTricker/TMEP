@@ -24,13 +24,13 @@
 
   ///////////////////////////
   // teploty za posledni dny
-  $tabulka = "<table class='tabulkaVHlavicce' width='340'>
+  $tabulka = "<table class='tabulkaVHlavicceModal' width='340'>
       <tr class='radek'>
-        <td align='center'><b>{$lang['den']}</b></td>
-        <td align='center'><b>{$lang['min2']}</b></td>
-        <td align='center'><b>{$lang['prumer']}</b></td>
-        <td align='center'><b>{$lang['max2']}</b></td>
-        <td align='center'><b>{$lang['mereni']}</b></td>
+        <td><b>{$lang['den']}</b></td>
+        <td><b>{$lang['min2']}</b></td>
+        <td><b>{$lang['prumer']}</b></td>
+        <td><b>{$lang['max2']}</b></td>
+        <td><b>{$lang['mereni']}</b></td>
       </tr>";
 
       while($r = MySQLi_fetch_assoc($qStat))
@@ -39,11 +39,11 @@
         $vikend = jeVikend($r['den']);
 
         $tabulka .= "<tr class='radekStat'>
-           <td align='center'>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</td>
-           <td align='center'>".jednotkaTeploty($r['nejnizsi_vlhkost'], $u, 0)."</td>
-           <td align='center'>".jednotkaTeploty(round($r['prumer_vlhkost'], 2), $u, 0)."</td>
-           <td align='center'>".jednotkaTeploty($r['nejvyssi_vlhkost'], $u, 0)."</td>
-           <td align='center'>".number_format($r['mereni'], 0, "", " ")."</td>
+           <td>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</td>
+           <td>".jednotkaTeploty($r['nejnizsi_vlhkost'], $u, 0)."</td>
+           <td>".jednotkaTeploty(round($r['prumer_vlhkost'], 2), $u, 0)."</td>
+           <td>".jednotkaTeploty($r['nejvyssi_vlhkost'], $u, 0)."</td>
+           <td>".number_format($r['mereni'], 0, "", " ")."</td>
         </tr>";
 
         if($kolik < 130)
@@ -67,5 +67,3 @@
 
   // Paticka
   require "foot.php";
-
-?>

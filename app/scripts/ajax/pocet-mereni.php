@@ -17,8 +17,6 @@
   $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT count(id) AS pocet FROM tme");
   $pocetMereni = MySQLi_fetch_assoc($dotaz);
 
-header('Content-type: text/html; charset=UTF-8');
+  header('Content-type: text/html; charset=UTF-8');
 
-echo number_format($pocetMereni['pocet'], 0, "", " ");
-
-?>
+  echo number_format($pocetMereni['pocet'], 0, "", " ");

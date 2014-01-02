@@ -49,9 +49,9 @@
 
   header('Content-type: text/html; charset=UTF-8');
 
-  echo "<table width='250' class='tabulkaVHlavicce'>
+  echo "<table width='100%' class='tabulkaVHlavicce'>
     <tr class='radek'>
-      <td colspan='3' align='center'><a href='./scripts/modals/driveToutoDobou.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['drivetoutodobou']}</b> <img src='./images/nw.png' title='{$lang['historie']}'></a></td>
+      <td colspan='3'><a href='./scripts/modals/driveToutoDobou.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['drivetoutodobou']}</b> <img src='./images/nw.png' title='{$lang['historie']}'></a></td>
     </tr>";
 
     // posledni dny do pole
@@ -73,13 +73,11 @@
       $hod = MySQLi_fetch_assoc($dotaz);
 
       echo "<tr>
-              <td align='center'>".formatDnu($dny2[$a])."</td>
-              <td align='center'><abbr title='".substr($hod['kdy'], 11, 5)."'>".jednotkaTeploty($hod['teplota'], $u, 1)."</abbr></td>";
-              if($vlhkomer == 1){ echo "<td align='center'>".($hod['vlhkost'] != 0 ? "{$hod['vlhkost']}%" : "")."</td>"; }
+              <td>".formatDnu($dny2[$a])."</td>
+              <td><abbr title='".substr($hod['kdy'], 11, 5)."'>".jednotkaTeploty($hod['teplota'], $u, 1)."</abbr></td>";
+              if($vlhkomer == 1){ echo "<td>".($hod['vlhkost'] != 0 ? "{$hod['vlhkost']}%" : "")."</td>"; }
             echo "</tr>";
 
     }
 
  echo "</table>";
-
-?>

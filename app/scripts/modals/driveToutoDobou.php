@@ -24,7 +24,7 @@
         </form>";
 
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka = "<table width='".($vlhkomer == 1 ? "400" : "230")."' class='tabulkaVHlavicce'>
+  $tabulka = "<table width='".($vlhkomer == 1 ? "400" : "230")."' class='tabulkaVHlavicceModal'>
               <tr class='radek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['teplota']}<br />&nbsp;(&deg;{$u})</b></td>";
@@ -91,12 +91,12 @@
 
       // Radek tabulky
       $tabulka .= "<tr class='radekStatModal'>
-              <td align='center'><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($dny2[$a]).($vikend == 1 ? "</font>" : "")."</b></td>
-              <td align='center'>".jednotkaTeploty($hod['teplota'], $u, 0)."</td>";
+              <td><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($dny2[$a]).($vikend == 1 ? "</font>" : "")."</b></td>
+              <td>".jednotkaTeploty($hod['teplota'], $u, 0)."</td>";
               if($vlhkomer == 1)
               {
-                $tabulka .= "<td align='center'>".($hod['vlhkost'] != 0 ? "{$hod['vlhkost']}" : "-")."</td>";
-                $tabulka .= "<td align='center'>{$rosnyBod}</td>";
+                $tabulka .= "<td>".($hod['vlhkost'] != 0 ? "{$hod['vlhkost']}" : "-")."</td>";
+                $tabulka .= "<td>{$rosnyBod}</td>";
               }
             $tabulka .=  "</tr>";
 
@@ -116,5 +116,3 @@
 
   // Paticka
   require "foot.php";
-
-?>

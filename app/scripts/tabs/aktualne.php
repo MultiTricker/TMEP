@@ -21,7 +21,7 @@
   $nejvyssiDnes = MySQLi_fetch_assoc($dotaz);
 
   // MIN/AVG/MAX za dnesni den
-  echo "<br /><table class='tabulkaVHlavicce'>
+  echo "<table class='tabulkaVHlavicce'>
           <tr>
             <td class='radekVelky'>&nbsp;<strong>{$lang['dnes']}</strong>&nbsp;</td>";
             $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'],2), $u, 1);

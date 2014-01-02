@@ -14,22 +14,6 @@
   require "./scripts/fce.php";       // skript s nekolika funkcemi
 
  //////////////////////////////////////////////////////////////////////////
- //// PRESMEROVANI NA MOBILNI VERZI, zaslal Cyrille David
- //////////////////////////////////////////////////////////////////////////
-
- // Prichazime z mobilni stranky a nechceme presmerovat?
- if($_GET['nemobile'] != 1){ $_GET['nemobile'] == 0; }
-
- // Vylepsena detekce mobilu (tablety nepresmerovavame)
- if($presmerovavatMobily == 1)
- { 
-   require "./scripts/mobileDetect.php";  // skript na detekci mobilnich zarizeni
-   $detect = new Mobile_Detect();
-   if ($detect->isMobile() AND !$detect->isTablet() AND $_GET['nemobile'] == 0)
-   { header('Location: mobile.php') ; exit(); }
- }
-
- //////////////////////////////////////////////////////////////////////////
  //// ZAPIS DO DATABAZE ANEB VLOZENI HODNOTY Z TME
  //////////////////////////////////////////////////////////////////////////
 
@@ -112,19 +96,18 @@
  //////////////////////////////////////////////////////////////////////////
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 
   <head>
     <title><?php echo $lang['titulekstranky']; ?></title>
     <meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/css.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
     <meta NAME="description" CONTENT="<?php echo $lang['popisstranky']; ?>">
-<?php if($obnoveniStranky != 0 and  is_numeric($obnoveniStranky)){ echo '    <meta http-equiv="refresh" content="'.$obnoveniStranky.'">'; } ?>
+    <?php if($obnoveniStranky != 0 and  is_numeric($obnoveniStranky)){ echo '    <meta http-equiv="refresh" content="'.$obnoveniStranky.'">'; } ?>
     <meta NAME="author" CONTENT="Michal Ševčík (http://multi.tricker.cz), František Ševčík (f.sevcik@seznam.cz)">
-    <script src="scripts/js/jquery.tools.ui.timer.colorbox.tmep.js" type="text/javascript"></script>
-    <script src="scripts/js/highcharts.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+    <script src="scripts/js/jquery.tools.ui.timer.colorbox.tmep.highcharts.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function(){
      // po urcitem case AJAXove nacteni hodnot
@@ -153,19 +136,14 @@
 
 <body>
 
-<center>
-
-  <div id='hlavni'>
-
+  <div id='hlavni' class="container">
     <?php
-    
+
     // Hlavička
     require_once "./scripts/head.php";
-    
+
     // Záložky
-    echo "<p></p>
-    <center>
-    <div id=\"oblastzalozek\">
+    echo "<div id=\"oblastzalozek\">
     <ul class=\"tabs\">
       <li><a href=\"#aktualne\">{$lang['aktualne']}</a></li>
       <li><a href=\"#denni\" onclick=\"loadTab('denni-statistiky');\">{$lang['dennistatistiky']}</a></li>
@@ -181,21 +159,16 @@
       echo "<div id=\"rocni-statistiky\"></div>";
       echo "<div id=\"historieTab\">"; require "scripts/tabs/historie.php"; echo "</div>";
       echo "</div>
-    </div>
-    </center>";
+    </div>";
 
     // Patička
-    echo "<h2>{$lang['paticka']}</h2>";
+    echo "<div class='nohy'><p>{$lang['paticka']}</p></div>";
 
 ?>
 
   </div> <!-- konec hlavni -->
 
-</center>
-
 </body>
 </html>
 <?php
-  } // konec pokud si stranku prohlizi uzivatel
-    // a nevola ji teplomer
-?>
+  } // konec pokud si stranku prohlizi uzivatel a nevola ji teplomer

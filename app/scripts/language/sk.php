@@ -115,5 +115,3 @@
 
   // TMEP 4.2
   $lang['kompletnistranky'] = "Úplný prehľad";
-
-?>

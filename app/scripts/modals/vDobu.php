@@ -39,14 +39,14 @@
                       LIMIT 25");
 
     echo "<tr>
-            <td colspan='2' class='radek' align='center'><b>{$lang['nejnizsiteploty']}</b></td>
+            <td colspan='2' class='radek'><b>{$lang['nejnizsiteploty']}</b></td>
           </tr>";
 
     while($r = MySQLi_fetch_assoc($q))
     {
       echo "<tr>
-              <td align='center'>".formatDnu($r['den'])."</td>
-              <td align='center'>".jednotkaTeploty($r[$_GET['doba']."nejnizsi"], $u, 1)."</td>
+              <td>".formatDnu($r['den'])."</td>
+              <td>".jednotkaTeploty($r[$_GET['doba']."nejnizsi"], $u, 1)."</td>
             </tr>";
     }
 
@@ -62,14 +62,14 @@
           </td>
           <td valign='top'>
             <table class='tabulkaVHlavicce' width='190' style='margin: 0px 16px 0px 0px;'><tr>
-              <td colspan='2' class='radek' align='center'><b>{$lang['nejvyssiteploty']}</b></td>
+              <td colspan='2' class='radek'><b>{$lang['nejvyssiteploty']}</b></td>
             </tr>";
 
     while($r = MySQLi_fetch_assoc($q))
     {
       echo "<tr>
-              <td align='center'>".formatDnu($r['den'])."</td>
-              <td align='center'>".jednotkaTeploty($r[$_GET['doba']."nejvyssi"], $u, 1)."</td>
+              <td>".formatDnu($r['den'])."</td>
+              <td>".jednotkaTeploty($r[$_GET['doba']."nejvyssi"], $u, 1)."</td>
             </tr>";
     }
 
@@ -92,14 +92,14 @@
                         ORDER BY {$_GET['doba']}nejnizsi_vlhkost ASC 
                         LIMIT 25");
       echo "<tr>
-              <td colspan='2' class='radek' align='center'><b>{$lang['nejnizsivlhkost']}</b></td>
+              <td colspan='2' class='radek'><b>{$lang['nejnizsivlhkost']}</b></td>
             </tr>";
 
       while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
-                <td align='center'>".formatDnu($r['den'])."</td>
-                <td align='center'>".($r[$_GET['doba']."nejnizsi_vlhkost"])."%</td>
+                <td>".formatDnu($r['den'])."</td>
+                <td>".($r[$_GET['doba']."nejnizsi_vlhkost"])."%</td>
               </tr>";
       }
   
@@ -115,14 +115,14 @@
           </td>
           <td valign='top'>
             <table class='tabulkaVHlavicce' width='190' style='margin: 0px 16px 0px 0px;'><tr>
-              <td colspan='2' class='radek' align='center'><b>{$lang['nejvyssivlhkost']}</b></td>
+              <td colspan='2' class='radek'><b>{$lang['nejvyssivlhkost']}</b></td>
             </tr>";
 
       while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
-                <td align='center'>".formatDnu($r['den'])."</td>
-                <td align='center'>".($r[$_GET['doba']."nejvyssi_vlhkost"])."%</td>
+                <td>".formatDnu($r['den'])."</td>
+                <td>".($r[$_GET['doba']."nejvyssi_vlhkost"])."%</td>
               </tr>";
       }
   
@@ -136,5 +136,3 @@
 
   // Paticka
   require "foot.php";
-
-?>

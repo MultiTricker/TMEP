@@ -8,15 +8,12 @@
   if(strlen($_GET['rozsahdo']) > 10 OR !is_numeric(substr($_GET['rozsahdo'], 0 , 4)) OR !is_numeric(substr($_GET['rozsahdo'], 5 , 2)))
   { $_GET['rozsahdo'] = date("Y-m-d", mktime(date("H"), date("i"), date("s"), date("m"), date("d")-1, date("Y"))); }
 
-  echo "<center>";
-
     // formular pro den
     echo "<form method='GET' action='{$_SERVER['PHP_SELF']}#historie'>
             <fieldset>
             <legend>{$lang['zobrazitden']}</legend>
             <input type='hidden' name='ja' value='{$_GET['ja']}'>
             <input type='hidden' name='je' value='{$_GET['je']}'>
-            <input type='hidden' name='nemobile' value='{$_GET['nemobile']}'>
             <input type='hidden' name='typ' value='0'>
             <p><label for='jenden'>{$lang['den']}:</label> <input type='text' name='jenden' id='jenden' value='{$_GET['jenden']}'>
             <input type='submit' class='submit' name='odeslani' value='{$lang['zobrazit']}'></p>
@@ -91,17 +88,16 @@
       $r = MySQLi_fetch_assoc($q);
 
       echo "<br>
-        <table class='tabulkaVHlavicce' width='900'>
+        <table class='tabulkaVHlavicce'>
         <tr>
-          <td class='radekVelky' align='center' colspan='4'><b>".formatDnu($_GET['jenden'])."</b> <font class='mensi'>({$lang['mereni']}: {$r['mereni']})</font></td>
+          <td class='radekVelky' colspan='4'><b>".formatDnu($_GET['jenden'])."</b> <font class='mensi'>({$lang['mereni']}: {$r['mereni']})</font></td>
         </tr>
-        <td>
+        </table>
         <center>";
 
-        echo "<br>
-        <table class='tabulkaVHlavicce' width='786'>
+        echo "<table class='tabulkaVHlavicce'>
         <tr>
-          <td class='radekVelky' align='center' colspan='5'><b>{$lang['namerenehodnotyvprubehulet']}</b></td>
+          <td class='radekVelky' colspan='5'><b>{$lang['namerenehodnotyvprubehulet']}</b></td>
         </tr>";
 
         $qL = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer),
@@ -136,7 +132,7 @@
 
         }
 
-        echo "</table><br>";
+        echo "</table>";
 
         echo "<div class='graf' id='graf-historie-teplota'>"; require './scripts/grafy/teplota/historie.php'; echo "</div>";
     
@@ -145,9 +141,8 @@
           echo "<div class='graf' id='graf-historie-vlhkost'>"; require './scripts/grafy/vlhkost/historie.php'; echo "</div>";
         }
 
-      echo "<br>
-            <table class='tabulkaVHlavicce' width='786'>
-              <tr class='radekVelky' align='center'>
+      echo "<table class='tabulkaVHlavicce'>
+              <tr class='radekVelky'>
                 <td colspan='5'><b>{$lang['hodnotynamerenevjednotlivychdobach']}</b></td>
               </tr>";
 
@@ -187,12 +182,6 @@
             echo "</table><br>
             </center>";
 
-      echo "</td>
-      </tr>
-      </table>";
-
     }
 
   }
-
-  echo "</center>";
