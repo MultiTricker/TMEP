@@ -145,7 +145,7 @@
   else
   {
 
-        echo "<div class='col-md-3'>
+        echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
             <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejvicemereni']}</b> <img src='./images/nw.png' title='{$lang['mesicnistatistiky']}'></a></td>
@@ -175,7 +175,7 @@
   echo "</table></div>";
 
 
-        echo "<div class='col-md-3'>
+        echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
             <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejmenemereni']}</b> <img src='./images/nw.png' title='{$lang['mesicnistatistiky']}'></a></td>
