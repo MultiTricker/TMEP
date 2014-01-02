@@ -8,8 +8,9 @@
   ////////////////////////////////////////////
   // NEJNIZSI
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka = "<table width='600'><tr><td width='300'>
-              <table width='260' class='tabulkaVHlavicce'>
+  $tabulka = "<div class='row'>
+              <div class='col-md-5'>
+              <table class='tabulkaVHlavicceModalMensi'>
               <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejmenemereni']}</b></td></tr>
               <tr class='radek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
@@ -31,8 +32,8 @@
 
       // Radek tabulky
       $tabulka .= "<tr class='radekStatModal'>
-              <td align='center'><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
-              <td align='center'>{$r['mereni']}</td>";
+              <td><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
+              <td>{$r['mereni']}</td>";
             $tabulka .=  "</tr>";
 
     }
@@ -42,8 +43,8 @@
   ////////////////////////////////////////////
   // Nejvyssi
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka .= "</td><td width='300'>
-              <table width='260' class='tabulkaVHlavicce'>
+  $tabulka .= "</div><div class='col-md-5'>
+              <table class='tabulkaVHlavicceModalMensi'>
               <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejvicemereni']}</b></td></tr>
               <tr class='radek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
@@ -64,20 +65,18 @@
 
       // Radek tabulky
       $tabulka .= "<tr class='radekStatModal'>
-              <td align='center'><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
-              <td align='center'>{$r['mereni']}</td>";
+              <td><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
+              <td>{$r['mereni']}</td>";
             $tabulka .=  "</tr>";
 
     }
 
   $tabulka .=  "</table>";
    
-  $tabulka .= "</td></tr></table>";
+  $tabulka .= "</div></div>";
 
   // Tabulka s hodnotami
   echo $tabulka;
 
   // Paticka
   require "foot.php";
-
-?>

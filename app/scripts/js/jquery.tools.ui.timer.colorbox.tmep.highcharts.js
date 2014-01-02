@@ -211,8 +211,9 @@ $(document).on("click", "a.modal", function (event){
   $.colorbox({
     href: $(this).attr("href"),
     iframe:true,
-    width: "890px",
-    height: "90%"
+    width: "100%",
+    height: "90%",
+    maxWidth: "1000px"
   });
 });
 

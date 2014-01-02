@@ -39,8 +39,8 @@
 
       // Radek tabulky
       $tabulka .= "<tr class='radekStatModal'>
-              <td align='center'><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatData($hod['kdy']).($vikend == 1 ? "</font>" : "")."</b></td>
-              <td align='center'>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
+              <td><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatData($hod['kdy']).($vikend == 1 ? "</font>" : "")."</b></td>
+              <td>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
             $tabulka .=  "</tr>";
 
     }
@@ -71,8 +71,8 @@
 
       // Radek tabulky
       $tabulka .= "<tr class='radekStatModal'>
-              <td align='center'><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
-              <td align='center'>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
+              <td><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
+              <td>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
             $tabulka .=  "</tr>";
 
     }
@@ -111,8 +111,8 @@
 
       // Radek tabulky
       $tabulka .= "<tr class='radekStatModal'>
-              <td align='center'><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatData($hod['kdy']).($vikend == 1 ? "</font>" : "")."</b></td>
-              <td align='center'>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
+              <td><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatData($hod['kdy']).($vikend == 1 ? "</font>" : "")."</b></td>
+              <td>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
             $tabulka .=  "</tr>";
 
     }
@@ -142,8 +142,8 @@
 
       // Radek tabulky
       $tabulka .= "<tr class='radekStatModal'>
-              <td align='center'><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
-              <td align='center'>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
+              <td><b>".($vikend == 1 ? "<font style='color: #009000;'>" : "").formatDnu($r['den']).($vikend == 1 ? "</font>" : "")."</b></td>
+              <td>".jednotkaTeploty($r['teplota'], $u, 0)."</td>";
             $tabulka .=  "</tr>";
 
     }
@@ -157,5 +157,3 @@
 
   // Paticka
   require "foot.php";
-
-?>

@@ -48,43 +48,41 @@
   {
 
   ///////////////////////////
-  // rozdeleni na dva sloupce
-  echo "<center>";
+  // rozdeleni na sloupce
 
-  echo "<table><tr>";
+  echo "<div class='row'>";
 
-        echo "<td valign='top'>
-              <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
+        echo "<div class='col-md-3'><table class='tabulkaVHlavicce' style='margin: 0px 40px 0px 0px;'>
           <tr>
-            <td colspan='2' class='radek' align='center'><b>{$lang['nejteplejsimesice']}</b></td>
+            <td colspan='2' class='radek'><b>{$lang['nejteplejsimesice']}</b></td>
           </tr>
           <tr>
-            <td class='radek' align='center'><b>{$lang['mesic']}</b></td>
-            <td class='radek' align='center'><b>{$lang['prumernateplota']}</b></td>
+            <td class='radek'><b>{$lang['mesic']}</b></td>
+            <td class='radek'><b>{$lang['prumernateplota']}</b></td>
           </tr>";
 
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
-              <td align='center'>".jednotkaTeploty(round($r['prumer'], 2), $u, 1)."</td>
+              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".jednotkaTeploty(round($r['prumer'], 2), $u, 1)."</td>
             </tr>";
     }
 
     echo "</table>
-    </td>";
+    </div>";
 
         ///////////////////////////
         // Nejstudenejsi mesice
         ///////////////////////////
-        echo "<td valign='top'>
+        echo "<div class='col-md-3'>
               <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
           <tr>
-            <td colspan='2' class='radek' align='center'><b>{$lang['nejstudenejsimesice']}</b></td>
+            <td colspan='2' class='radek'><b>{$lang['nejstudenejsimesice']}</b></td>
           </tr>
           <tr>
-            <td class='radek' align='center'><b>{$lang['mesic']}</b></td>
-            <td class='radek' align='center'><b>{$lang['prumernateplota']}</b></td>
+            <td class='radek'><b>{$lang['mesic']}</b></td>
+            <td class='radek'><b>{$lang['prumernateplota']}</b></td>
           </tr>";
 
   // nacteme
@@ -97,14 +95,14 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
-              <td align='center'>".jednotkaTeploty(round($r['prumer'], 2), $u, 1)."</td>
+              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".jednotkaTeploty(round($r['prumer'], 2), $u, 1)."</td>
             </tr>";
     }
 
   echo "</table>
   
-          </td>";
+          </div>";
 
   // mame vlhkomer?
   if($vlhkomer == 1)
@@ -117,38 +115,38 @@
                         ORDER BY prumer DESC
                         LIMIT 50");
 
-        echo "<td valign='top'>
+        echo "<div class='col-md-3'>
               <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
           <tr>
-            <td colspan='2' class='radek' align='center'><b>{$lang['nejvlhcimesice']}</b></td>
+            <td colspan='2' class='radek'><b>{$lang['nejvlhcimesice']}</b></td>
           </tr>
           <tr>
-            <td class='radek' align='center'><b>{$lang['mesic']}</b></td>
-            <td class='radek' align='center'><b>{$lang['prumernavlhkost']}</b></td>
+            <td class='radek'><b>{$lang['mesic']}</b></td>
+            <td class='radek'><b>{$lang['prumernavlhkost']}</b></td>
           </tr>";
 
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
-              <td align='center'>".round($r['prumer'], 2)."%</td>
+              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".round($r['prumer'], 2)."%</td>
             </tr>";
     }
 
     echo "</table>
-    </td>";
+    </div>";
 
         ///////////////////////////
         // Nejstudenejsi mesice
         ///////////////////////////
-        echo "<td valign='top'>
+        echo "<div class='col-md-3'>
               <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
           <tr>
-            <td colspan='2' class='radek' align='center'><b>{$lang['nejsussimesice']}</b></td>
+            <td colspan='2' class='radek'><b>{$lang['nejsussimesice']}</b></td>
           </tr>
           <tr>
-            <td class='radek' align='center'><b>{$lang['mesic']}</b></td>
-            <td class='radek' align='center'><b>{$lang['prumernavlhkost']}</b></td>
+            <td class='radek'><b>{$lang['mesic']}</b></td>
+            <td class='radek'><b>{$lang['prumernavlhkost']}</b></td>
           </tr>";
 
   // nacteme
@@ -162,27 +160,27 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
-              <td align='center'>".round($r['prumer'], 2)."%</td>
+              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".round($r['prumer'], 2)."%</td>
             </tr>";
     }
 
   echo "</table>
   
-          </td>";
+          </div>";
 
   }
   else
   {
 
-        echo "<td valign='top'>
+        echo "<div class='col-md-3'>
               <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
           <tr>
-            <td colspan='2' class='radek' align='center'><b>{$lang['nejvicemereni']}</b></td>
+            <td colspan='2' class='radek'><b>{$lang['nejvicemereni']}</b></td>
           </tr>
           <tr>
-            <td class='radek' align='center'><b>{$lang['mesic']}</b></td>
-            <td class='radek' align='center'><b>{$lang['mereni']}</b></td>
+            <td class='radek'><b>{$lang['mesic']}</b></td>
+            <td class='radek'><b>{$lang['mereni']}</b></td>
           </tr>";
 
   ///////////////////////////
@@ -197,24 +195,24 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
-              <td align='center'>".number_format($r['mereni'], 0, "", " ")."</td>
+              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".number_format($r['mereni'], 0, "", " ")."</td>
             </tr>";
     }
 
   echo "</tr></table>
   
-          </td>";
+          </div>";
 
 
-        echo "<td valign='top'>
+        echo "<div class='col-md-3'>
               <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
           <tr>
-            <td colspan='2' class='radek' align='center'><b>{$lang['nejmenemereni']}</b></td>
+            <td colspan='2' class='radek'><b>{$lang['nejmenemereni']}</b></td>
           </tr>
           <tr>
-            <td class='radek' align='center'><b>{$lang['mesic']}</b></td>
-            <td class='radek' align='center'><b>{$lang['mereni']}</b></td>
+            <td class='radek'><b>{$lang['mesic']}</b></td>
+            <td class='radek'><b>{$lang['mereni']}</b></td>
           </tr>";
 
   ///////////////////////////
@@ -229,23 +227,20 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td align='center'><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
-              <td align='center'>".number_format($r['mereni'], 0, "", " ")."</td>
+              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".number_format($r['mereni'], 0, "", " ")."</td>
             </tr>";
     }
 
   echo "</tr></table>
   
-          </td>";
+          </div>";
 
   }
 
 }
-         echo "</tr>
-        </table>";
 
+  echo "</div>";
 
   // Paticka
   require "foot.php";
-
-?>

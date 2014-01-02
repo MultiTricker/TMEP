@@ -28,5 +28,3 @@
 
   // Paticka
   require "foot.php";
-
-?>

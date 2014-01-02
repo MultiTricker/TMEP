@@ -96,7 +96,7 @@
  //////////////////////////////////////////////////////////////////////////
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 
   <head>
@@ -106,6 +106,7 @@
     <meta NAME="description" CONTENT="<?php echo $lang['popisstranky']; ?>">
     <?php if($obnoveniStranky != 0 and  is_numeric($obnoveniStranky)){ echo '    <meta http-equiv="refresh" content="'.$obnoveniStranky.'">'; } ?>
     <meta NAME="author" CONTENT="Michal Ševčík (http://multi.tricker.cz), František Ševčík (f.sevcik@seznam.cz)">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
     <script src="scripts/js/jquery.tools.ui.timer.colorbox.tmep.highcharts.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function(){
@@ -136,16 +137,13 @@
 <body>
 
   <div id='hlavni' class="container">
-
     <?php
-    
+
     // Hlavička
     require_once "./scripts/head.php";
-    
+
     // Záložky
-    echo "<p></p>
-    <center>
-    <div id=\"oblastzalozek\">
+    echo "<div id=\"oblastzalozek\">
     <ul class=\"tabs\">
       <li><a href=\"#aktualne\">{$lang['aktualne']}</a></li>
       <li><a href=\"#denni\" onclick=\"loadTab('denni-statistiky');\">{$lang['dennistatistiky']}</a></li>
@@ -161,11 +159,10 @@
       echo "<div id=\"rocni-statistiky\"></div>";
       echo "<div id=\"historieTab\">"; require "scripts/tabs/historie.php"; echo "</div>";
       echo "</div>
-    </div>
-    </center>";
+    </div>";
 
     // Patička
-    echo "<h2>{$lang['paticka']}</h2>";
+    echo "<div class='nohy'><p>{$lang['paticka']}</p></div>";
 
 ?>
 
@@ -174,6 +171,4 @@
 </body>
 </html>
 <?php
-  } // konec pokud si stranku prohlizi uzivatel
-    // a nevola ji teplomer
-?>
+  } // konec pokud si stranku prohlizi uzivatel a nevola ji teplomer

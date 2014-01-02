@@ -92,7 +92,7 @@
       echo "<br>
         <table class='tabulkaVHlavicce' width='900'>
         <tr>
-          <td class='radekVelky' align='center' colspan='4'><b>".formatDnu($_GET['jenden'])."</b> <font class='mensi'>({$lang['mereni']}: {$r['mereni']})</font></td>
+          <td class='radekVelky' colspan='4'><b>".formatDnu($_GET['jenden'])."</b> <font class='mensi'>({$lang['mereni']}: {$r['mereni']})</font></td>
         </tr>
         <td>
         <center>";
@@ -100,7 +100,7 @@
         echo "<br>
         <table class='tabulkaVHlavicce' width='786'>
         <tr>
-          <td class='radekVelky' align='center' colspan='5'><b>{$lang['namerenehodnotyvprubehulet']}</b></td>
+          <td class='radekVelky' colspan='5'><b>{$lang['namerenehodnotyvprubehulet']}</b></td>
         </tr>";
 
         $qL = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer),
@@ -146,7 +146,7 @@
 
       echo "<br>
             <table class='tabulkaVHlavicce' width='786'>
-              <tr class='radekVelky' align='center'>
+              <tr class='radekVelky'>
                 <td colspan='5'><b>{$lang['hodnotynamerenevjednotlivychdobach']}</b></td>
               </tr>";
 

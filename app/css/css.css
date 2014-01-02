@@ -7,12 +7,14 @@
 body{ background: url(../images/pozadi.jpg) repeat rgb(242,242,225); color: rgb(60,58,23); font-family: Verdana, Arial, Times, serif; font-size: 13px; margin: 15px 0px; padding: 0px; text-align: center; }
 
 /* hlavni */
-#hlavni { height: auto; background: url(../images/prechod4.gif) repeat-x top center rgb(243,242,221); padding: 0px; border: 2px solid rgb(70,68,28); vertical-align: middle; text-align: center; -webkit-box-shadow: 0 0 8px black; -moz-box-shadow: 0 0 8px black; box-shadow: 0 0 8px black; }
+#hlavni { height: auto; background: rgb(243,242,221); padding: 0px; border: 2px solid rgb(70,68,28); vertical-align: middle; text-align: center; -webkit-box-shadow: 0 0 8px black; -moz-box-shadow: 0 0 8px black; box-shadow: 0 0 8px black; }
 #hlavni table tr td { border-bottom: 1px solid rgb(221,220,170); }
-.tabulkaVHlavicce { border: 1px solid #a2a181; }
+.tabulkaVHlavicce { width: 100%; border: 1px solid #a2a181; margin: 10px 0px; }
+.tabulkaVHlavicceModal { width: 100%; max-width: 600px; border: 1px solid #a2a181; margin: 10px auto; float: center }
+.tabulkaVHlavicceModalMensi { width: 100%; max-width: 300px; border: 1px solid #a2a181; margin: 10px auto; float: center }
 
 /* vlajky */
-.vlajka { background: url("../images/vlajky.png") top center no-repeat; width: 16px; height: 11px; display: inline; border: none; }
+.vlajka { background: url("../images/vlajky.png") top center no-repeat; width: 16px; height: 11px; display: inline-block; border: none; overflow: hidden; }
 .sk { background-position: 0px -11px; }
 .en { background-position: 0px -22px; }
 .de { background-position: 0px -33px; }
@@ -23,7 +25,8 @@ body{ background: url(../images/pozadi.jpg) repeat rgb(242,242,225); color: rgb(
 .sv { background-position: 0px -88px; }
 
 /* aktualne */
-.aktualne { background: url("../images/stavy.jpg") no-repeat top left #3C3A14; width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 74px; color: white; font-weight: bold; line-height: 26px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
+.sloupekAktualne { margin: 8px auto; float: center; width: 230px; overflow: hidden; }
+.aktualne { background: url("../images/stavy.jpg") no-repeat top left #3C3A14; width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 74px; color: white; font-weight: bold; line-height: 24px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
 .aktualnejen { background: url("../images/stavy.jpg") no-repeat top left #3C3A14; width: 220px; margin: 0px 0px 3px 0px; border: 2px solid rgb(70,68,28); height: 104px; color: white; font-weight: bold; line-height: 36px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
 .aktua { color: white; font-size: 24px; font-weight: bold; }
 .aktualnemensi { background: url("../images/stavy.jpg") no-repeat top left #2E2D0E;  font-size: 11px; margin: 1px 4px 0px 0px; float: left; width: 106px; border: 2px solid rgb(70,68,28); height: 44px; color: white; font-weight: bold; line-height: 21px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
@@ -43,60 +46,69 @@ body{ background: url(../images/pozadi.jpg) repeat rgb(242,242,225); color: rgb(
 .stejnem { background-position: -5px -328px; }
 
 /* Highcharts */
-.graf { width: 98%; margin: 15px 0px; }
+.graf { width: 100%; margin: 15px 0px; }
 .grafModal { width: 98%; margin: 15px 0px; }
 
 /* radky */
-.radek { background: url(../images/prechod2.gif) repeat-x top center #E3E2A9; color: #585441; }
-.radekVelky { background: url(../images/prechod2.gif) repeat-x top center #E3E2A9; color: #585441; line-height: 18px; vertical-align: center; font-size: 14px; color: black; }
-.radekVetsi { background: url(../images/prechod2.gif) repeat-x top center #E3E2A9; color: #585441; line-height: 20px; vertical-align: center; font-size: 12px; }
+.radek { background: #c2c18b;background: -moz-linear-gradient(top,  #c2c18b 0%, #d6d59d 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c2c18b), color-stop(100%,#d6d59d));background: -webkit-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: -o-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: -ms-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: linear-gradient(to bottom,  #c2c18b 0%,#d6d59d 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c18b', endColorstr='#d6d59d',GradientType=0 ); color: #585441; }
+.radekVelky { background: #c2c18b;background: -moz-linear-gradient(top,  #c2c18b 0%, #d6d59d 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c2c18b), color-stop(100%,#d6d59d));background: -webkit-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: -o-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: -ms-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: linear-gradient(to bottom,  #c2c18b 0%,#d6d59d 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c18b', endColorstr='#d6d59d',GradientType=0 ); color: #585441; line-height: 18px; vertical-align: center; font-size: 14px; color: black; }
+.radekVetsi { background: #c2c18b;background: -moz-linear-gradient(top,  #c2c18b 0%, #d6d59d 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c2c18b), color-stop(100%,#d6d59d));background: -webkit-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: -o-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: -ms-linear-gradient(top,  #c2c18b 0%,#d6d59d 100%);background: linear-gradient(to bottom,  #c2c18b 0%,#d6d59d 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c18b', endColorstr='#d6d59d',GradientType=0 ); color: #585441; line-height: 20px; vertical-align: center; font-size: 12px; }
 .radekStat td { border-right: 1px solid rgb(221,220,170); }
 .radekStat:hover td { background: #f3f2dd; }
 .radekStatModal td { border-right: 1px solid rgb(221,220,170); border-bottom: 1px solid rgb(221,220,170); }
 .radekStatModal:hover td { background: #e8e5c6; }
+td { text-align: center; }
 
 /* typo */
-h1{ color: #F9F8E6; background: url(../images/prechod1.gif) repeat-x top center #2E2D0E; font-size: 20px; line-height: 30px; height: 60px; font-weight: bold; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; width: 100%; vertical-align: middle; }
-h1 font { font-size: 12px; }
-h1 font a { color: white; }
-h1 font a:hover { text-decoration: none; }
-h2 { color: #F9F8E6; background: url(../images/prechod1.gif) repeat-x top center #2E2D0E; font-size: 11px; line-height: 25px; height: 25px; font-weight: bold; padding: 0px 0px 0px 0px; margin: 10px 0px 0px 0px; width: 100%; border-top: 2px solid rgb(70,68,28); vertical-align: middle; }
-h2 a { color: white; }
-h2 a:hover { text-decoration: none; }
-h3 { color: #F9F8E6; font-size: 20px; line-height: 30px; height: 50px; overflow: hidden; font-weight: bold; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; vertical-align: middle; }
+.hlava{ background: #1f1e0a;background: -moz-linear-gradient(top,  #1f1e0a 1%, #3d3714 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#1f1e0a), color-stop(100%,#3d3714));background: -webkit-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -o-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -ms-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: linear-gradient(to bottom,  #1f1e0a 1%,#3d3714 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f1e0a', endColorstr='#3d3714',GradientType=0 ); padding: 0px; margin: 0px; width: 100%; vertical-align: middle; }
+.hlava h1 { color: #F9F8E6; font-size: 20px; margin: 0px; padding: 10px 0px 0px 0px; }
+.hlava p { font-size: 12px; color: #F9F8E6; font-weight: bold; margin: 0px; padding: 12px 0px 8px 0px;}
+.hlava p a { color: white; }
+.hlava p a:hover { text-decoration: none; }
+.nohy p { color: #F9F8E6; background: #1f1e0a;background: -moz-linear-gradient(top,  #1f1e0a 1%, #3d3714 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#1f1e0a), color-stop(100%,#3d3714));background: -webkit-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -o-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -ms-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: linear-gradient(to bottom,  #1f1e0a 1%,#3d3714 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f1e0a', endColorstr='#3d3714',GradientType=0 ); font-size: 11px; line-height: 25px; font-weight: bold; padding: 0px; margin: 10px 0px 0px 0px; width: 100%; border-top: 2px solid rgb(70,68,28); vertical-align: middle; }
+.nohy p a { color: white; }
+.nohy p a:hover { text-decoration: none; }
+h3 { color: #F9F8E6; font-size: 20px; line-height: 50px; height: 50px; overflow: hidden; font-weight: bold; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; vertical-align: middle; }
 br { line-height: 1.5em; }
 .mensi { font-size: 11px; }
 a { color: rgb(60,58,23); }
 a:hover { text-decoration: none; }
+.nomargin { margin: 0px; }
 
 /* zadny ramecky! */
 img{ border: 0px; }
 
 /* sloupecky */
-#tri { width: 100%; overflow: hidden; margin: 10px 0px 30px 0px; }
-#levej { width: 50%; float: left; margin: 0px 0px 0px 20px; }
-#pravejsi { width: 25%; float: left; text-align: center; }
-#pravej { width: 25%; float: right; text-align: center; }
-#dva { width: 90%; overflow: hidden; display: block; margin: 10px 0px 30px 0px; border: none; }
-#levejVelikan { width: 50%; overflow: hidden; display: block; float: left; text-align: center; border: none; }
-#pravejVelikan { width: 50%; overflow: hidden; display: block; float: right; text-align: center; border: none; }
+#tri { width: 100%; overflow: hidden; margin: 0px 0px 12px 0px; border-bottom: 1px solid #c9c8a2; background: #f3f3e4;background: -moz-linear-gradient(top,  #f3f3e4 0%, #e9e8c9 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f3e4), color-stop(100%,#e9e8c9));background: -webkit-linear-gradient(top,  #f3f3e4 0%,#e9e8c9 100%);background: -o-linear-gradient(top,  #f3f3e4 0%,#e9e8c9 100%);background: -ms-linear-gradient(top,  #f3f3e4 0%,#e9e8c9 100%);background: linear-gradient(to bottom,  #f3f3e4 0%,#e9e8c9 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3e4', endColorstr='#e9e8c9',GradientType=0 ); }
 
 /* tabs */
-#oblastzalozek { width: 98%; }
-ul.tabs { margin: 0 !important; padding:0; height:30px; border-bottom:1px solid #3B3913; }
+#oblastzalozek { width: 98%; float: center; margin: auto; }
+ul.tabs { margin: 0 !important; padding:0; border-bottom:1px solid #3B3913; overflow: hidden }
 ul.tabs li { float:left; padding:0; margin:0; list-style-type:none; }
-ul.tabs a { font-weight: bold; float:left; font-size:13px; display:block; padding:5px 25px; text-decoration:none; border:1px solid #3B3913; border-bottom:0px; height:18px; background-color:#e1dddd; color:#777; margin-right:2px; position:relative; top:1px; outline:0; -moz-border-radius:4px 4px 0 0; }
+ul.tabs a { font-weight: bold; float:left; font-size:13px; display:block; padding:5px 25px; text-decoration:none; border:1px solid #3B3913; height:18px; background-color:#e1dddd; color:#777; margin-right:2px; position:relative; top:1px; outline:0; -moz-border-radius:4px 4px 0 0; border-bottom: 1px solid transparent; }
 ul.tabs a:hover { background-color:#cfcc94; color:#333; }
 ul.tabs a.current { background-color:#e7e5c5; border-bottom:1px solid #e7e5c5; color:#000; cursor:default; }
 .panely > div { display:none; border:1px solid #3B3913; border-width:0 1px 1px 1px; min-height:80px; padding:5px 10px; background-color:#e7e5c5; }
 
 /* formular na strance historie */
-form{ font-weight: bold; }
+form{ font-weight: bold; margin: auto; float: center; width: 300px; }
 .submit input{margin-left: 4.5em; }
 input{color: black;background: white;border: 1px solid #24230C; width: 80px; padding: 2px; }
 .submit {color: #000;background: white;border: 2px outset #24230C; }
 fieldset{border: 1px solid #24230C; width: 300px; }
 legend{color: black;background: #F3F2DD;border: 1px solid #24230C;padding: 2px 6px; }
+
+/* adaptivni zalezitosti */
+@media (min-width: 768px) {
+
+}
+
+@media (max-width: 992px)
+{
+ body { margin: 0px; }
+ ul.tabs a { border-bottom: 1px solid black; }
+ #oblastzalozek{ width: 100%; }
+}
 
 /* ColorBox Core Style */
 #colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
@@ -112,7 +124,7 @@ legend{color: black;background: #F3F2DD;border: 1px solid #24230C;padding: 2px 6
 #colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
 /* ColorBox User Style */
 #cboxOverlay{background:#000;}
-#colorbox{}
+#colorbox{ }
 #cboxContent{margin-top:20px;}
 .cboxIframe{background:#fff;}
 #cboxError{padding:50px; border:1px solid #ccc;}
@@ -132,7 +144,7 @@ legend{color: black;background: #F3F2DD;border: 1px solid #24230C;padding: 2px 6
 /* Bootstrap grid system */
 .container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px;}
 .row{margin-left:-15px;margin-right:-15px;}
-.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-left:15px;padding-right:15px;}
+.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-left:13px;padding-right:13px;}
 .col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{float:left;}
 .col-xs-12{width:100%;}
 .col-xs-11{width:91.666666666667%;}
