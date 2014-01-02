@@ -58,6 +58,8 @@ body{ background: url(../images/pozadi.jpg) repeat rgb(242,242,225); color: rgb(
 .radekStatModal td { border-right: 1px solid rgb(221,220,170); border-bottom: 1px solid rgb(221,220,170); }
 .radekStatModal:hover td { background: #e8e5c6; }
 td { text-align: center; }
+.mesicVDobe { width: 20%; float: left; border: 1px solid #c2c18b; margin: auto; }
+.rokVDobe { width: 23.5%; min-width: 150px; float: left; border: 1px solid #c2c18b; margin: 5px 5px; }
 
 /* typo */
 .hlava{ background: #1f1e0a;background: -moz-linear-gradient(top,  #1f1e0a 1%, #3d3714 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#1f1e0a), color-stop(100%,#3d3714));background: -webkit-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -o-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: -ms-linear-gradient(top,  #1f1e0a 1%,#3d3714 100%);background: linear-gradient(to bottom,  #1f1e0a 1%,#3d3714 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f1e0a', endColorstr='#3d3714',GradientType=0 ); padding: 0px; margin: 0px; width: 100%; vertical-align: middle; }
@@ -99,16 +101,26 @@ fieldset{border: 1px solid #24230C; width: 300px; }
 legend{color: black;background: #F3F2DD;border: 1px solid #24230C;padding: 2px 6px; }
 
 /* adaptivni zalezitosti */
-@media (min-width: 768px) {
-
-}
-
 @media (max-width: 992px)
 {
- body { margin: 0px; }
- ul.tabs a { border-bottom: 1px solid black; }
- #oblastzalozek{ width: 100%; }
+
+  body { margin: 0px; }
+  ul.tabs a { border-bottom: 1px solid black; }
+
+  #oblastzalozek{ width: 100%; }
+
+  #tri {display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-moz-box-orient:vertical;-webkit-box-orient:vertical;-ms-box-orient: vertical;-webkit-flex-direction: column;flex-direction: column;}
+  .horniTreti {-moz-box-ordinal-group: 1;-webkit-flex-ordinal-group: 1;-ms-flex-order: 1;-webkit-order: 1;order: 1;}
+  .horniDruhy {-moz-box-ordinal-group: 2;-webkit-flex-ordinal-group: 2;-ms-flex-order: 2;-webkit-order: 2;order: 2;}
+  .horniPrvni {-moz-box-ordinal-group: 3;-webkit-flex-ordinal-group: 3;-ms-flex-order: 3;-webkit-order: 3;order: 3;}
+
 }
+
+@media (min-width: 992px)
+{
+  .perc22 { width: 22% !important; }
+}
+
 
 /* ColorBox Core Style */
 #colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}

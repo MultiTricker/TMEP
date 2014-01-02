@@ -33,7 +33,7 @@
   
         <div id='tri' class='row'>
 
-        <div class='col-md-5'>
+        <div class='col-md-5 horniPrvni'>
 
           <table class='tabulkaVHlavicce'>
             <tr class='radek'>
@@ -63,7 +63,7 @@
 
         </div>
 
-        <div class='col-md-3'>
+        <div class='col-md-3 horniDruhy'>
 
           <div class='drivetoutodobouted'>
           <table class='tabulkaVHlavicce'>
@@ -102,7 +102,7 @@
          
         </div>
 
-        <div class='col-md-3'>
+        <div class='col-md-3 horniTreti'>
 
         <div class='sloupekAktualne'>
         <div class='ajaxrefresh'>

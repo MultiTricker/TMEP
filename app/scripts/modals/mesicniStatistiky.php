@@ -50,9 +50,7 @@
   ///////////////////////////
   // rozdeleni na sloupce
 
-  echo "<div class='row'>";
-
-        echo "<div class='col-md-3'><table class='tabulkaVHlavicce' style='margin: 0px 40px 0px 0px;'>
+        echo "<table class='tabulkaVHlavicceModalMensi'>
           <tr>
             <td colspan='2' class='radek'><b>{$lang['nejteplejsimesice']}</b></td>
           </tr>
@@ -69,14 +67,12 @@
             </tr>";
     }
 
-    echo "</table>
-    </div>";
+    echo "</table>";
 
         ///////////////////////////
         // Nejstudenejsi mesice
         ///////////////////////////
-        echo "<div class='col-md-3'>
-              <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
+        echo "<table class='tabulkaVHlavicceModalMensi'>
           <tr>
             <td colspan='2' class='radek'><b>{$lang['nejstudenejsimesice']}</b></td>
           </tr>
@@ -100,9 +96,7 @@
             </tr>";
     }
 
-  echo "</table>
-  
-          </div>";
+  echo "</table>";
 
   // mame vlhkomer?
   if($vlhkomer == 1)
@@ -115,8 +109,7 @@
                         ORDER BY prumer DESC
                         LIMIT 50");
 
-        echo "<div class='col-md-3'>
-              <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
+        echo "<table class='tabulkaVHlavicceModalMensi'>
           <tr>
             <td colspan='2' class='radek'><b>{$lang['nejvlhcimesice']}</b></td>
           </tr>
@@ -133,14 +126,12 @@
             </tr>";
     }
 
-    echo "</table>
-    </div>";
+    echo "</table>";
 
         ///////////////////////////
         // Nejstudenejsi mesice
         ///////////////////////////
-        echo "<div class='col-md-3'>
-              <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
+        echo "<table class='tabulkaVHlavicceModalMensi'>
           <tr>
             <td colspan='2' class='radek'><b>{$lang['nejsussimesice']}</b></td>
           </tr>
@@ -165,16 +156,13 @@
             </tr>";
     }
 
-  echo "</table>
-  
-          </div>";
+  echo "</table>";
 
   }
   else
   {
 
-        echo "<div class='col-md-3'>
-              <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
+        echo "<table class='tabulkaVHlavicceModalMensi'>
           <tr>
             <td colspan='2' class='radek'><b>{$lang['nejvicemereni']}</b></td>
           </tr>
@@ -200,13 +188,10 @@
             </tr>";
     }
 
-  echo "</tr></table>
-  
-          </div>";
+  echo "</tr></table>";
 
 
-        echo "<div class='col-md-3'>
-              <table class='tabulkaVHlavicce' width='170' style='margin: 0px 40px 0px 0px;'>
+        echo "<table class='tabulkaVHlavicceModalMensi'>
           <tr>
             <td colspan='2' class='radek'><b>{$lang['nejmenemereni']}</b></td>
           </tr>
@@ -232,15 +217,11 @@
             </tr>";
     }
 
-  echo "</tr></table>
-  
-          </div>";
+  echo "</tr></table>";
 
   }
 
 }
-
-  echo "</div>";
 
   // Paticka
   require "foot.php";

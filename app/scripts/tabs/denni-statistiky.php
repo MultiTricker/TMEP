@@ -20,7 +20,7 @@
 
   echo "<div class='container'>
         <div class='row' style='width: 98%;'>
-          <div class='col-xs-6'>
+          <div class='col-md-6'>
             <div class='row'>";
 
           // Iterace
@@ -30,7 +30,7 @@
           for($a = 0; $a < 24; $a++)
           {
 
-            echo "<div class='col-xs-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
+            echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
                   <tr class='radek'>
                   <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} <font style='color: black;'>{$a}:00 - {$a}:59</font></b> <img src='./images/nw.png' title='{$lang['dennistatistiky']}'></a></td>
                 </tr>";
@@ -84,7 +84,7 @@
       ///////////////////////////
       echo "</div>
             </div>
-        <div class='col-xs-5'>";
+        <div class='col-md-5'>";
 
       ///////////////////////////
       // teploty za posledni dny
@@ -144,7 +144,7 @@
 
   echo "<div class='container'>
         <div class='row' style='width: 98%;'>
-      <div class='col-xs-6'>
+      <div class='col-md-6'>
         <div class='row'>";
   
     ///////////////////////////
@@ -155,7 +155,7 @@
     for($a = 0; $a < 24; $a++)
     {
   
-          echo "<div class='col-xs-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
+          echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
                 <tr class='radek'>
                 <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} <font style='color: black;'>{$a}:00 - {$a}:59</font></b> <img src='./images/nw.png' title='{$lang['dennistatistiky']}'></a></td>
               </tr>";
@@ -210,7 +210,7 @@
   ///////////////////////////
       echo "</div>
             </div>
-        <div class='col-xs-5'>";
+        <div class='col-md-5'>";
 
       ///////////////////////////
       // teploty za posledni dny

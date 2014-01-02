@@ -26,8 +26,7 @@
                             LIMIT 1");
       $r = MySQLi_fetch_assoc($qStat);
 
-      echo "<center>
-            <table class='tabulkaVHlavicce'>
+      echo "<table class='tabulkaVHlavicce'>
               <tr>
                 <td class='radekVelky' colspan='12'><a href='./scripts/modals/rocniGrafy.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;rok={$rok}' class='modal'><b>{$rok}</b> <img src='./images/nw.png' title='{$rok}'></a><br>
                     <font class='mensi'>(<b>{$lang['teplota']}:</b> <b>MIN:</b> ".jednotkaTeploty(round($r['MIN(nejnizsi)'], 2), $u, 1).", 
@@ -42,16 +41,14 @@
                     echo ")</font></td>
               </tr>
             <tr>
-            <td>
-            
-           <table><tr>";
+            <td>";
 
 
       /////////////////////////////////
       // SLOUPEK
       ////////////////////////////////
 
-        echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+        echo"<table class='rokVDobe'>
               <tr>
                 <td colspan='2' class='radek'><b>{$lang['nejvyssiteplota']}</b></td>
               </tr>
@@ -75,13 +72,13 @@
                 </tr>";
         }
     
-        echo "</table></td>";
+        echo "</table>";
 
       /////////////////////////////////
       // SLOUPEK
       ////////////////////////////////
 
-        echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+        echo"<table class='rokVDobe'>
               <tr>
                 <td colspan='2' class='radek'><b>{$lang['nejnizsiteplota']}</b></td>
               </tr>
@@ -105,13 +102,13 @@
                 </tr>";
         }
 
-        echo "</table></td>";
+        echo "</table>";
 
       /////////////////////////////////
       // SLOUPEK
       ////////////////////////////////
 
-        echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+        echo"<table class='rokVDobe'>
               <tr>
                 <td colspan='2' class='radek'><b>{$lang['nejteplejsimesice']}</b></td>
               </tr>
@@ -136,13 +133,13 @@
                 </tr>";
         }
     
-        echo "</table></td>";
+        echo "</table>";
 
       /////////////////////////////////
       // SLOUPEK
       ////////////////////////////////
 
-        echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+        echo"<table class='rokVDobe'>
               <tr>
                 <td colspan='2' class='radek'><b>{$lang['nejstudenejsimesice']}</b></td>
               </tr>
@@ -167,12 +164,11 @@
                 </tr>";
         }
     
-        echo "</table></td>";
+        echo "</table>";
 
 
-        echo "
-        </tr>
-        </table>";
+        echo "</td>
+        </tr>";
 
 
 
@@ -180,7 +176,7 @@
         if($vlhkomer == 1)
         {
 
-          echo "<table><tr>";
+          echo "<tr><td>";
     
           /////////////////////////////////
           // SLOUPEK
@@ -196,7 +192,7 @@
           if(MySQLi_num_rows($qStat) > 0)
           {
     
-            echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+            echo"<table class='rokVDobe'>
                   <tr>
                     <td colspan='2' class='radek'><b>{$lang['nejvyssivlhkost']}</b></td>
                   </tr>
@@ -213,7 +209,7 @@
                     </tr>";
             }
         
-            echo "</table></td>";
+            echo "</table>";
 
           }
 
@@ -231,7 +227,7 @@
           if(MySQLi_num_rows($qStat) > 0)
           {
 
-            echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+            echo"<table class='rokVDobe'>
                   <tr>
                     <td colspan='2' class='radek'><b>{$lang['nejnizsivlhkost']}</b></td>
                   </tr>
@@ -249,7 +245,7 @@
                     </tr>";
             }
         
-            echo "</table></td>";
+            echo "</table>";
           
           }
     
@@ -269,7 +265,7 @@
           {
 
     
-            echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+            echo"<table class='rokVDobe'>
                   <tr>
                     <td colspan='2' class='radek'><b>{$lang['nejvlhcimesice']}</b></td>
                   </tr>
@@ -286,7 +282,7 @@
                     </tr>";
             }
         
-            echo "</table></td>";
+            echo "</table>";
           
           }
     
@@ -306,7 +302,7 @@
           if(MySQLi_num_rows($qStat) > 0)
           {
 
-            echo"<td><table class='tabulkaVHlavicce' width='200' style='margin: 0px 20px 0px 0px;'>
+            echo"<table class='rokVDobe'>
                   <tr>
                     <td colspan='2' class='radek'><b>{$lang['nejsussimesice']}</b></td>
                   </tr>
@@ -324,23 +320,18 @@
                     </tr>";
             }
 
-            echo "</table></td>";
+            echo "</table>";
 
           }
 
           // konec sloupku
-
-          echo "
-          </tr>
-          </table>";
 
         }
 
 
         echo "</td>
         </tr>
-        </table><br>
-        </center>";
+        </table>";
 
     } // konec while
 
