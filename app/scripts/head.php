@@ -105,27 +105,10 @@
         <div class='col-md-3 horniTreti'>
 
         <div class='sloupekAktualne'>
-        <div class='ajaxrefresh'>
-          <div class='aktualne".($vlhkomer == 1 ? "" : "jen")." {$vyvoj}".($vlhkomer == 1 ? "" : "jen")."'>
-            {$lang['aktualniteplota']}<br>
-            <font class='aktua'>".jednotkaTeploty($posledni['teplota'], $u, 1)."</font><br>".formatData($posledni['kdy'])."
-          </div>";
-          if($vlhkomer == 1)
-          {
-            echo "<div class='aktualnemensi {$vyvojv}'>
-              {$lang['vlhkost']}:<br>
-              <font class='aktuamens'>{$posledni['vlhkost']}%</font>
-            </div>";
-
-            echo "<div class='aktualnemensi {$vyvojrb}'>
-              {$lang['rosnybod']}:<br>
-              <font class='aktuamens'>".jednotkaTeploty(rosnyBod($posledni['teplota'], $posledni['vlhkost']), $u, 1)."</font>
-            </div>";
-
-          }
+        <div class='ajaxrefresh'>";
+          require_once dirname(__FILE__)."/ajax/teplota.php";
         echo "</div>
               </div>
-        
               </div>
 
         </div>";

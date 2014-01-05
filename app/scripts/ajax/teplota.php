@@ -1,49 +1,47 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
  //////////////////////////////////////////////////////////////////////////
  //// VLOZENI SOUBORU
  //////////////////////////////////////////////////////////////////////////
 
-  require "../../config.php"; // skript s nastavenim
-  require "../db.php";        // skript s databazi
-  require "../fce.php";       // skript s nekolika funkcemi
+  require_once dirname(__FILE__)."/../../config.php"; // skript s nastavenim
+  require_once dirname(__FILE__)."/../db.php";        // skript s databazi
+  require_once dirname(__FILE__)."/../fce.php";       // skript s nekolika funkcemi
 
  //////////////////////////////////////////////////////////////////////////
  //// JAZYK A JEDNOTKA
  //////////////////////////////////////////////////////////////////////////
 
   // pokud je povolene vlastni nastaveni...
-  if($zobrazitNastaveni == 1)
+  if(!isset($dopocitat))
   {
-
-    // jazyk
-    if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR 
-       $_GET['ja'] == "de"))
+    if($zobrazitNastaveni == 1)
     {
-      $l = $_GET['ja'];
+
+      // jazyk
+      if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR
+         $_GET['ja'] == "de"))
+      {
+        $l = $_GET['ja'];
+      }
+
+      require_once "../language/".$l.".php";       // skript s jazykovou mutaci
+
+      // jednotka
+      if(isset($_GET['je']) AND ($_GET['je'] == 'C' OR $_GET['je'] == 'F' OR
+       $_GET['je'] == 'K' OR $_GET['je'] == 'R' OR $_GET['je'] == 'D' OR
+       $_GET['je'] == 'N' OR $_GET['je'] == 'Ro' OR $_GET['je'] == 'Re'))
+      {
+        $u = $_GET['je'];
+      }
+
     }
-
-    require_once "../language/".$l.".php";       // skript s jazykovou mutaci    
-
-    // jednotka
-    if(isset($_GET['je']) AND ($_GET['je'] == 'C' OR $_GET['je'] == 'F' OR
-     $_GET['je'] == 'K' OR $_GET['je'] == 'R' OR $_GET['je'] == 'D' OR 
-     $_GET['je'] == 'N' OR $_GET['je'] == 'Ro' OR $_GET['je'] == 'Re'))
+    else
     {
-      $u = $_GET['je'];
+
+      require_once "../language/".$l.".php";       // skript s jazykovou mutaci
+
     }
-
-  }
-  else
-  {
-
-    require_once "../language/".$l.".php";       // skript s jazykovou mutaci    
-
   }
 
   // Vycteni hodnot
@@ -84,7 +82,11 @@ if($vlhkomer == 1)
 
 }
 
-header('Content-type: text/html; charset=UTF-8');
+// Stranku vkladame a nevolame AJAXem? Neposleme hlavicku, kdyz existuje v index.php deklarovana hodnota.
+if(!isset($dopocitat))
+{
+  header('Content-type: text/html; charset=UTF-8');
+}
 
 echo "<div class='aktualne".($vlhkomer == 1 ? "" : "jen")." {$vyvoj}'>
             {$lang['aktualniteplota']}<br>

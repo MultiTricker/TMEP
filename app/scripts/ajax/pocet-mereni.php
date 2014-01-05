@@ -1,17 +1,12 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- *************************************************************************/
-
  //////////////////////////////////////////////////////////////////////////
  //// VLOZENI SOUBORU
  //////////////////////////////////////////////////////////////////////////
 
-  require "../../config.php"; // skript s nastavenim
-  require "../db.php";        // skript s databazi
-  require "../fce.php";       // skript s nekolika funkcemi
+  require_once dirname(__FILE__)."/../../config.php"; // skript s nastavenim
+  require_once dirname(__FILE__)."/../db.php";        // skript s databazi
+  require_once dirname(__FILE__)."/../fce.php";       // skript s nekolika funkcemi
 
   // Pocet mereni
   $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT count(id) AS pocet FROM tme");
