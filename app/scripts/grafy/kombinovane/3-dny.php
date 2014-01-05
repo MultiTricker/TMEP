@@ -11,10 +11,14 @@
   $do = date("Y-m-d H:m:s");
 
   // Posledni zaznamy vcera
-  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost
+                                      FROM tme
+                                      WHERE kdy >= CAST('{$od}' AS datetime)
+                                        AND kdy <= CAST('{$do}' AS datetime)
+                                      ORDER BY kdy DESC");
 
   // budeme brat kazdy 5ty zaznam
-  $a = 8;
+  $a = 12;
 
     while($t = MySQLi_fetch_assoc($q))
     {
@@ -27,7 +31,7 @@
     $count++;
 
       // uz mame dostatek mereni?
-      if($a == 8)
+      if($a == 12)
       {
 
         // pridame teplotu do pole

@@ -13,18 +13,22 @@
   $tep = 0;
 
   // Posledni zaznamy
-  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota FROM tme WHERE kdy > '{$od}' AND kdy < '{$do}' ORDER BY kdy DESC");
-      $a = 5;
+  $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota
+                                        FROM tme
+                                        WHERE kdy >= CAST('{$od}' AS datetime)
+                                          AND kdy <= CAST('{$do}' AS datetime)
+                                        ORDER BY kdy DESC");
+      $a = 12;
       $fr = 1;
         while($t = MySQLi_fetch_assoc($q))
         {
           $tep = $tep+$t['teplota'];
-          if($a == 5)
+          if($a == 12)
           {
 
             $labels[] = substr($t['kdy'], 11, 5);
 
-            if($tep == 0 OR ($tep/5) == 0){ $tep = "0"; }
+            if($tep == 0 OR ($tep/12) == 0){ $tep = "0"; }
 
             $a = 0;
             if($fr == 1)
@@ -35,9 +39,9 @@
             else
             {
 
-              if($tep == 0 OR ($tep/5) == 0){ $ydata[] = "0"; }
+              if($tep == 0 OR ($tep/12) == 0){ $ydata[] = "0"; }
               else
-              { $ydata[] = jednotkaTeploty($tep/5, $u, 0); }
+              { $ydata[] = jednotkaTeploty($tep/12, $u, 0); }
 
             }
             
