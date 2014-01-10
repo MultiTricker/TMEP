@@ -8,39 +8,8 @@
   require_once dirname(__FILE__)."/../db.php";        // skript s databazi
   require_once dirname(__FILE__)."/../fce.php";       // skript s nekolika funkcemi
 
- //////////////////////////////////////////////////////////////////////////
- //// STYL GRAFU, JAZYK A JEDNOTKA
- //////////////////////////////////////////////////////////////////////////
-
-  // pokud je povolene vlastni nastaveni...
-  if($zobrazitNastaveni == 1)
-  {
-
-    // jazyk
-    if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR 
-       $_GET['ja'] == "de"))
-    {
-      $l = $_GET['ja'];
-    }
-
-    require_once "../language/".$l.".php";       // skript s jazykovou mutaci    
-
-    // jednotka
-    if(isset($_GET['je']) AND ($_GET['je'] == 'C' OR $_GET['je'] == 'F' OR
-     $_GET['je'] == 'K' OR $_GET['je'] == 'R' OR $_GET['je'] == 'D' OR 
-     $_GET['je'] == 'N' OR $_GET['je'] == 'Ro' OR $_GET['je'] == 'Re'))
-    {
-      $u = $_GET['je'];
-    }
-
-
-  }
-  else
-  {
-
-    require_once "../language/".$l.".php";       // skript s jazykovou mutaci
-
-  }
+  // Osetreni vstupu
+  require_once dirname(__FILE__)."/../variableCheck.php";
 
   header('Content-type: text/html; charset=UTF-8');
 
