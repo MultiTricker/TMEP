@@ -28,7 +28,7 @@
 
             $labels[] = substr($t['kdy'], 11, 5);
 
-            if($tep == 0 OR ($tep/12) == 0){ $tep = "0"; }
+            if($tep == 0 OR ($tep/12) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
 
             $a = 0;
             if($fr == 1)
@@ -39,7 +39,7 @@
             else
             {
 
-              if($tep == 0 OR ($tep/12) == 0){ $ydata[] = "0"; }
+              if($tep == 0 OR ($tep/12) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
               else
               { $ydata[] = jednotkaTeploty($tep/12, $u, 0); }
 

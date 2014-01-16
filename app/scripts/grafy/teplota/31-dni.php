@@ -10,15 +10,15 @@
     // popisek
     $labels[] = formatDnu($hod['den']);
     // sup do pole
-    if(round($hod['nejvyssi'], 2) == 0){ $ydata[] = "0"; }
+    if(round($hod['nejvyssi'], 2) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
     else
     { $ydata[] = jednotkaTeploty(round($hod['nejvyssi'],2), $u, 0); }
 
-    if(round($hod['nejnizsi'], 2) == 0){ $ydata2[] = "0"; }
+    if(round($hod['nejnizsi'], 2) == 0){ $ydata2[] = jednotkaTeploty(0, $u, 0); }
     else
     { $ydata2[] = jednotkaTeploty(round($hod['nejnizsi'],2), $u, 0); }
 
-    if(round($hod['prumer'], 2) == 0){ $ydata3[] = "0"; }
+    if(round($hod['prumer'], 2) == 0){ $ydata3[] = jednotkaTeploty(0, $u, 0); }
     else
     { $ydata3[] = jednotkaTeploty(round($hod['prumer'],2), $u, 0); }
 

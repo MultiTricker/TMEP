@@ -21,7 +21,7 @@
           {
 
             // pridame do poli
-            if(round($teplota/$count, 1) == 0){ $ydata[] = "0"; }
+            if(round($teplota/$count, 1) == 0){ $ydata[] = round(jednotkaTeploty(0, $u, 0), 1); }
             else{ $ydata[] = round(jednotkaTeploty($teplota/$count, $u, 0), 1); }
             
             $labels[] = substr($t['kdy'], 11, 5);

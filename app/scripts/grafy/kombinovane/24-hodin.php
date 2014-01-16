@@ -24,14 +24,9 @@
       {
 
         // pridame teplotu do pole
-        if(round($teplota/$count, 1) == 0){ $ydata[] = "0"; }
-        else{ $ydata[] = round(jednotkaTeploty($teplota/$count, $u, 0), 1); }
-
-        if(round($vlhkost/$count, 1) == 0){ $ydata2[] = "0"; }
-        else{ $ydata2[] = round($vlhkost/$count, 1); }
-
-        if(round($rosnyBod/$count, 1) == 0){ $ydata3[] = "0"; }
-        else{ $ydata3[] = round($rosnyBod/$count, 1); }
+        $ydata[] = round(jednotkaTeploty($teplota/$count, $u, 0), 1);
+        $ydata2[] = round($vlhkost/$count, 1);
+        $ydata3[] = round($rosnyBod/$count, 1);
 
         // pridame popisek do pole
         $labels[] = substr($t['kdy'], 11, 5);

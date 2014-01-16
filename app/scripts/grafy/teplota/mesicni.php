@@ -14,13 +14,13 @@
    while($data = MySQLi_fetch_assoc($dotaz))
    {
 
-     if(round($data['nejvyssi'], 2) == 0){ $ydata[] = "0"; }
+     if(round($data['nejvyssi'], 2) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
      else{ $ydata[] = jednotkaTeploty(round($data['nejvyssi'], 2), $u, 0); }
 
-     if(round($data['nejnizsi'], 2) == 0){ $ydata2[] = "0"; }
+     if(round($data['nejnizsi'], 2) == 0){ $ydata2[] = jednotkaTeploty(0, $u, 0); }
      else{ $ydata2[] = jednotkaTeploty(round($data['nejnizsi'], 2), $u, 0); }
 
-     if(round($data['prumer'], 2) == 0){ $ydata3[] = "0"; }
+     if(round($data['prumer'], 2) == 0){ $ydata3[] = jednotkaTeploty(0, $u, 0); }
      else{ $ydata3[] = jednotkaTeploty(round($data['prumer'], 2), $u, 0); }
 
      $labels[] = substr($data['mesic'], 0, 4)."/".substr($data['mesic'], 5, 2);

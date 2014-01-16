@@ -23,7 +23,7 @@
       {
 
         // pridame teplotu do pole
-        if(round($teplota/$count, 1) == 0){ $ydata[] = "0"; }
+        if(round($teplota/$count, 1) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
         else{ $ydata[] = round(jednotkaTeploty($teplota/$count, $u, 0), 1); }
         // pridame popisek do pole
         $labels[] = substr($t['kdy'], 11, 5);

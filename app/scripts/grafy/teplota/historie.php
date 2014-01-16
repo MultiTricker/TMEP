@@ -16,7 +16,7 @@
     $t = MySQLi_fetch_assoc($q);
 
     // pridame teplotu do pole
-    if($t['teplota'] == ""){ $ydata[] = "0"; }
+    if($t['teplota'] == ""){ $ydata[] = jednotkaTeploty(0, $u, 0); }
     else{ $ydata[] = round(jednotkaTeploty($t['teplota'], $u, 0), 1); }
     // pridame popisek do pole
     $labels[] = substr($t['kdy'], 11, 5);
