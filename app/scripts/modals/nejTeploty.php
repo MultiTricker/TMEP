@@ -8,7 +8,8 @@
   ////////////////////////////////////////////
   // NEJNIZSI
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka = "<table width='600'><tr><td width='300'>
+  $tabulka = "<center>
+              <table width='600'><tr><td width='300'>
               <table width='260' class='tabulkaVHlavicce'>
               <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejnizsiteplota']}</b></td></tr>
               <tr class='radek'>
@@ -150,7 +151,7 @@
 
   $tabulka .=  "</table>";
    
-  $tabulka .= "</td></tr></table>";
+  $tabulka .= "</td></tr></table></center>";
 
   // Tabulka s hodnotami
   echo $tabulka;
