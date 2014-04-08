@@ -54,7 +54,7 @@
     <meta NAME="author" CONTENT="Michal Ševčík (http://multi.tricker.cz), František Ševčík (f.sevcik@seznam.cz)">
     <script src="../js/jquery.tools.ui.timer.colorbox.tmep.highcharts.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="../../images/favicon.ico">
-    <style type="text/css">body{ background: url("../../images/modal-bcg.png") top center repeat-x #f4f3e5; }</style>
+    <style type="text/css">body { background: white; }</style>
   </head>
 
 <body>

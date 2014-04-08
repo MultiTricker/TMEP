@@ -32,7 +32,7 @@
 
             echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
                   <tr class='radek'>
-                  <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} <font style='color: black;'>{$a}:00 - {$a}:59</font></b> <img src='./images/nw.png' title='{$lang['dennistatistiky']}'></a></td>
+                  <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} {$a}:00 - {$a}:59</b></a></td>
                 </tr>";
 
             ///////////////////////////
@@ -93,7 +93,7 @@
       $jednotka = str_replace("&deg;", "°", $jednotkap[1]);
       echo "<table class='tabulkaVHlavicce nomargin'>
             <tr class='radek'>
-            <td colspan='5'><a href='./scripts/modals/teplotyZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['teplotyzaposlednidny']}</b> ({$jednotka}) <img src='./images/nw.png' title='{$lang['teplotyzaposlednidny']}'></a></td>
+            <td colspan='5'><a href='./scripts/modals/teplotyZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['teplotyzaposlednidny']}</b> ({$jednotka})</a></td>
           </tr>
           <tr class='radek'>
             <td><b>{$lang['den']}</b></td>
@@ -157,7 +157,7 @@
   
           echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
                 <tr class='radek'>
-                <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} <font style='color: black;'>{$a}:00 - {$a}:59</font></b> <img src='./images/nw.png' title='{$lang['dennistatistiky']}'></a></td>
+                <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} {$a}:00 - {$a}:59</b></a></td>
               </tr>";
 
       ///////////////////////////
@@ -216,7 +216,7 @@
       // teploty za posledni dny
       echo "<table class='tabulkaVHlavicce nomargin'>
             <tr class='radek'>
-            <td colspan='5'><a href='./scripts/modals/vlhkostZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['vlhkostzaposlednidny']}</b> (%) <img src='./images/nw.png' title='{$lang['vlhkostzaposlednidny']}'></a></td>
+            <td colspan='5'><a href='./scripts/modals/vlhkostZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['vlhkostzaposlednidny']}</b> (%)</a></td>
           </tr>
           <tr class='radek'>
             <td width='100'><b>{$lang['den']}</b></td>

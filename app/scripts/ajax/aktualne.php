@@ -67,7 +67,7 @@ if($vlhkomer == 1)
     <font class='aktuamens'>{$posledni['vlhkost']}%</font>
   </div>";
 
-  echo "<div class='aktualnemensi {$vyvojrb}'>
+  echo "<div class='aktualnemensi vpravo {$vyvojrb}'>
     {$lang['rosnybod']}:<br>
     <font class='aktuamens'>".jednotkaTeploty(rosnyBod($posledni['teplota'], $posledni['vlhkost']), $u, 1)."</font>
   </div>";

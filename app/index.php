@@ -112,7 +112,7 @@
     $(document).ready(function(){
      // po urcitem case AJAXove nacteni hodnot
      $.timer(60000, function (timer) {
-       $.get('scripts/ajax/teplota.php<?php echo "?ja={$l}&je={$u}"; ?>', function(data) { $('.ajaxrefresh').html(data); });
+       $.get('scripts/ajax/aktualne.php<?php echo "?ja={$l}&je={$u}"; ?>', function(data) { $('.ajaxrefresh').html(data); });
        $.get('scripts/ajax/pocet-mereni.php', function(data) { $('.pocetmereni').html(data); });
       });
      $.timer(120000, function (timer) {

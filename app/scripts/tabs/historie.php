@@ -154,7 +154,7 @@
             $max = "MAX({$a}nejvyssi)";
 
             echo "<tr>
-              <td style='border-bottom: 1px solid darkgrey';"; if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo " rowspan='2'"; } echo "><b>{$lang['doba']} <font style='color: black;'>{$a}:00 - {$a}:59</font></td>
+              <td style='border-bottom: 1px solid darkgrey';"; if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo " rowspan='2'"; } echo "><b>{$lang['doba']} {$a}:00 - {$a}:59</td>
               <td width='100'><b>{$lang['teplota']}:</b></td>
               <td><b>MIN:</b> ".jednotkaTeploty(round($r[$min], 2), $u, 1)."</td>
               <td><b>AVG:</b> ".jednotkaTeploty(round($r[$avg], 2), $u, 1)."</td>
