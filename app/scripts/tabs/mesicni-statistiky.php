@@ -31,17 +31,17 @@
       <div class='col-md-3 perc22'>
           <table class='tabulkaVHlavicce'>
       <tr>
-        <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejteplejsimesice']}</b></a></td>
+        <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejteplejsimesice']}</a></td>
       </tr>
       <tr>
-        <td class='radek'><b>{$lang['mesic']}</b></td>
-        <td class='radek'><b>{$lang['prumernateplota']}</b></td>
+        <td class='radek'>{$lang['mesic']}</td>
+        <td class='radek'>{$lang['prumernateplota']}</td>
       </tr>";
 
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</td>
               <td>".jednotkaTeploty(round($r['prumer'], 2), $u, 1)."</td>
             </tr>";
     }
@@ -54,11 +54,11 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejstudenejsimesice']}</b></a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejstudenejsimesice']}</a></td>
           </tr>
           <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['prumernateplota']}</b></td>
+            <td class='radek'>{$lang['mesic']}</td>
+            <td class='radek'>{$lang['prumernateplota']}</td>
           </tr>";
 
   // nacteme
@@ -71,7 +71,7 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</td>
               <td>".jednotkaTeploty(round($r['prumer'], 2), $u, 1)."</td>
             </tr>";
     }
@@ -93,17 +93,17 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejvlhcimesice']}</b></a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejvlhcimesice']}</a></td>
           </tr>
           <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['prumernavlhkost']}</b></td>
+            <td class='radek'>{$lang['mesic']}</td>
+            <td class='radek'>{$lang['prumernavlhkost']}</td>
           </tr>";
 
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</td>
               <td>".round($r['prumer'], 2)."%</td>
             </tr>";
     }
@@ -116,11 +116,11 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejsussimesice']}</b></a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejsussimesice']}</a></td>
           </tr>
           <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['prumernavlhkost']}</b></td>
+            <td class='radek'>{$lang['mesic']}</td>
+            <td class='radek'>{$lang['prumernavlhkost']}</td>
           </tr>";
 
   // nacteme
@@ -134,7 +134,7 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</td>
               <td>".round($r['prumer'], 2)."%</td>
             </tr>";
     }
@@ -148,11 +148,11 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejvicemereni']}</b></a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejvicemereni']}</a></td>
           </tr>
           <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['mereni']}</b></td>
+            <td class='radek'>{$lang['mesic']}</td>
+            <td class='radek'>{$lang['mereni']}</td>
           </tr>";
 
   ///////////////////////////
@@ -167,7 +167,7 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</td>
               <td>".number_format($r['mereni'], 0, "", " ")."</td>
             </tr>";
     }
@@ -178,11 +178,11 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['nejmenemereni']}</b></a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejmenemereni']}</a></td>
           </tr>
           <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['mereni']}</b></td>
+            <td class='radek'>{$lang['mesic']}</td>
+            <td class='radek'>{$lang['mereni']}</td>
           </tr>";
 
   ///////////////////////////
@@ -197,7 +197,7 @@
     while($r = MySQLi_fetch_assoc($qStat))
     {
       echo "<tr>
-              <td><b>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</b></td>
+              <td>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</td>
               <td>".number_format($r['mereni'], 0, "", " ")."</td>
             </tr>";
     }
@@ -275,15 +275,15 @@
 
         echo "<table class='tabulkaVHlavicce' style='margin: 15px 0px 15px 0px;'>
               <tr>
-                <td class='radekVelky' colspan='12'><b>".$lang['mesic'.substr($r['den'], 5, 2)]." ".substr($r['den'], 0, 4)."</b><br>
-                    <font class='mensi'>(<b>{$lang['teplota']}:</b> <b>MIN:</b> ".jednotkaTeploty(round($r['MIN(nejnizsi)'], 2), $u, 1).", 
-                    <b>AVG:</b> ".jednotkaTeploty(round($r['AVG(prumer)'], 2), $u, 1).", 
-                    <b>MAX:</b> ".jednotkaTeploty(round($r['MAX(nejvyssi)'], 2), $u, 1);
+                <td class='radekVelky' colspan='12'>".$lang['mesic'.substr($r['den'], 5, 2)]." ".substr($r['den'], 0, 4)."<br>
+                    <font class='mensi'>({$lang['teplota']}: MIN: ".jednotkaTeploty(round($r['MIN(nejnizsi)'], 2), $u, 1).", 
+                    AVG: ".jednotkaTeploty(round($r['AVG(prumer)'], 2), $u, 1).", 
+                    MAX: ".jednotkaTeploty(round($r['MAX(nejvyssi)'], 2), $u, 1);
                     if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
                     {
-                    echo " | <b>{$lang['vlhkost']}:</b> <b>MIN:</b> ".round($r['MIN(nejnizsi_vlhkost)'], 2)."%, 
-                    <b>AVG:</b> ".round($r['AVG(prumer_vlhkost)'], 2)."%, 
-                    <b>MAX:</b> ".round($r['MAX(nejvyssi_vlhkost)'], 2)."%";
+                    echo " | {$lang['vlhkost']}: MIN: ".round($r['MIN(nejnizsi_vlhkost)'], 2)."%, 
+                    AVG: ".round($r['AVG(prumer_vlhkost)'], 2)."%, 
+                    MAX: ".round($r['MAX(nejvyssi_vlhkost)'], 2)."%";
                     }
                     echo ")</font></td>
               </tr>
@@ -292,7 +292,7 @@
               {
                 echo "<table class='mesicVDobe'>
                       <tr>
-                        <td class='radekVetsi' colspan='3'><b>{$a}:00 - {$a}:59</b></td>
+                        <td class='radekVetsi' colspan='3'>{$a}:00 - {$a}:59</td>
                       </tr>
                       <tr>
                         <td class='radek'>MIN</td>

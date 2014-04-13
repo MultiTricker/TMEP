@@ -11,7 +11,7 @@ $(function () {
     $(document).ready(function() {
         window.chart = new Highcharts.Chart({
         
-            chart: { renderTo: 'mesicniRozptyl', type: 'arearange', zoomType: 'x', borderWidth: 1, backgroundColor: '#f7f6eb' },
+            chart: { renderTo: 'mesicniRozptyl', type: 'arearange', zoomType: 'x', borderWidth: 1, backgroundColor: '#f7f6eb', borderRadius: 0 },
             credits: { enabled: 0 },
             title: { text: null },
             xAxis: {

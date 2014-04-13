@@ -32,7 +32,7 @@
 
             echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
                   <tr class='radek'>
-                  <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} {$a}:00 - {$a}:59</b></a></td>
+                  <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'>{$lang['doba']} {$a}:00 - {$a}:59</a></td>
                 </tr>";
 
             ///////////////////////////
@@ -47,7 +47,7 @@
             while($r = MySQLi_fetch_assoc($q))
             {
               echo "<tr>
-                      <td><b>{$lang['min2']}</b></td>
+                      <td>{$lang['min2']}</td>
                       <td>".formatDnu($r['den'])."</td>
                       <td>".jednotkaTeploty($r[$a."nejnizsi"], $u, 1)."</td>
                     </tr>";
@@ -64,7 +64,7 @@
             while($r = MySQLi_fetch_assoc($q))
             {
               echo "<tr>
-                      <td><b>{$lang['max2']}</b></td>
+                      <td>{$lang['max2']}</td>
                       <td>".formatDnu($r['den'])."</td>
                       <td>".jednotkaTeploty($r[$a."nejvyssi"], $u, 1)."</td>
                     </tr>";
@@ -93,14 +93,14 @@
       $jednotka = str_replace("&deg;", "°", $jednotkap[1]);
       echo "<table class='tabulkaVHlavicce nomargin'>
             <tr class='radek'>
-            <td colspan='5'><a href='./scripts/modals/teplotyZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['teplotyzaposlednidny']}</b> ({$jednotka})</a></td>
+            <td colspan='5'><a href='./scripts/modals/teplotyZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['teplotyzaposlednidny']} ({$jednotka})</a></td>
           </tr>
           <tr class='radek'>
-            <td><b>{$lang['den']}</b></td>
-            <td><b>{$lang['min2']}</b></td>
-            <td><b>{$lang['prumer']}</b></td>
-            <td><b>{$lang['max2']}</b></td>
-            <td><b>{$lang['mereni']}</b></td>
+            <td>{$lang['den']}</td>
+            <td>{$lang['min2']}</td>
+            <td>{$lang['prumer']}</td>
+            <td>{$lang['max2']}/td>
+            <td>{$lang['mereni']}</td>
           </tr>";
 
           while($r = MySQLi_fetch_assoc($qStat))
@@ -157,7 +157,7 @@
   
           echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
                 <tr class='radek'>
-                <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'><b>{$lang['doba']} {$a}:00 - {$a}:59</b></a></td>
+                <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'>{$lang['doba']} {$a}:00 - {$a}:59</a></td>
               </tr>";
 
       ///////////////////////////
@@ -172,7 +172,7 @@
       while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
-                <td><b>{$lang['min2']}</b></td>
+                <td>{$lang['min2']}</td>
                 <td>".formatDnu($r['den'])."</td>
                 <td>".($r[$a."nejnizsi_vlhkost"])."%</td>
               </tr>";
@@ -189,7 +189,7 @@
       while($r = MySQLi_fetch_assoc($q))
       {
         echo "<tr>
-                <td><b>{$lang['max2']}</b></td>
+                <td>{$lang['max2']}</td>
                 <td>".formatDnu($r['den'])."</td>
                 <td>".($r[$a."nejvyssi_vlhkost"])."%</td>
               </tr>";
@@ -216,13 +216,13 @@
       // teploty za posledni dny
       echo "<table class='tabulkaVHlavicce nomargin'>
             <tr class='radek'>
-            <td colspan='5'><a href='./scripts/modals/vlhkostZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['vlhkostzaposlednidny']}</b> (%)</a></td>
+            <td colspan='5'><a href='./scripts/modals/vlhkostZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['vlhkostzaposlednidny']} (%)</a></td>
           </tr>
           <tr class='radek'>
-            <td width='100'><b>{$lang['den']}</b></td>
-            <td width='80'><b>{$lang['min2']}</b></td>
-            <td width='80'><b>{$lang['prumer']}</b></td>
-            <td width='80'><b>{$lang['max2']}</b></td>
+            <td width='100'>{$lang['den']}</td>
+            <td width='80'>{$lang['min2']}</td>
+            <td width='80'>{$lang['prumer']}</td>
+            <td width='80'>{$lang['max2']}</td>
           </tr>";
 
           while($r = MySQLi_fetch_assoc($qStat))

@@ -15,7 +15,7 @@
 
   echo "<table width='100%' class='tabulkaVHlavicce'>
     <tr class='radek'>
-      <td colspan='3'><a href='./scripts/modals/driveToutoDobou.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['drivetoutodobou']}</b></a></td>
+      <td colspan='3'><a href='./scripts/modals/driveToutoDobou.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['drivetoutodobou']}</a></td>
     </tr>";
 
     // posledni dny do pole

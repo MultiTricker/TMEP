@@ -80,7 +80,7 @@
 
     if(MySQLi_num_rows($q) == 0)
     {
-      echo "<p><b>{$lang['nenalezenyzaznam']}</b></p>";
+      echo "<p>{$lang['nenalezenyzaznam']}</p>";
     }
     else
     {
@@ -90,14 +90,14 @@
       echo "<br>
         <table class='tabulkaVHlavicce'>
         <tr>
-          <td class='radekVelky' colspan='4'><b>".formatDnu($_GET['jenden'])."</b> <font class='mensi'>({$lang['mereni']}: {$r['mereni']})</font></td>
+          <td class='radekVelky' colspan='4'>".formatDnu($_GET['jenden'])." <font class='mensi'>({$lang['mereni']}: {$r['mereni']})</font></td>
         </tr>
         </table>
         <center>";
 
         echo "<table class='tabulkaVHlavicce'>
         <tr>
-          <td class='radekVelky' colspan='5'><b>{$lang['namerenehodnotyvprubehulet']}</b></td>
+          <td class='radekVelky' colspan='5'>{$lang['namerenehodnotyvprubehulet']}</td>
         </tr>";
 
         $qL = MySQLi_query($GLOBALS["DBC"], "SELECT den, mereni, MIN(nejnizsi), MAX(nejvyssi), AVG(prumer),
@@ -110,23 +110,23 @@
         {
 
         echo "<tr class='radek'>
-          <td class='radekVelky' colspan='5'>&nbsp;&nbsp;<b>".formatDnu($t['den'])."</b></td>
+          <td class='radekVelky' colspan='5'>&nbsp;&nbsp;".formatDnu($t['den'])."</td>
         </tr>
 
         <tr>
-          <td><b>{$lang['teplota']}:</b></td>
-          <td><b>MIN:</b> ".jednotkaTeploty(round($t['MIN(nejnizsi)'], 2), $u, 1)."</td>
-          <td><b>AVG:</b> ".jednotkaTeploty(round($t['AVG(prumer)'], 2), $u, 1)."</td>
-          <td><b>MAX:</b> ".jednotkaTeploty(round($t['MAX(nejvyssi)'], 2), $u, 1)."</td>
+          <td>{$lang['teplota']}:</td>
+          <td>MIN: ".jednotkaTeploty(round($t['MIN(nejnizsi)'], 2), $u, 1)."</td>
+          <td>AVG: ".jednotkaTeploty(round($t['AVG(prumer)'], 2), $u, 1)."</td>
+          <td>MAX: ".jednotkaTeploty(round($t['MAX(nejvyssi)'], 2), $u, 1)."</td>
         </tr>";
 
         if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
         {
           echo "<tr>
-          <td><b>{$lang['vlhkost']}:</b></td>
-          <td><b>MIN:</b> ".round($t['MIN(nejnizsi_vlhkost)'], 2)."%</td>
-          <td><b>AVG:</b> ".round($t['AVG(prumer_vlhkost)'], 2)."%</td>
-          <td><b>MAX:</b> ".round($t['MAX(nejvyssi_vlhkost)'], 2)."%</td>
+          <td>{$lang['vlhkost']}:</td>
+          <td>MIN: ".round($t['MIN(nejnizsi_vlhkost)'], 2)."%</td>
+          <td>AVG: ".round($t['AVG(prumer_vlhkost)'], 2)."%</td>
+          <td>MAX: ".round($t['MAX(nejvyssi_vlhkost)'], 2)."%</td>
           </tr>";
         }
 
@@ -143,7 +143,7 @@
 
       echo "<table class='tabulkaVHlavicce'>
               <tr class='radekVelky'>
-                <td colspan='5'><b>{$lang['hodnotynamerenevjednotlivychdobach']}</b></td>
+                <td colspan='5'>{$lang['hodnotynamerenevjednotlivychdobach']}</td>
               </tr>";
 
             for($a = 0; $a < 24; $a++)
@@ -154,11 +154,11 @@
             $max = "MAX({$a}nejvyssi)";
 
             echo "<tr>
-              <td style='border-bottom: 1px solid darkgrey';"; if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo " rowspan='2'"; } echo "><b>{$lang['doba']} {$a}:00 - {$a}:59</td>
-              <td width='100'><b>{$lang['teplota']}:</b></td>
-              <td><b>MIN:</b> ".jednotkaTeploty(round($r[$min], 2), $u, 1)."</td>
-              <td><b>AVG:</b> ".jednotkaTeploty(round($r[$avg], 2), $u, 1)."</td>
-              <td><b>MAX:</b> ".jednotkaTeploty(round($r[$max], 2), $u, 1)."</td>
+              <td style='border-bottom: 1px solid darkgrey';"; if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo " rowspan='2'"; } echo ">{$lang['doba']} {$a}:00 - {$a}:59</td>
+              <td width='100'>{$lang['teplota']}:</td>
+              <td>MIN: ".jednotkaTeploty(round($r[$min], 2), $u, 1)."</td>
+              <td>AVG: ".jednotkaTeploty(round($r[$avg], 2), $u, 1)."</td>
+              <td>MAX: ".jednotkaTeploty(round($r[$max], 2), $u, 1)."</td>
             </tr>";
 
             if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
@@ -169,10 +169,10 @@
               $max = "MAX({$a}nejvyssi_vlhkost)";
 
               echo "<tr>
-              <td style='border-bottom: 1px solid darkgrey'><b>{$lang['vlhkost']}:</b></td>
-              <td style='border-bottom: 1px solid darkgrey'><b>MIN:</b> ".round($r[$min], 2)."%</td>
-              <td style='border-bottom: 1px solid darkgrey'><b>AVG:</b> ".round($r[$avg], 2)."%</td>
-              <td style='border-bottom: 1px solid darkgrey'><b>MAX:</b> ".round($r[$max], 2)."%</td>
+              <td style='border-bottom: 1px solid darkgrey'>{$lang['vlhkost']}:</td>
+              <td style='border-bottom: 1px solid darkgrey'>MIN: ".round($r[$min], 2)."%</td>
+              <td style='border-bottom: 1px solid darkgrey'>AVG: ".round($r[$avg], 2)."%</td>
+              <td style='border-bottom: 1px solid darkgrey'>MAX: ".round($r[$max], 2)."%</td>
               </tr>";
 
             }
