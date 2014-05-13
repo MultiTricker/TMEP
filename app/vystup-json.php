@@ -33,6 +33,5 @@
    "teplota": <?php echo $posledni["teplota"] ?>,
    "vlhkost": <?php echo ($vlhkomer == 1 ? $posledni["vlhkost"] : "null") ?>,
    "cas": "<?php echo $posledni["kdy"] ?>",
-   "umisteni": "<?php echo $umisteni; ?>",
-   "popis": "Teplomer"
+   "umisteni": "<?php echo $umisteni; ?>"
 }
