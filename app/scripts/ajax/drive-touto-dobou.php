@@ -11,7 +11,11 @@
   // Osetreni vstupu
   require_once dirname(__FILE__)."/../variableCheck.php";
 
-  header('Content-type: text/html; charset=UTF-8');
+  // Stranku vkladame a nevolame AJAXem? Neposleme hlavicku, kdyz existuje v index.php deklarovana hodnota.
+  if(!isset($dopocitat))
+  {
+    header('Content-type: text/html; charset=UTF-8');
+  }
 
   echo "<table width='100%' class='tabulkaVHlavicce'>
     <tr class='radek'>
