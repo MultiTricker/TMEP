@@ -28,7 +28,7 @@
 
       echo "<table class='tabulkaVHlavicce'>
               <tr>
-                <td class='radekVelky' colspan='12'><a href='./scripts/modals/rocniGrafy.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;rok={$rok}' class='modal'>{$rok}</a><br>
+                <td class='radekVelky' colspan='12'><a href='./scripts/modals/rocniGrafy.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;rok={$rok}' class='modal bilyOdkaz'>{$rok}</a><br>
                     <font class='mensi'>({$lang['teplota']}: MIN: ".jednotkaTeploty(round($r['MIN(nejnizsi)'], 2), $u, 1).", 
                     AVG: ".jednotkaTeploty(round($r['AVG(prumer)'], 2), $u, 1).", 
                     MAX: ".jednotkaTeploty(round($r['MAX(nejvyssi)'], 2), $u, 1);

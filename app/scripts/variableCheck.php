@@ -1,13 +1,34 @@
 <?php
 
+  // Prvotni INIT
+  if(!isset($_GET['je'])){ $_GET['je'] = $l; }
+  if(!isset($_GET['ja'])){ $_GET['ja'] = $u; }
+
+  $jazyky = array("cz" => "cz",
+                  "sk" => "sk",
+                  "en" => "en",
+                  "de" => "de",
+                  "ru" => "ru",
+                  "pl" => "pl",
+                  "fr" => "fr",
+                  "fi" => "fi",
+                  "sv" => "sv");
+
+  $jednotky = Array("C" => "Celsius",
+                    "F" => "Fahrenheit",
+                    "K" => "Kelvin",
+                    "R" => "Rankine",
+                    "D" => "Delisle",
+                    "N" => "Newton",
+                    "Re" => "Reaumur",
+                    "Ro" => "Romer");
+
+  // Davame moznost zobrazit nastaveni?
   if($zobrazitNastaveni == 1)
   {
 
     // jazyk
-    if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR
-        $_GET['ja'] == "de" OR $_GET['ja'] == 'fr' OR $_GET['ja'] == 'pl') OR
-      $_GET['ja'] == 'fi' OR $_GET['ja'] == 'sv' OR $_GET['ja'] == 'sk' OR
-      $_GET['ja'] == 'ru')
+    if(isset($_GET['ja']) AND array_key_exists($_GET['ja'], $jazyky))
     {
       $l = $_GET['ja'];
     }
@@ -15,9 +36,7 @@
     require_once dirname(__FILE__)."/language/".$l.".php";       // skript s jazykovou mutaci
 
     // jednotka
-    if(isset($_GET['je']) AND ($_GET['je'] == 'C' OR $_GET['je'] == 'F' OR
-        $_GET['je'] == 'K' OR $_GET['je'] == 'R' OR $_GET['je'] == 'D' OR
-        $_GET['je'] == 'N' OR $_GET['je'] == 'Ro' OR $_GET['je'] == 'Re'))
+    if(isset($_GET['je']) AND array_key_exists($_GET['je'], $jednotky))
     {
       $u = $_GET['je'];
     }

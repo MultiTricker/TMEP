@@ -4,12 +4,10 @@
  *************************************************************************/
 
 /* telo */
-body{ background: rgb(210,210,210); color: rgb(60,58,23); font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial; font-size: 13px; margin: 15px 0px; padding: 0px; text-align: center; }
+body{ color: rgb(60,58,23); background: rgb(226,226,226); font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial; font-size: 13px; margin: 0px; padding: 0px; text-align: center; }
 
 /* hlavni */
-#hlavni { height: auto; background: white; padding: 0px; border: 2px solid #2C3E50; vertical-align: middle; text-align: center; }
-#hlavni table { border-collapse: collapse; }
- #hlavni table tr td { border-bottom: 1px solid #b9e8de; }
+#hlavni { height: auto; background: white; padding: 0px; vertical-align: middle; text-align: center; }
 #hlavni #nadpis { float: left; }
 #hlavni #menu { float: right; }
 .tabulkaVHlavicce { width: 100%; margin: 10px 0px; }
@@ -17,20 +15,27 @@ body{ background: rgb(210,210,210); color: rgb(60,58,23); font-family: "Lucida G
 tr.radek td a { color: white; }
 .tabulkaVHlavicceModal { width: 100%; max-width: 600px; margin: 10px auto; float: center }
 .tabulkaVHlavicceModalMensi { width: 100%; max-width: 300px; margin: 10px auto; float: center }
+#hlavni table, .tabulkaVHlavicceModal, .tabulkaVHlavicceModalMensi { border-collapse: collapse; }
+#hlavni table tr:first-child, .tabulkaVHlavicceModal tr:first-child, .tabulkaVHlavicceModalMensi tr:first-child { background: #16A085 !important; }
+#hlavni table tr:nth-child(odd), .tabulkaVHlavicceModal tr:nth-child(odd), .tabulkaVHlavicceModalMensi tr:nth-child(odd) { background: #e4f7f3; }
+#hlavni table tr:last-of-type, .tabulkaVHlavicceModal tr:last-of-type, .tabulkaVHlavicceModalMensi tr:last-of-type { border-bottom: 1px solid #16A085; }
+
+table tr { background: white; }
 
 /* menu */
 nav { float: right; }
-nav ul { background: #efefef; padding: 0 0px; list-style: none; position: relative; display: inline-table; z-index: 5; margin: 0; }
+nav ul { background: black; padding: 0 0px; list-style: none; position: relative; display: inline-table; z-index: 5; margin: 0; }
 nav ul:after { content: ""; clear: both; display: block; }
 nav ul li:first-child { border-right: 1px solid #2C3E50; }
 nav ul li { float: left; }
 nav ul li:hover { background: #4b545f; }
 nav ul li:hover a { color: #fff; }
-nav ul li a { display: block; padding: 15px 20px; color: #757575; text-decoration: none; }
-nav ul ul { background: #5f6975; border-radius: 0px; padding: 0; position: absolute; top: 100%; }
-nav ul ul li { float: none; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a; position: relative; }
-nav ul ul li a { padding: 15px 40px; color: #fff; }
-nav ul ul li a:hover { background: #4b545f; }
+nav ul li a { display: block; padding: 15px 25px; color: white; text-decoration: none; }
+nav ul ul { background: black; border-radius: 0px; padding: 0; position: absolute; top: 100%; }
+nav ul ul li { float: none; border-bottom: 1px solid #2C3E50; position: relative; }
+nav ul ul.jazyk li a { padding: 15px 25px; color: #fff; }
+nav ul ul.teplota li a { padding: 15px 16px; color: #fff; }
+nav ul ul li a:hover { background: #2C3E50; }
 nav ul ul { display: none; }
 nav ul li:hover > ul { display: block; }
 
@@ -47,25 +52,42 @@ nav ul li:hover > ul { display: block; }
 
 /* aktualne */
 .sloupekAktualne { margin: 8px auto; float: center; overflow: hidden; }
-.aktualne { background: url("../images/stavy.png") no-repeat top left #E74C3C; margin: 0px 0px 3px 0px; border: 2px solid #E74C3C; height: 80px; color: white; line-height: 26px; width: 100%; }
-.aktualnejen { background: url("../images/stavy.png") no-repeat top left #E74C3C; width: 220px; margin: 0px 0px 3px 0px; border: 2px solid #3C3A14; height: 104px; color: white; line-height: 36px; -webkit-border-radius: 0.8em; -moz-border-radius: 0.8em; border-radius: 0.8em; }
-.aktua { color: white; font-size: 24px; }
-.aktualnemensi { background: url("../images/stavy.png") no-repeat top left #34495E;  font-size: 11px; margin: 1px 0px 0px 0px; float: left; width: 49%; border: 0; height: 50px; color: white; line-height: 22px; }
-.aktuamens { color: white; font-size: 16px; }
+.aktualne { background: url("../images/stavy.png") no-repeat top left #E74C3C; margin: 0px 0px 3px 0px; border: 0; height: 95px; color: white; line-height: 26px; width: 100%; }
+.aktualnejen { background: url("../images/stavy.png") no-repeat top left #E74C3C; width: 100%; margin: 0px 0px 3px 0px; border: 0; height: 164px; color: white; line-height: 56px; }
+.aktua { color: white; font-size: 32px; line-height: 42px; vertical-align: center; }
+.aktualnemensi { background: url("../images/stavy.png") no-repeat top center #34495E; font-size: 11px; margin: 2px 0px 0px 0px; padding: 8px 0px -8px 0px; float: left; width: 49%; border: 0; height: 59px; color: white; line-height: 22px; }
+.aktuamens { color: white; font-size: 20px; }
+.aktualneOdskok { padding: 6px 0px 0px 0px; }
 .vpravo { float: right; }
 
 /* teplota */
-.teplejsi { background-position: center -126px; }
-.studenejsi { background-position: center -232px; }
-.stejne { background-position: center -15px; }
-.teplejsijen { background-position: center -110px; }
-.studenejsijen { background-position: center -216px; }
+.teplejsi { background-position: center -118px; }
+.studenejsi { background-position: center -224px; }
+.stejne { background-position: center -7px; }
+.teplejsijen { background-position: center -86px; }
+.studenejsijen { background-position: center -192px; }
 .stejnejen { background-position: center 0px; }
 
 /* vlhkost */
-.teplejsim { background-position: center -384px; }
-.studenejsim { background-position: center -440px; }
-.stejnem { background-position: center -328px; }
+.teplejsiMalyBox { background-position: center -380px; }
+.studenejsiMalyBox { background-position: center -434px; }
+.stejneMalyBox { background-position: center -324px; }
+
+/* obarveni teploty */
+.teplota-30 { background-color: #092847; }
+.teplota-25 { background-color: #11375f; }
+.teplota-20 { background-color: #194776; }
+.teplota-15 { background-color: #275b90; }
+.teplota-10 { background-color: #2e71b6; }
+.teplota-5 { background-color: #4c8aca; }
+.teplota0 { background-color: #83b2e3; }
+.teplota5 { background-color: #6bc9e1; }
+.teplota10 { background-color: #efc26b; }
+.teplota15 { background-color: #ebb54c; }
+.teplota20 { background-color: #ed5a5a; }
+.teplota25 { background-color: #de3939; }
+.teplota30 { background-color: #e50101; }
+.teplota35 { background-color: #eb2020; }
 
 /* Highcharts */
 .graf { width: 100%; margin: 15px 0px; }
@@ -73,15 +95,14 @@ nav ul li:hover > ul { display: block; }
 
 /* radky */
 .radek { background: #16A085; color: white; }
-.radekVelky { background: #16A085; color: white; line-height: 18px; vertical-align: center; font-size: 14px; }
-.radekVetsi { background: #16A085; color: white; line-height: 20px; vertical-align: center; font-size: 12px; }
+.radekVelky { background: #16A085; color: white; line-height: 24px; vertical-align: center; font-size: 14px; }
+.radekVetsi { background: #16A085; color: white; line-height: 28px; vertical-align: center; font-size: 12px; }
 .radekStat td { }
 .radekStat:hover td { background: #f3f2dd; }
-.radekStatModal td { border-bottom: 1px solid rgb(221,220,170); }
-.radekStatModal:hover td { background: #e8e5c6; }
+
 td { text-align: center; }
-.mesicVDobe { width: 20%; float: left; margin: auto; }
-.rokVDobe { width: 23.5%; min-width: 150px; float: left; margin: 5px 5px; }
+.mesicVDobe { width: 19%; float: left; margin: 5px 1% 5px 0px; }
+.rokVDobe { width: 23.9%; min-width: 150px; float: left; margin: 5px 5px; }
 
 /* typo */
 .hlava{ background: #2C3E50; padding: 0px; margin: 0px; width: 100%; vertical-align: middle; height: 47px; }
@@ -89,7 +110,7 @@ td { text-align: center; }
 .hlava p { font-size: 12px; color: #F9F8E6; margin: 0px; padding: 12px 5px 8px 5px;}
 .hlava p a { color: white; }
 .hlava p a:hover { text-decoration: none; }
-.nohy p { color: #F9F8E6; background: #2C3E50; font-size: 11px; line-height: 25px; padding: 0px; margin: 10px 0px 0px 0px; width: 100%; border-top: 2px solid rgb(70,68,28); vertical-align: middle; }
+.nohy p { color: #F9F8E6; background: #2C3E50; font-size: 11px; line-height: 25px; padding: 0px; margin: 0px 0px 0px 0px; width: 100%; border-top: 2px solid rgb(70,68,28); vertical-align: middle; }
 .nohy p a { color: white; }
 .nohy p a:hover { text-decoration: none; }
 h3 { color: rgb(70, 70, 70); font-size: 20px; line-height: 50px; height: 50px; overflow: hidden; padding: 0px 5px 0px 5px; margin: 0px 0px 0px 0px; vertical-align: middle; }
@@ -98,41 +119,45 @@ br { line-height: 1.5em; }
 a { color: white; }
 a:hover { text-decoration: none; }
 .nomargin { margin: 0px; }
-table tr td { height: 20px; line-height: 20px; vertical-align: center; }
+table tr td { height: 24px; line-height: 24px; vertical-align: center; }
+hr { height: 1px; width: 100%; border: none; background: #16A085; }
+.bilyOdkaz{ color: white !important; }
 
 /* zadny ramecky! */
 img{ border: 0px; }
 
 /* sloupecky */
-#tri { width: 100%; overflow: hidden; margin: 0px 0px 12px 0px; border-bottom: 1px solid #16A085; background: #FEFEFE; }
+#tri { width: 100%; overflow: hidden; margin: 6px 0px 8px 0px; background: #FEFEFE; }
 
 /* tabs */
-#oblastzalozek { width: 98%; float: center; margin: auto; }
-ul.tabs { margin: 0 !important; padding:0; border-bottom:1px solid #3B3913; overflow: hidden }
-ul.tabs li { float:left; padding:0; margin:0; list-style-type:none; }
-ul.tabs a { float:left; font-size:13px; display:block; padding:5px 25px; text-decoration:none; border:1px solid #3B3913; height:18px; background-color:#e1dddd; color:#777; margin-right:2px; position:relative; top:1px; outline:0; -moz-border-radius:4px 4px 0 0; border-bottom: 1px solid transparent; }
-ul.tabs a:hover { background-color:grey; color:#333; }
-ul.tabs a.current { background-color:#F5F5F5; border-bottom:1px solid #F5F5F5; color:#000; cursor:default; }
-.panely > div { display:none; border:1px solid #3B3913; border-width:0 1px 1px 1px; min-height:80px; padding:5px 10px; background-color:#F5F5F5; }
+#oblastzalozek { width: 100%; float: center; margin: auto; }
+ul.tabs { margin: 0 !important; padding:0; overflow: hidden; width: 100% }
+ul.tabs li { float:left; padding:0; margin:0; list-style-type:none; width: 20%; }
+ul.tabs a { padding: 8px 0px; float:left; font-size:13px; width: 100%; display:block; text-decoration:none; height:18px; background-color: #eeeeee; border: none; color:rgb(147,147,147); margin-right:2px; position:relative; top:1px; outline:0; }
+ul.tabs a:hover { background-color:grey; color:white; }
+ul.tabs a.current { background-color: #2C3E50; color:white; cursor:default; border: none; }
+.panely > div { display:none; border-width:0 1px 1px 1px; min-height:80px; padding:8px 15px; background-color: white; }
 
 /* formular na strance historie */
-form{ margin: auto; float: center; width: 300px; }
+form{ margin: 20px auto; float: center; width: 300px; }
 .submit input{margin-left: 4.5em; }
 input{color: rgb(70, 70, 70);background: white;border: 1px solid #24230C; width: 80px; padding: 2px; }
 .submit {color: #000;background: white;border: 2px outset #24230C; }
 fieldset{border: 1px solid #24230C; width: 300px; }
-legend{color: rgb(70, 70, 70);background: #F3F2DD;border: 1px solid #24230C;padding: 2px 6px; }
+legend{color: rgb(70, 70, 70);background: #e4f7f3;border: 1px solid #24230C;padding: 2px 6px; }
 
 /* adaptivni zalezitosti */
 @media (max-width: 768px) {
   #hlavni{ border: none; }
-  #nadpis h1 { font-size: 12px; }
+  #nadpis h1 { font-size: 16px; }
+  #oblastzalozek { width: 96%; }
+  ul.tabs li { width: auto; }
+  ul.tabs a { width: auto; float: left; padding: 12px 20px; margin: 0px 5px 5px 0px; }
 }
 
-@media (max-width: 992px)
+@media (min-width: 769px) AND (max-width: 992px)
 {
   body { margin: 0px; }
-  ul.tabs a { border-bottom: 1px solid rgb(70, 70, 70); }
   #oblastzalozek{ width: 100%; }
   .aktualnemensi { margin: 5px 0px 0px 0px; }
   #nadpis h1 { font-size: 16px; }
@@ -177,7 +202,7 @@ legend{color: rgb(70, 70, 70);background: #F3F2DD;border: 1px solid #24230C;padd
 
 /* Bootstrap grid system */
 .container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px;}
-.row{margin-left:-15px;margin-right:-15px;}
+/*.row{margin-left:-15px;margin-right:-15px;}*/
 .col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-left:13px;padding-right:13px;}
 .col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{float:left;}
 .container:before,.container:after,.row:before,.row:after{content:" ";display:table;}
@@ -203,6 +228,7 @@ legend{color: rgb(70, 70, 70);background: #F3F2DD;border: 1px solid #24230C;padd
 }
 @media (min-width: 1200px) {
   .container{width:1170px;}
+  .col-md-5{width:42.666666666667%;}
 }
 
  /*

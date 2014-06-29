@@ -6,37 +6,14 @@
   if($zobrazitNastaveni == 1)
   {
 
-  echo "<div id='menu'>
-  <nav>
-	<ul>
-		<li><a href='{$_SERVER['PHP_SELF']}?ja=cz&amp;je={$_GET['je']}'><span class=\"vlajka\" title='CZ'></span></a>
-			<ul>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=cz&amp;je={$_GET['je']}'><span class=\"vlajka\" title='CZ'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=sk&amp;je={$_GET['je']}'><span class=\"vlajka sk\" title='SK'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=en&amp;je={$_GET['je']}'><span class=\"vlajka en\" title='EN'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=de&amp;je={$_GET['je']}'><span class=\"vlajka de\" title='DE'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=ru&amp;je={$_GET['je']}'><span class=\"vlajka ru\" title='RU'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=pl&amp;je={$_GET['je']}'><span class=\"vlajka pl\" title='PL'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=fr&amp;je={$_GET['je']}'><span class=\"vlajka fr\" title='FR'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=fi&amp;je={$_GET['je']}'><span class=\"vlajka fi\" title='FI'></span></a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?ja=sv&amp;je={$_GET['je']}'><span class=\"vlajka sv\" title='SV'></span></a></li>
-			</ul>
-		</li>
-		<li><a href='{$_SERVER['PHP_SELF']}?je=C&amp;ja={$_GET['ja']}' title='Celsius'>Celsius</a>
-			<ul>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=C&amp;ja={$_GET['ja']}' title='Celsius'>Celsius</a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=F&amp;ja={$_GET['ja']}' title='Fahrenheit'>Fahrenheit</a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=K&amp;ja={$_GET['ja']}' title='Kelvin'>Kelvin</a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=R&amp;ja={$_GET['ja']}' title='Rankine'>Rankine</a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=D&amp;ja={$_GET['ja']}' title='Delisle'>Delisle</a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=N&amp;ja={$_GET['ja']}' title='Newton'>Newton</a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=Re&amp;ja={$_GET['ja']}' title='Reaumur'>Reaumur</a></li>
-        <li><a href='{$_SERVER['PHP_SELF']}?je=Ro&amp;ja={$_GET['ja']}' title='Romer'>Romer</a></li>
-			</ul>
-		</li>
-	</ul>
-</nav>
-</div>";
+    echo "<div id='menu'>
+            <nav>
+              <ul>
+                ".menuJazyk($jazyky, $l)."
+                ".menuJednotky($jednotky, $u)."
+              </ul>
+            </nav>
+          </div>";
 
   }
 
@@ -47,11 +24,11 @@
         // Aktualne
         echo "<div class='col-md-3'>
                 <div class='sloupekAktualne'>
-                <div class='ajaxrefresh'>";
-                  require_once dirname(__FILE__)."/ajax/aktualne.php";
+                  <div class='ajaxrefresh'>";
+                    require_once dirname(__FILE__)."/ajax/aktualne.php";
             echo "</div>
-                  </div>
-                  </div>";
+                </div>
+              </div>";
 
         // Drive touto dobou
         echo "<div class='col-md-3'>

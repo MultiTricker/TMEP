@@ -13,7 +13,7 @@ $(function () {
     var chart;
     $(document).ready(function() {
         chart = new Highcharts.Chart({
-            chart: { renderTo: 'driveToutoDobou', zoomType: 'x', borderWidth: 1, backgroundColor: '#f7f6eb', borderRadius: 0 },
+            chart: { renderTo: 'driveToutoDobou', zoomType: 'x', backgroundColor: '#ffffff', borderRadius: 0 },
             credits: { enabled: 0 },
             title: { text: null },
             xAxis: { categories: ['<?php echo implode("','", $labels); ?>'], 
@@ -57,6 +57,9 @@ $(function () {
                 marker: { enabled: false }
             }]
         });
+
+        $(".tabs > li").click(function () { chart.reflow(); });
+
     });
     
 });

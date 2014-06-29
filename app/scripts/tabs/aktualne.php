@@ -42,14 +42,14 @@
   if($vlhkomer == 1)
   {
 
-      echo "<div class='graf' id='graf-24-hodin'>"; require "./scripts/grafy/kombinovane/24-hodin.php"; echo "</div>";
+      echo "<div class='graf' id='graf-24-hodin'>"; require "./scripts/grafy/kombinovane/24-hodin.php"; echo "</div><hr>";
       if(kolik("id", "tme") > 4400) { echo "<div class='graf' id='graf-3-dny'>"; require "./scripts/grafy/kombinovane/3-dny.php"; echo "</div>"; }
 
   }
   else
   {
 
-    echo "<div class='graf' id='graf-24-hodin-teplota'>"; require './scripts/grafy/teplota/24-hodin.php'; echo "</div>";
+    echo "<div class='graf' id='graf-24-hodin-teplota'>"; require './scripts/grafy/teplota/24-hodin.php'; echo "</div><hr>";
     if(kolik("id", "tme") > 4400) { echo "<div class='graf' id='graf-3-dny-teplota'>"; require './scripts/grafy/teplota/3-dny.php'; echo "</div>"; }
 
   }

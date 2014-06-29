@@ -31,7 +31,7 @@
       <div class='col-md-3 perc22'>
           <table class='tabulkaVHlavicce'>
       <tr>
-        <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejteplejsimesice']}</a></td>
+        <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejteplejsimesice']}</a></td>
       </tr>
       <tr>
         <td class='radek'>{$lang['mesic']}</td>
@@ -54,7 +54,7 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejstudenejsimesice']}</a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejstudenejsimesice']}</a></td>
           </tr>
           <tr>
             <td class='radek'>{$lang['mesic']}</td>
@@ -93,7 +93,7 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejvlhcimesice']}</a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejvlhcimesice']}</a></td>
           </tr>
           <tr>
             <td class='radek'>{$lang['mesic']}</td>
@@ -116,7 +116,7 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejsussimesice']}</a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejsussimesice']}</a></td>
           </tr>
           <tr>
             <td class='radek'>{$lang['mesic']}</td>
@@ -148,7 +148,7 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejvicemereni']}</a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejvicemereni']}</a></td>
           </tr>
           <tr>
             <td class='radek'>{$lang['mesic']}</td>
@@ -178,7 +178,7 @@
         echo "<div class='col-md-3 perc22'>
               <table class='tabulkaVHlavicce'>
           <tr>
-            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['nejmenemereni']}</a></td>
+            <td colspan='2' class='radek'><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejmenemereni']}</a></td>
           </tr>
           <tr>
             <td class='radek'>{$lang['mesic']}</td>

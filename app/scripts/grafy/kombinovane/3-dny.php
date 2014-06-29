@@ -69,7 +69,7 @@ $(function () {
     var chart;
     $(document).ready(function() {
         chart = new Highcharts.Chart({
-            chart: { renderTo: 'graf-3-dny', zoomType: 'x', borderWidth: 1, backgroundColor: '#f7f6eb', borderRadius: 0 },
+            chart: { renderTo: 'graf-3-dny', zoomType: 'x', backgroundColor: '#ffffff', borderRadius: 0 },
             credits: { enabled: 0 },
             title: { text: '<?php echo $lang['3dny']; ?>' },
             xAxis: { categories: ['<?php echo implode("','", $labels); ?>'], 
@@ -154,6 +154,9 @@ $(function () {
                 visible: false
             }]
         });
+
+        $(".tabs > li").click(function () { chart.reflow(); });
+
     });
     
 });

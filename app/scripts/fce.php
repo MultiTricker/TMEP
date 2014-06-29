@@ -310,3 +310,83 @@ function datetimeToPapouch($datetime)
 {
  return substr($datetime, 5, 2)."/".substr($datetime, 8, 2)."/".substr($datetime, 0, 4)." ".substr($datetime, 11, 2).":".substr($datetime, 14, 2).":".substr($datetime, 17, 2);
 }
+
+/**
+ * Vrátí CSS třídu pro obarvení rámečku podle hodnoty teploty.
+ *
+ * @param $teplota
+ * @return string
+ */
+
+function barvaRamecku($teplota)
+{
+
+  $trida = "teplota-30";
+
+  $skoky = array(-30, -25, -20, -15, -10, -5, 0, 5, 10 , 15, 20, 25, 30, 35);
+
+  foreach($skoky as $skok)
+  {
+    if($teplota >= $skok){ $trida = "teplota".(string)$skok; }
+  }
+
+  return " ".$trida;
+
+}
+
+/**
+ * @param $jazyky
+ * @param $vybranyJazyk
+ * @return string
+ */
+
+function menuJazyk($jazyky, $vybranyJazyk)
+{
+
+  $menu = "<li><a href='{$_SERVER['PHP_SELF']}?ja={$vybranyJazyk}&amp;je={$_GET['je']}'><span class=\"vlajka {$vybranyJazyk}\" title='".strtoupper($vybranyJazyk)."'></span></a>";
+    $menu .= "<ul class='jazyk'>";
+
+    foreach($jazyky as $jazyk)
+    {
+
+      if($jazyk != $vybranyJazyk)
+      {
+        $menu .= "<li><a href='{$_SERVER['PHP_SELF']}?ja={$jazyk}&amp;je={$_GET['je']}'><span class=\"vlajka {$jazyk}\" title='".strtoupper($jazyk)."'></span></a></li>";
+      }
+
+    }
+
+  $menu .= "</ul></li>";
+
+
+  return $menu;
+
+}
+
+/**
+ * @param $jednotky
+ * @param $vybranaJednotka
+ * @return string
+ */
+
+function menuJednotky($jednotky, $vybranaJednotka)
+{
+
+  $menu = "<li><a href='{$_SERVER['PHP_SELF']}?je={$vybranaJednotka}&amp;ja={$_GET['ja']}' title='{$jednotky[$vybranaJednotka]}'>{$jednotky[$vybranaJednotka]}</a>";
+    $menu .= "<ul class='teplota'>";
+
+    foreach($jednotky as $index => $jednotka)
+    {
+
+      if($index != $vybranaJednotka)
+      {
+        $menu .= "<li><a href='{$_SERVER['PHP_SELF']}?je={$index}&amp;ja={$_GET['ja']}' title='{$jednotka}'>{$jednotka}</a></li>";
+      }
+
+    }
+
+  $menu .= "</ul></li>";
+
+  return $menu;
+
+}
