@@ -343,7 +343,7 @@ function barvaRamecku($teplota)
 function menuJazyk($jazyky, $vybranyJazyk)
 {
 
-  $menu = "<li><a href='{$_SERVER['PHP_SELF']}?ja={$vybranyJazyk}&amp;je={$_GET['je']}'><span class=\"vlajka {$vybranyJazyk}\" title='".strtoupper($vybranyJazyk)."'></span></a>";
+  $menu = "<li><a href='#'><span class=\"vlajka {$vybranyJazyk}\" title='".strtoupper($vybranyJazyk)."'></span></a>";
     $menu .= "<ul class='jazyk'>";
 
     foreach($jazyky as $jazyk)
@@ -372,7 +372,7 @@ function menuJazyk($jazyky, $vybranyJazyk)
 function menuJednotky($jednotky, $vybranaJednotka)
 {
 
-  $menu = "<li><a href='{$_SERVER['PHP_SELF']}?je={$vybranaJednotka}&amp;ja={$_GET['ja']}' title='{$jednotky[$vybranaJednotka]}'>{$jednotky[$vybranaJednotka]}</a>";
+  $menu = "<li><a href='#' title='{$jednotky[$vybranaJednotka]}'>{$jednotky[$vybranaJednotka]}</a>";
     $menu .= "<ul class='teplota'>";
 
     foreach($jednotky as $index => $jednotka)

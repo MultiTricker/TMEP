@@ -63,14 +63,14 @@
   if($vlhkomer == 1)
   {
 
-    echo "<div class='aktualnemensi {$vyvojv}'>
+    echo "<div class='aktualneMensi aktualneMensiVlhkost {$vyvojv}'>
             <div class='aktualneOdskok'>
               {$lang['vlhkost']}:<br>
               <span class='aktuamens'>{$posledni['vlhkost']}%</span>
             </div>
           </div>
 
-          <div class='aktualnemensi vpravo {$vyvojrb}'>
+          <div class='aktualneMensi aktualneMensiRosnyBod vpravo {$vyvojrb}'>
             <div class='aktualneOdskok'>
               {$lang['rosnybod']}:<br>
               <font class='aktuamens'>".jednotkaTeploty(rosnyBod($posledni['teplota'], $posledni['vlhkost']), $u, 1)."</font>

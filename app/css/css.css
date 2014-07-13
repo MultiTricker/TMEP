@@ -55,8 +55,10 @@ nav ul li:hover > ul { display: block; }
 .aktualne { background: url("../images/stavy.png") no-repeat top left #E74C3C; margin: 0px 0px 3px 0px; border: 0; height: 95px; color: white; line-height: 26px; width: 100%; }
 .aktualnejen { background: url("../images/stavy.png") no-repeat top left #E74C3C; width: 100%; margin: 0px 0px 3px 0px; border: 0; height: 164px; color: white; line-height: 56px; }
 .aktua { color: white; font-size: 32px; line-height: 42px; vertical-align: center; }
-.aktualnemensi { background: url("../images/stavy.png") no-repeat top center #34495E; font-size: 11px; margin: 2px 0px 0px 0px; padding: 8px 0px -8px 0px; float: left; width: 49%; border: 0; height: 59px; color: white; line-height: 22px; }
-.aktuamens { color: white; font-size: 20px; }
+.aktualneMensi { background: url("../images/stavy.png") no-repeat top center; font-size: 11px; margin: 2px 0px 0px 0px; padding: 8px 0px -8px 0px; float: left; width: 49%; border: 0; height: 59px; color: white; line-height: 22px; }
+.aktualneMensiVlhkost { background-color: #2C3E50; }
+.aktualneMensiRosnyBod { background-color: #16A085; }
+ .aktuamens { color: white; font-size: 20px; }
 .aktualneOdskok { padding: 6px 0px 0px 0px; }
 .vpravo { float: right; }
 
@@ -105,8 +107,9 @@ td { text-align: center; }
 .rokVDobe { width: 23.9%; min-width: 150px; float: left; margin: 5px 5px; }
 
 /* typo */
+.roztahovak { width: 100%; background: #2C3E50; }
 .hlava{ background: #2C3E50; padding: 0px; margin: 0px; width: 100%; vertical-align: middle; height: 47px; }
-.hlava h1 { color: #F9F8E6; font-size: 20px; margin: 0px; padding: 10px 5px 0px 35px; text-align: left; }
+.hlava h1 { color: white; font-size: 20px; margin: 0px; padding: 10px 5px 0px 35px; text-align: left; }
 .hlava p { font-size: 12px; color: #F9F8E6; margin: 0px; padding: 12px 5px 8px 5px;}
 .hlava p a { color: white; }
 .hlava p a:hover { text-decoration: none; }
@@ -149,7 +152,7 @@ legend{color: rgb(70, 70, 70);background: #e4f7f3;border: 1px solid #24230C;padd
 /* adaptivni zalezitosti */
 @media (max-width: 768px) {
   #hlavni{ border: none; }
-  #nadpis h1 { font-size: 16px; }
+  #nadpis h1 { font-size: 14px; }
   #oblastzalozek { width: 96%; }
   ul.tabs li { width: auto; }
   ul.tabs a { width: auto; float: left; padding: 12px 20px; margin: 0px 5px 5px 0px; }
