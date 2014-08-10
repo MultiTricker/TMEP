@@ -11,13 +11,13 @@
   {
     $lang['titulekstranky'] = "TH2E - ethernetový teploměr a vlhkoměr";
     $lang['popisstranky'] = "Ethernetový teploměr a vlhkoměr TH2E - stránka s hodnotami a grafy.";
-    $lang['hlavninadpis'] = "TH2E - ethernetový teploměr a vlhkoměr";
+    $lang['hlavninadpis'] = "<span>TH2E</span> - ethernetový teploměr a vlhkoměr";
   }
   else
   {
     $lang['titulekstranky'] = "TME - ethernetový teploměr";
     $lang['popisstranky'] = "Ethernetový teploměr TME - stránka s hodnotami a grafy.";
-    $lang['hlavninadpis'] = "TME - ethernetový teploměr";
+    $lang['hlavninadpis'] = "<span>TME</span> - ethernetový teploměr";
   }
 
   // tmep v1-2

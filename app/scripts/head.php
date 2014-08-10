@@ -1,25 +1,8 @@
 <?php
 
-  echo "<div class='hlava'"; if($zobrazitNastaveni == 0){ echo " style='height: 30px;'"; } echo ">
-        <div id='nadpis'><h1>".$lang['hlavninadpis']."</h1></div>";
-
-  if($zobrazitNastaveni == 1)
-  {
-
-    echo "<div id='menu'>
-            <nav>
-              <ul>
-                ".menuJazyk($jazyky, $l)."
-                ".menuJednotky($jednotky, $u)."
-              </ul>
-            </nav>
-          </div>";
-
-  }
-
-  echo "</div>
-  
-        <div id='tri' class='row'>";
+  echo "<div class='roztahovak-vrsek'>
+        <div id='tri' class='row'>
+        <div class='container'>";
 
         // Aktualne
         echo "<div class='col-md-3'>
@@ -64,6 +47,7 @@ echo "<div class='col-md-5'>
               <td>".jednotkaTeploty($nejnizsi['teplota'], $u, 1)." - ".formatData($nejnizsi['kdy'])."</td>
             </tr>
           </table>
+          </div>
         </div>
-
-        </div>";
+      </div>
+    </div>";

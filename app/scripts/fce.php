@@ -340,10 +340,10 @@ function barvaRamecku($teplota)
  * @return string
  */
 
-function menuJazyk($jazyky, $vybranyJazyk)
+function menuJazyky($jazyky, $vybranyJazyk)
 {
 
-  $menu = "<li><a href='#'><span class=\"vlajka {$vybranyJazyk}\" title='".strtoupper($vybranyJazyk)."'></span></a>";
+  $menu = "<li><a href='#'>".strtoupper($vybranyJazyk)."</a>";
     $menu .= "<ul class='jazyk'>";
 
     foreach($jazyky as $jazyk)
@@ -351,7 +351,7 @@ function menuJazyk($jazyky, $vybranyJazyk)
 
       if($jazyk != $vybranyJazyk)
       {
-        $menu .= "<li><a href='{$_SERVER['PHP_SELF']}?ja={$jazyk}&amp;je={$_GET['je']}'><span class=\"vlajka {$jazyk}\" title='".strtoupper($jazyk)."'></span></a></li>";
+        $menu .= "<li><a href='{$_SERVER['PHP_SELF']}?ja={$jazyk}&amp;je={$_GET['je']}'>".strtoupper($jazyk)."</a></li>";
       }
 
     }
