@@ -29,7 +29,7 @@
   $lang['den'] = "Jour";
   $lang['dnes'] = "Aujourd'hui";
   $lang['teplota'] = "Temperature";
-  $lang['aktualniteplota'] = "Température actuelle:";
+  $lang['aktualniteplota'] = "Température actuelle";
   $lang['paticka'] = "Fabricant du TME : <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, auteur de l'application : <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, graphique généré; avec <a href='http://www.highcharts.com/'>Highcharts</a>.";
   $lang['teplota4hodiny'] = "Temperature des dernieres 4 heures";
   $lang['teplota24hodin'] = "Temperature des dernieres 24 heures";

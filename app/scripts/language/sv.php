@@ -31,7 +31,7 @@
   $lang['den'] = "Dag";
   $lang['dnes'] = "Idag";
   $lang['teplota'] = "Temperatur";
-  $lang['aktualniteplota'] = "Aktuell temperatur:";
+  $lang['aktualniteplota'] = "Aktuell temperatur";
   $lang['paticka'] = "TME manufacturer: <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, author of this application: <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, graphs generated using <a href='http://www.highcharts.com/'>Highcharts</a>.";
   $lang['teplota4hodiny'] = "Senaste 4 timmars temperatur";
   $lang['teplota24hodin'] = "Senaste 24 timmars temperatur";

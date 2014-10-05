@@ -31,7 +31,7 @@
   $lang['cas'] = "Время";
   $lang['den'] = "День";
   $lang['teplota'] = "Температура";
-  $lang['aktualniteplota'] = "Текущая температура:";
+  $lang['aktualniteplota'] = "Текущая температура";
   $lang['paticka'] = "Производитель TME/TГ2E: <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, создатель этого приложения: <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, графики строятся по <a href='http://www.highcharts.com/'>Highcharts</a>.";
   $lang['teplota4hodiny'] = "Температура за последние 4 часа";
   $lang['teplota24hodin'] = "Температура за последние 24 часа";

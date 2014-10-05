@@ -23,7 +23,7 @@
       // Info tabulka
 echo "<div class='col-md-5'>
           <table class='tabulkaVHlavicce'>
-            <tr class='radek'>
+            <tr class='radek zelenyRadek'>
               <td colspan='2'>{$lang['statistika']}</td>
             </tr>
             <tr>

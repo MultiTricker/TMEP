@@ -21,19 +21,19 @@
   $nejvyssiDnes = MySQLi_fetch_assoc($dotaz);
 
   // MIN/AVG/MAX za dnesni den
-  echo "<table class='tabulkaVHlavicce'>
+  echo "<table class='tabulkaDnes'>
           <tr>
-            <td class='radekVelky'>&nbsp;{$lang['dnes']}&nbsp;</td>";
+            <td class='radekDnes'>".strtoupper($lang['dnes'])."&nbsp;</td>";
             $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'],2), $u, 1);
             $prumernaDnes['teplota'] = jednotkaTeploty(round($prumernaDnes['teplota'],2), $u, 1);
             $nejvyssiDnes['teplota'] = jednotkaTeploty(round($nejvyssiDnes['teplota'],2), $u, 1);
-            echo "<td class='radekVetsi'>&nbsp;{$lang['teplota']}: {$lang['min2']}: {$nejnizsiDnes['teplota']} | {$lang['prumer']}: {$prumernaDnes['teplota']} | {$lang['max2']}: {$nejvyssiDnes['teplota']}&nbsp;</td>";
+            echo "<td class='radekDnes'>".strtoupper($lang['teplota'])."<br>{$lang['min2']}: {$nejnizsiDnes['teplota']} | {$lang['prumer']}: {$prumernaDnes['teplota']} | {$lang['max2']}: {$nejvyssiDnes['teplota']}&nbsp;</td>";
             if($vlhkomer == 1)
             {
               $nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'],2);
               $prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'],2);
               $nejvyssiDnes['vlhkost'] = round($nejvyssiDnes['vlhkost'],2);
-              echo "<td class='radekVetsi'>&nbsp;{$lang['vlhkost']}: {$lang['min2']}: {$nejnizsiDnes['vlhkost']}% | {$lang['prumer']}: {$prumernaDnes['vlhkost']}% | {$lang['max2']}: {$nejvyssiDnes['vlhkost']}%&nbsp;</td>";
+              echo "<td class='radekDnes'>".strtoupper($lang['vlhkost'])."<br>{$lang['min2']}: {$nejnizsiDnes['vlhkost']}% | {$lang['prumer']}: {$prumernaDnes['vlhkost']}% | {$lang['max2']}: {$nejvyssiDnes['vlhkost']}%&nbsp;</td>";
             }
            echo "</tr>
         </table>";
@@ -42,14 +42,14 @@
   if($vlhkomer == 1)
   {
 
-      echo "<div class='graf' id='graf-24-hodin'>"; require "./scripts/grafy/kombinovane/24-hodin.php"; echo "</div><hr>";
+      echo "<div class='graf' id='graf-24-hodin'>"; require "./scripts/grafy/kombinovane/24-hodin.php"; echo "</div>";
       if(kolik("id", "tme") > 4400) { echo "<div class='graf' id='graf-3-dny'>"; require "./scripts/grafy/kombinovane/3-dny.php"; echo "</div>"; }
 
   }
   else
   {
 
-    echo "<div class='graf' id='graf-24-hodin-teplota'>"; require './scripts/grafy/teplota/24-hodin.php'; echo "</div><hr>";
+    echo "<div class='graf' id='graf-24-hodin-teplota'>"; require './scripts/grafy/teplota/24-hodin.php'; echo "</div>";
     if(kolik("id", "tme") > 4400) { echo "<div class='graf' id='graf-3-dny-teplota'>"; require './scripts/grafy/teplota/3-dny.php'; echo "</div>"; }
 
   }

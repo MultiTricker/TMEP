@@ -65,14 +65,14 @@
 
     echo "<div class='aktualneMensi aktualneMensiVlhkost {$vyvojv}'>
             <div class='aktualneOdskok'>
-              {$lang['vlhkost']}:<br>
+              {$lang['vlhkost']}<br>
               <span class='aktuamens'>{$posledni['vlhkost']}%</span>
             </div>
           </div>
 
           <div class='aktualneMensi aktualneMensiRosnyBod vpravo {$vyvojrb}'>
             <div class='aktualneOdskok'>
-              {$lang['rosnybod']}:<br>
+              {$lang['rosnybod']}<br>
               <font class='aktuamens'>".jednotkaTeploty(rosnyBod($posledni['teplota'], $posledni['vlhkost']), $u, 1)."</font>
             </div>
           </div>";

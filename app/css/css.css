@@ -1,10 +1,10 @@
  /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
+ ***  TMEP                                                              ***
  ***  Kaskadove styly / CSS styles                                      ***
  *************************************************************************/
 
 /* telo */
-body{ color: rgb(60,58,23); background: white; font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial; font-size: 16px; margin: 0px; padding: 0px; text-align: center; }
+body{ color: #28465c; background: white; font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif; font-size: 16px; margin: 0px; padding: 0px; text-align: center; }
 
 /* hlavni */
 #hlavni { height: auto; background: white; padding: 0px; margin: 30px auto; vertical-align: middle; text-align: center; }
@@ -12,14 +12,16 @@ body{ color: rgb(60,58,23); background: white; font-family: "Lucida Grande", "Lu
 #nadpis h1 { font-size: 16px; font-weight: normal; }
 #nadpis h1 span { font-size: 20px; font-weight: bold; font-style: italic; }
 #menu { float: right; }
-.tabulkaVHlavicce { width: 100%; margin: 10px 0px; }
+.tabulkaVHlavicce { width: 100%; margin: 10px 0px; border-spacing: 0; }
 .tabulkaVHlavicce tr td a { color: rgb(70, 70, 70); }
 tr.radek td a { color: white; }
 .tabulkaVHlavicceModal { width: 100%; max-width: 600px; margin: 10px auto; float: center }
 .tabulkaVHlavicceModalMensi { width: 100%; max-width: 300px; margin: 10px auto; float: center }
-#hlavni table, .tabulkaVHlavicceModal, .tabulkaVHlavicceModalMensi { border-collapse: collapse; }
-#hlavni table tr:first-child, .tabulkaVHlavicce tr:first-child, .tabulkaVHlavicceModal tr:first-child, .tabulkaVHlavicceModalMensi tr:first-child { background: #00a186 !important; height: 40px; }
+#hlavni table, .tabulkaVHlavicceModal, .tabulkaVHlavicceModalMensi { border-collapse: collapse; border-spacing: 0; }
+#hlavni table tr:first-child, .tabulkaVHlavicce tr:first-child, .tabulkaVHlavicceModal tr:first-child, .tabulkaVHlavicceModalMensi tr:first-child { background: #00a186; height: 40px; }
 #hlavni table tr:nth-child(odd), .tabulkaVHlavicce tr:nth-child(odd), .tabulkaVHlavicceModal tr:nth-child(odd), .tabulkaVHlavicceModalMensi tr:nth-child(odd) { background: #e4f7f3; }
+.zelenyRadek td { background: #00a186 !important; }
+.modryRadek td { background: #34495e !important; }
 
 table tr { background: white; }
 
@@ -31,7 +33,7 @@ nav ul li:first-child { border-right: 2px solid #23475f; }
 nav ul li { float: left; }
 nav ul li:hover { background: #4b545f; }
 nav ul li:hover a { color: #fff; }
-nav ul li a { display: block; padding: 30px 25px; color: white; text-decoration: none; }
+nav ul li a { display: block; padding: 27px 25px; color: white; text-decoration: none; }
 nav ul ul { background: #2c3f52; border-radius: 0px; padding: 0; position: absolute; top: 100%; }
 nav ul ul li { float: none; border-bottom: 1px solid #2C3E50; position: relative; }
 nav ul ul.jazyk li a { padding: 15px 25px; color: #fff; }
@@ -82,7 +84,7 @@ nav ul li:hover > ul { display: block; }
 .teplota35 { background-color: #eb2020; }
 
 /* Highcharts */
-.graf { width: 100%; margin: 15px 0px; }
+.graf { width: 100%; margin: 20px 0px; }
 .grafModal { width: 98%; margin: 15px 0px; }
 
 /* radky */
@@ -91,6 +93,10 @@ nav ul li:hover > ul { display: block; }
 .radekVetsi { background: #00a186; color: white; line-height: 28px; vertical-align: center; font-size: 12px; }
 .radekStat td { }
 .radekStat:hover td { background: #f3f2dd; }
+
+/* aktualne na uvodu */
+.tabulkaDnes { width: 100%; margin: 10px 0px; border-spacing: 0; }
+.radekDnes{ line-height: 24px; vertical-align: center; font-size: 14px; background: #F2F2F2; }
 
 td { text-align: center; }
 .mesicVDobe { width: 19%; float: left; margin: 5px 1% 5px 0px; }

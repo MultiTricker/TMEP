@@ -31,7 +31,7 @@
   $lang['den'] = "Päivä";
   $lang['dnes'] = "Tänään";
   $lang['teplota'] = "Lämpötila";
-  $lang['aktualniteplota'] = "Ajankohtainen lämpötila:";
+  $lang['aktualniteplota'] = "Ajankohtainen lämpötila";
   $lang['paticka'] = "TME manufacturer: <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, author of this application: <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, graphs generated using <a href='http://www.highcharts.com/'>Highcharts</a>.";
   $lang['teplota4hodiny'] = "Viime 4 tunnin lämpötilat";
   $lang['teplota24hodin'] = "Viime 24 tunnin lämpötilat";

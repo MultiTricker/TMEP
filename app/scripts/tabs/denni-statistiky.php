@@ -31,7 +31,7 @@
           {
 
             echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
-                  <tr class='radek'>
+                  <tr class='radek zelenyRadek'>
                   <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'>{$lang['doba']} {$a}:00 - {$a}:59</a></td>
                 </tr>";
 
@@ -92,10 +92,10 @@
       $jednotkap = explode(" ", jednotkaTeploty(1, $u, 1));
       $jednotka = str_replace("&deg;", "°", $jednotkap[1]);
       echo "<table class='tabulkaVHlavicce nomargin'>
-            <tr class='radek'>
+            <tr class='radek zelenyRadek'>
             <td colspan='5'><a href='./scripts/modals/teplotyZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['teplotyzaposlednidny']} ({$jednotka})</a></td>
           </tr>
-          <tr class='radek'>
+          <tr class='radek modryRadek'>
             <td>{$lang['den']}</td>
             <td>{$lang['min2']}</td>
             <td>{$lang['prumer']}</td>
@@ -138,8 +138,6 @@
 
       ///////////////////////////
       // prvotni tabulkove rozdeleni na dva sloupce
-      echo "<hr>";
-
       echo "<div class='graf' id='graf-31-dni-vlhkost'>"; require dirname(__FILE__).'/../grafy/vlhkost/31-dni.php'; echo "</div>";
 
       echo "<div class='container'>
@@ -156,7 +154,7 @@
         {
 
               echo "<div class='col-md-5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 40px 0px 0px;'>
-                    <tr class='radek'>
+                    <tr class='radek zelenyRadek'>
                     <td colspan='3'><a href='./scripts/modals/vDobu.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;doba={$a}' class='modal'>{$lang['doba']} {$a}:00 - {$a}:59</a></td>
                   </tr>";
 
@@ -215,10 +213,10 @@
           ///////////////////////////
           // teploty za posledni dny
           echo "<table class='tabulkaVHlavicce nomargin'>
-                <tr class='radek'>
+                <tr class='radek zelenyRadek'>
                 <td colspan='5'><a href='./scripts/modals/vlhkostZaPosledniDny.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['vlhkostzaposlednidny']} (%)</a></td>
               </tr>
-              <tr class='radek'>
+              <tr class='radek modryRadek'>
                 <td width='100'>{$lang['den']}</td>
                 <td width='80'>{$lang['min2']}</td>
                 <td width='80'>{$lang['prumer']}</td>
