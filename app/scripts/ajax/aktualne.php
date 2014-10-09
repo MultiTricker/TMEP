@@ -56,9 +56,12 @@
   }
 
   echo "<div class='aktualne".($vlhkomer == 1 ? "" : "jen")." {$vyvoj}".($vlhkomer == 1 ? "" : "jen").barvaRamecku($posledni['teplota'])."'>
-              {$lang['aktualniteplota']}<br>
-              <font class='aktua'>".jednotkaTeploty($posledni['teplota'], $u, 1)."</font><br>".formatData($posledni['kdy'])."
-          </div>";
+          <div class='aktualneOdskok'>
+            {$lang['aktualniteplota']}<br>
+            <font class='aktua".($vlhkomer == 1 ? "" : "jen")."'>".jednotkaTeploty($posledni['teplota'], $u, 1)."</font>
+            <br>".formatData($posledni['kdy'])."
+          </div>
+        </div>";
 
   if($vlhkomer == 1)
   {

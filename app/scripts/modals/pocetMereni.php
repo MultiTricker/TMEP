@@ -11,8 +11,8 @@
   $tabulka = "<div class='row'>
               <div class='col-md-5'>
               <table class='tabulkaVHlavicceModalMensi'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejmenemereni']}</b></td></tr>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejmenemereni']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['pocetmereni']}</b></td>";
     $tabulka .= "</tr>";
@@ -45,8 +45,8 @@
   // Tabulka s hodnotami + krmeni dat pro graf
   $tabulka .= "</div><div class='col-md-5'>
               <table class='tabulkaVHlavicceModalMensi'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejvicemereni']}</b></td></tr>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejvicemereni']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['pocetmereni']}</b></td>";
     $tabulka .= "</tr>";

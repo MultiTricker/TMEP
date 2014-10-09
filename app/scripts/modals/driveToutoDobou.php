@@ -25,7 +25,7 @@
 
   // Tabulka s hodnotami + krmeni dat pro graf
   $tabulka = "<table width='".($vlhkomer == 1 ? "400" : "230")."' class='tabulkaVHlavicceModal'>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['teplota']}<br />&nbsp;(&deg;{$u})</b></td>";
                 if($vlhkomer == 1)

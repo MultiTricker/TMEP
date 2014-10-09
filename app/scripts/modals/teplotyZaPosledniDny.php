@@ -27,7 +27,7 @@
   ///////////////////////////
   // teploty za posledni dny
   $tabulka = "<table class='tabulkaVHlavicceModal' width='340'>
-      <tr class='radek'>
+      <tr class='radek zelenyRadek'>
         <td><b>{$lang['den']}</b></td>
         <td><b>{$lang['min2']}</b></td>
         <td><b>{$lang['prumer']}</b></td>

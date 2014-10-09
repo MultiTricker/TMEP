@@ -4,15 +4,15 @@
  *************************************************************************/
 
 /* telo */
-body{ color: #28465c; background: white; font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif; font-size: 16px; margin: 0px; padding: 0px; text-align: center; }
+body{ color: #28465c; background: white; font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif; font-size: 16px; margin: 0; padding: 0; text-align: center; }
 
 /* hlavni */
-#hlavni { height: auto; background: white; padding: 0px; margin: 30px auto; vertical-align: middle; text-align: center; }
+#hlavni { height: auto; background: white; padding: 0; margin: 30px auto; vertical-align: middle; text-align: center; }
 #nadpis { float: left; }
 #nadpis h1 { font-size: 16px; font-weight: normal; }
 #nadpis h1 span { font-size: 20px; font-weight: bold; font-style: italic; }
 #menu { float: right; }
-.tabulkaVHlavicce { width: 100%; margin: 10px 0px; border-spacing: 0; }
+.tabulkaVHlavicce { width: 100%; margin: 10px 0; border-spacing: 0; }
 .tabulkaVHlavicce tr td a { color: rgb(70, 70, 70); }
 tr.radek td a { color: white; }
 .tabulkaVHlavicceModal { width: 100%; max-width: 600px; margin: 10px auto; float: center }
@@ -27,45 +27,46 @@ table tr { background: white; }
 
 /* menu */
 nav { float: right; }
-nav ul { background: #2c3f52; padding: 0 0px; list-style: none; position: relative; display: inline-table; z-index: 5; margin: 0; }
+nav ul { background: #2c3f52; padding: 0 0; list-style: none; position: relative; display: inline-table; z-index: 5; margin: 0; }
 nav ul:after { content: ""; clear: both; display: block; }
 nav ul li:first-child { border-right: 2px solid #23475f; }
-nav ul li { float: left; }
-nav ul li:hover { background: #4b545f; }
+nav ul li { float: left; background: url("../images/stavy.png") no-repeat center -550px; }
+nav ul li:hover {  background: #4b545f url("../images/stavy.png") no-repeat center -550px; }
 nav ul li:hover a { color: #fff; }
-nav ul li a { display: block; padding: 27px 25px; color: white; text-decoration: none; }
-nav ul ul { background: #2c3f52; border-radius: 0px; padding: 0; position: absolute; top: 100%; }
+nav ul li a { display: block; padding: 27px 30px; color: white; text-decoration: none; }
+nav ul ul { background: #2c3f52; border-radius: 0; padding: 0; position: absolute; top: 100%; }
 nav ul ul li { float: none; border-bottom: 1px solid #2C3E50; position: relative; }
-nav ul ul.jazyk li a { padding: 15px 25px; color: #fff; }
+nav ul ul.jazyk li a { padding: 15px 30px; color: #fff; }
 nav ul ul.teplota li a { padding: 15px 16px; color: #fff; }
-nav ul ul li a:hover { background: #2C3E50; }
+nav ul ul li:hover { background: #4b545f; }
 nav ul ul { display: none; }
 nav ul li:hover > ul { display: block; }
 
 /* aktualne */
 .sloupekAktualne { margin: 8px auto; float: center; overflow: hidden; }
-.aktualne { background: url("../images/stavy.png") no-repeat top left #E74C3C; margin: 0px 0px 3px 0px; border: 0; height: 95px; color: white; line-height: 26px; width: 100%; }
-.aktualnejen { background: url("../images/stavy.png") no-repeat top left #E74C3C; width: 100%; margin: 0px 0px 3px 0px; border: 0; height: 164px; color: white; line-height: 56px; }
-.aktua { color: white; font-size: 32px; line-height: 42px; vertical-align: center; }
-.aktualneMensi { background: url("../images/stavy.png") no-repeat top center; font-size: 11px; margin: 2px 0px 0px 0px; padding: 8px 0px -8px 0px; float: left; width: 49%; border: 0; height: 59px; color: white; line-height: 22px; }
+.aktualne { background: url("../images/stavy.png") no-repeat top left #E74C3C; margin: 0 0 5px 0; border: 0; height: 120px; color: white; line-height: 32px; width: 100%; }
+.aktualnejen { background: url("../images/stavy.png") no-repeat top left #E74C3C; width: 100%; margin: 0 0 3px 0; border: 0; height: 190px; color: white; line-height: 56px; }
+.aktua { color: white; font-size: 35px; line-height: 42px; vertical-align: center; }
+.aktuajen { color: white; font-size: 35px; line-height: 60px; vertical-align: center; }
+.aktualneMensi { background: url("../images/stavy.png") no-repeat top center; font-size: 11px; margin: 2px 0 0 0; padding: 8px 0 -8px 0; float: left; width: 49%; border: 0; height: 65px; color: white; line-height: 22px; }
 .aktualneMensiVlhkost { background-color: #009de1; }
 .aktualneMensiRosnyBod { background-color: #00a186; }
- .aktuamens { color: white; font-size: 20px; }
-.aktualneOdskok { padding: 6px 0px 0px 0px; }
+.aktuamens { color: white; font-size: 20px; }
+.aktualneOdskok { padding: 9px 0 0 0; }
 .vpravo { float: right; }
 
 /* teplota */
-.teplejsi { background-position: center -118px; }
-.studenejsi { background-position: center -224px; }
-.stejne { background-position: center -7px; }
-.teplejsijen { background-position: center -86px; }
-.studenejsijen { background-position: center -192px; }
-.stejnejen { background-position: center 0px; }
+.teplejsi { background-position: 90% -104px; }
+.studenejsi { background-position: 90% -227px; }
+.stejne { background-position: 90% 19px; }
+.teplejsijen { background-position: 90% -71px; }
+.studenejsijen { background-position: 90% -195px; }
+.stejnejen { background-position: 90% 51px; }
 
 /* vlhkost */
-.teplejsiMalyBox { background-position: center -380px; }
-.studenejsiMalyBox { background-position: center -434px; }
-.stejneMalyBox { background-position: center -324px; }
+.teplejsiMalyBox { background-position: 97% -431px; }
+.studenejsiMalyBox { background-position: 97% -499px; }
+.stejneMalyBox { background-position: 97% -361px; }
 
 /* obarveni teploty */
 .teplota-30 { background-color: #092847; }
@@ -84,8 +85,8 @@ nav ul li:hover > ul { display: block; }
 .teplota35 { background-color: #eb2020; }
 
 /* Highcharts */
-.graf { width: 100%; margin: 20px 0px; }
-.grafModal { width: 98%; margin: 15px 0px; }
+.graf { width: 100%; margin: 20px 0; }
+.grafModal { width: 98%; margin: 15px 0; }
 
 /* radky */
 .radek { background: #00a186; color: white; }
@@ -95,47 +96,47 @@ nav ul li:hover > ul { display: block; }
 .radekStat:hover td { background: #f3f2dd; }
 
 /* aktualne na uvodu */
-.tabulkaDnes { width: 100%; margin: 10px 0px; border-spacing: 0; }
+.tabulkaDnes { width: 100%; margin: 25px 0; border-spacing: 0; }
 .radekDnes{ line-height: 24px; vertical-align: center; font-size: 14px; background: #F2F2F2; }
 
 td { text-align: center; }
-.mesicVDobe { width: 19%; float: left; margin: 5px 1% 5px 0px; }
+.mesicVDobe { width: 19%; float: left; margin: 5px 1% 5px 0; }
 .rokVDobe { width: 23.9%; min-width: 150px; float: left; margin: 5px 5px; }
 
 /* typo */
 .roztahovak-modry { width: 100%; background: #23475f; height: 80px; }
 .roztahovak-vrsek { width: 100%; background: #f2f2f2; height: auto; }
-.hlava{ background: #23475f; padding: 0px; margin: 0px; width: 100%; vertical-align: middle; height: 80px; }
-.hlava h1 { color: white; font-size: 20px; margin: 0px; padding: 29px 5px 0px 35px; text-align: left; }
-.hlava p { font-size: 12px; color: #F9F8E6; margin: 0px; padding: 12px 5px 8px 5px;}
+.hlava{ background: #23475f; padding: 0; margin: 0; width: 100%; vertical-align: middle; height: 80px; }
+.hlava h1 { color: white; font-size: 20px; margin: 0; padding: 29px 5px 0 35px; text-align: left; }
+.hlava p { font-size: 12px; color: #F9F8E6; margin: 0; padding: 12px 5px 8px 5px;}
 .hlava p a { color: white; }
 .hlava p a:hover { text-decoration: none; }
-.nohy p { color: #F9F8E6; background: #23475f; font-size: 11px; padding: 34px 20px 0 0; margin: 0; width: 100%; border-top: 2px solid rgb(70,68,28); vertical-align: middle; text-align: right; }
+.nohy p { color: #F9F8E6; background: #23475f; font-size: 11px; padding: 34px 20px 0 0; margin: 0 -20px; width: 100%; border-top: 2px solid rgb(70,68,28); vertical-align: middle; text-align: right; }
 .nohy p a { color: white; }
 .nohy p a:hover { text-decoration: none; }
-h3 { color: rgb(70, 70, 70); font-size: 20px; line-height: 50px; height: 50px; overflow: hidden; padding: 0px 5px 0px 5px; margin: 0px 0px 0px 0px; vertical-align: middle; }
+h3 { color: rgb(70, 70, 70); font-size: 20px; line-height: 50px; height: 50px; overflow: hidden; padding: 0 5px 0 5px; margin: 0 0 0 0; vertical-align: middle; }
 br { line-height: 1.5em; }
 .mensi { font-size: 11px; }
 a { color: white; }
 a:hover { text-decoration: none; }
-.nomargin { margin: 0px; }
-table tr td { height: 24px; line-height: 24px; vertical-align: center; }
+.nomargin { margin: 0; }
+table tr td { height: 24px; line-height: 24px; vertical-align: center; padding: 4px 0 2px 0; }
 hr { height: 1px; width: 100%; border: none; background: #00a186; }
 .bilyOdkaz{ color: white !important; }
 
 /* zadny ramecky! */
-img{ border: 0px; }
+img{ border: 0; }
 
 /* sloupecky */
-#tri { width: 100%; overflow: hidden; margin: 0px 0px 18px 0px; background: #f2f2f2; }
+#tri { width: 100%; overflow: hidden; margin: 0 0 18px 0; background: #f2f2f2; padding: 2px 0px 6px 0px; }
 
 /* tabs */
 #oblastzalozek { width: 100%; float: center; margin: auto; }
 ul.tabs { margin: 0 !important; padding:0; overflow: hidden; width: 100% }
 ul.tabs li { float:left; padding:0; margin:0; list-style-type:none; width: 20%; }
-ul.tabs a { padding: 20px 0px; float:left; font-size:16px; width: 100%; display:block; text-decoration:none; height:25px; background-color: #34495e; border: none; color: white; margin-right:2px; position:relative; top:1px; outline:0; }
-ul.tabs a:hover { background-color:#f2f2f2; color:#34495e; }
-ul.tabs a.current { background-color: #f2f2f2; color:#34495e; cursor:default; border: none; }
+ul.tabs a { padding: 20px 0; float:left; font-size:16px; width: 100%; display:block; text-decoration:none; height:25px; background-color: #34495e; border: none; color: white; margin-right:2px; position:relative; top:1px; outline:0; }
+ul.tabs a:hover { background: #e1e1e1 url("../images/stavy.png") no-repeat center -620px; color:#34495e; }
+ul.tabs a.current { background: #f2f2f2 url("../images/stavy.png") no-repeat center -620px; color:#34495e; cursor:default; border: none; }
 .panely > div { display:none; border-width:0 1px 1px 1px; min-height:80px; padding:8px 15px; background-color: #f2f2f2; }
 
 /* formular na strance historie */
@@ -150,16 +151,17 @@ legend{color: rgb(70, 70, 70);background: #e4f7f3;border: 1px solid #24230C;padd
 @media (max-width: 768px) {
   #hlavni{ border: none; }
   #nadpis h1 { font-size: 14px; }
-  #oblastzalozek { width: 96%; }
+  #oblastzalozek { width: 100%; }
   ul.tabs li { width: auto; }
-  ul.tabs a { width: auto; float: left; padding: 12px 20px; margin: 0px 5px 5px 0px; }
+  ul.tabs a { width: auto; float: left; padding: 12px 20px; margin: 0 5px 5px 0; }
+  .container{ padding: 0 !important; }
 }
 
 @media (min-width: 769px) AND (max-width: 992px)
 {
-  body { margin: 0px; }
+  body { margin: 0; }
   #oblastzalozek{ width: 100%; }
-  .aktualnemensi { margin: 5px 0px 0px 0px; }
+  .aktualnemensi { margin: 5px 0 0 0; }
   #nadpis h1 { font-size: 16px; }
 }
 
