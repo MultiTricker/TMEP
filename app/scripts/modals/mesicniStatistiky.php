@@ -74,7 +74,7 @@
         ///////////////////////////
         echo "<table class='tabulkaVHlavicceModalMensi'>
           <tr class='radek zelenyRadek'>
-            <td colspan='2'><b>{$lang['nejstudenejsimesice']}</b></td>
+            <td colspan='2'><b>{$lang['nejchladnejsimesice']}</b></td>
           </tr>
           <tr class='radek modryRadek'>
             <td><b>{$lang['mesic']}</b></td>

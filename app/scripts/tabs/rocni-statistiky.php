@@ -140,10 +140,10 @@
       ////////////////////////////////
 
         echo"<table class='rokVDobe'>
-              <tr>
-                <td colspan='2' class='radek'>{$lang['nejstudenejsimesice']}</td>
+              <tr class='zelenyRadek'>
+                <td colspan='2' class='radek'>{$lang['nejchladnejsimesice']}</td>
               </tr>
-              <tr>
+              <tr class='modryRadek'>
                 <td class='radek'>{$lang['mesic']}</td>
                 <td class='radek'>{$lang['prumer']}</td>
               </tr>";
@@ -193,10 +193,10 @@
           {
     
             echo"<table class='rokVDobe'>
-                  <tr>
+                  <tr class='zelenyRadek'>
                     <td colspan='2' class='radek'>{$lang['nejvyssivlhkost']}</td>
                   </tr>
-                  <tr>
+                  <tr class='modry'>
                     <td class='radek'>{$lang['den']}</td>
                     <td class='radek'>{$lang['vlhkost']}</td>
                   </tr>";

@@ -65,7 +65,7 @@
   $lang['mesicnistatistiky'] = "Månatlig statistik";
   $lang['rocnistatistiky'] = "Årlig statistik";
   $lang['nejteplejsimesice'] = "Varmaste månad";
-  $lang['nejstudenejsimesice'] = "Kallaste månad";
+  $lang['nejchladnejsimesice'] = "Kallaste månad";
   $lang['prumernateplota'] = "Medel temperatur";
   $lang['nejvicemereni'] = "Mest mätningar";
   $lang['nejmenemereni'] = "Minst mätningar";

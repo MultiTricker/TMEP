@@ -65,7 +65,7 @@
   $lang['mesicnistatistiky'] = "Kuuk. statistiikat";
   $lang['rocnistatistiky'] = "Vuos. statistiikat";
   $lang['nejteplejsimesice'] = "Lämpimin kuukausi";
-  $lang['nejstudenejsimesice'] = "Kylmin kuukausi";
+  $lang['nejchladnejsimesice'] = "Kylmin kuukausi";
   $lang['prumernateplota'] = "Keski lämpötila";
   $lang['nejvicemereni'] = "Eniten mittauksia";
   $lang['nejmenemereni'] = "Vähiten mittauksia";

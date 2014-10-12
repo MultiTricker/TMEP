@@ -63,7 +63,7 @@
   $lang['mesicnistatistiky'] = "Měsíční statistiky";
   $lang['rocnistatistiky'] = "Roční statistiky";
   $lang['nejteplejsimesice'] = "Nejteplejší měsíce";
-  $lang['nejstudenejsimesice'] = "Nejchladnější měsíce";
+  $lang['nejchladnejsimesice'] = "Nejchladnější měsíce";
   $lang['prumernateplota'] = "Průměrná teplota";
   $lang['nejvicemereni'] = "Nejvíce měření";
   $lang['nejmenemereni'] = "Nejméně měření";

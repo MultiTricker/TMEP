@@ -64,7 +64,7 @@
   $lang['mesicnistatistiky'] = "Stat. mensuelles";
   $lang['rocnistatistiky'] = "Stat. annuelles";
   $lang['nejteplejsimesice'] = "Mois le plus chaud";
-  $lang['nejstudenejsimesice'] = "Mois le plus froid";
+  $lang['nejchladnejsimesice'] = "Mois le plus froid";
   $lang['prumernateplota'] = "Temperature moyenne";
   $lang['nejvicemereni'] = "Most measurements";
   $lang['nejmenemereni'] = "Min. measurement";

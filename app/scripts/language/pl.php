@@ -64,7 +64,7 @@
   $lang['mesicnistatistiky'] = "Statystyki miesięczne";
   $lang['rocnistatistiky'] = "Statystyki roczne";
   $lang['nejteplejsimesice'] = "Najcieplejsze miesiące";
-  $lang['nejstudenejsimesice'] = "Najchłodniejsze miesiące";
+  $lang['nejchladnejsimesice'] = "Najchłodniejsze miesiące";
   $lang['prumernateplota'] = "Średnia temeratura";
   $lang['nejvicemereni'] = "Najwyższy pomiar";
   $lang['nejmenemereni'] = "Najniższy pomiar";
