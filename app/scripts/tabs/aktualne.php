@@ -21,19 +21,20 @@
   $nejvyssiDnes = MySQLi_fetch_assoc($dotaz);
 
   // MIN/AVG/MAX za dnesni den
+  $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'],2), $u, 1);
+  $prumernaDnes['teplota'] = jednotkaTeploty(round($prumernaDnes['teplota'],2), $u, 1);
+  $nejvyssiDnes['teplota'] = jednotkaTeploty(round($nejvyssiDnes['teplota'],2), $u, 1);
   echo "<table class='tabulkaDnes'>
           <tr>
-            <td class='radekDnes'><span class='font25 zelena'>".strtoupper($lang['dnes'])."</span>&nbsp;</td>";
-            $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'],2), $u, 1);
-            $prumernaDnes['teplota'] = jednotkaTeploty(round($prumernaDnes['teplota'],2), $u, 1);
-            $nejvyssiDnes['teplota'] = jednotkaTeploty(round($nejvyssiDnes['teplota'],2), $u, 1);
-            echo "<td class='radekDnes'>
-                    <div class='vpravo'>".strtoupper($lang['teplota'])."<br>
+            <td class='radekDnes'><span class='font25 zelena'>".strtoupper($lang['dnes'])."</span></td>
+            <td class='radekDnes'>";
+            if($vlhkomer == 1){ echo "<div class='vpravo'>"; }
+            echo strtoupper($lang['teplota'])."<br>
                       <span class='zelena'>{$lang['min2']}:</span> {$nejnizsiDnes['teplota']} |
                       <span class='zelena'>{$lang['prumer']}:</span> {$prumernaDnes['teplota']} |
-                      <span class='zelena'>{$lang['max2']}:</span> {$nejvyssiDnes['teplota']}&nbsp;
-                    </div>
-                  </td>";
+                      <span class='zelena'>{$lang['max2']}:</span> {$nejvyssiDnes['teplota']}&nbsp;";
+            if($vlhkomer == 1){ echo "</div>"; }
+            echo "</td>";
             if($vlhkomer == 1)
             {
               $nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'],2);

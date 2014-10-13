@@ -47,6 +47,8 @@ tr.radek td a { color: white; }
 .tabulkaDnes { width: 100%; margin: 25px 0; border-spacing: 0; }
 .radekDnes{ line-height: 26px; vertical-align: center; font-size: 18px; background: #F2F2F2; }
 table tr { background: white; }
+.sedaBunka { background: #f2f2f2; }
+.padding5 { padding: 0 5px; }
 /* radky */
 .radek { background: #00a186; color: white; }
 .radekVelky { background: #00a186; color: white; line-height: 24px; vertical-align: center; font-size: 14px; }
@@ -259,7 +261,7 @@ legend{color: white;background: #00a186;border: 1px solid #00a186;padding: 2px 6
 .ui-widget-content a { color: #1e1b1d; }
 .ui-widget-header { border: 1px solid #34495e; background: #34495e; color: #ffffff; font-weight: bold; }
 .ui-widget-header a { color: #ffffff; }
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #cdc3b7; background: #ede4d4; font-weight: normal; color: #3f3731; }
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #cdc3b7; background: #F5F5F5; font-weight: normal; color: #3f3731; }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #3f3731; text-decoration: none; }
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #34495e; background: #f5f0e5; font-weight: normal; color: #34495e; }
 .ui-state-hover a, .ui-state-hover a:hover { color: #34495e; text-decoration: none; }

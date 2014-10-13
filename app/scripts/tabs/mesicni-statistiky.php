@@ -273,51 +273,81 @@
       while($r = MySQLi_fetch_assoc($qStat))
       {
 
-        echo "<table class='tabulkaVHlavicce' style='margin: 15px 0px 15px 0px;'>
-              <tr class='zelenyRadek'>
-                <td class='radek' colspan='12'>".$lang['mesic'.substr($r['den'], 5, 2)]." ".substr($r['den'], 0, 4)."</td>
-              </tr>
-              <tr class='modryRadek'>
-                <td class='radek'>
-                    <font class='mensi'>({$lang['teplota']}: MIN: ".jednotkaTeploty(round($r['MIN(nejnizsi)'], 2), $u, 1).", 
-                    AVG: ".jednotkaTeploty(round($r['AVG(prumer)'], 2), $u, 1).", 
-                    MAX: ".jednotkaTeploty(round($r['MAX(nejvyssi)'], 2), $u, 1);
-                    if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
-                    {
-                    echo " | {$lang['vlhkost']}: MIN: ".round($r['MIN(nejnizsi_vlhkost)'], 2)."%, 
-                    AVG: ".round($r['AVG(prumer_vlhkost)'], 2)."%, 
-                    MAX: ".round($r['MAX(nejvyssi_vlhkost)'], 2)."%";
-                    }
-                    echo ")</font></td>
-              </tr>
-              <tr><td>";
-              for($a = 0; $a < 24; $a++)
-              {
-                echo "<table class='mesicVDobe'>
-                      <tr class='zelenyRadek'>
-                        <td class='radekVetsi' colspan='3'>{$a}:00 - {$a}:59</td>
-                      </tr>
-                      <tr class='modryRadek'>
-                        <td class='radek'>MIN</td>
-                        <td class='radek'>AVG</td>
-                        <td class='radek'>MAX</td>
-                      </tr>
-                      <tr>
-                        <td>".jednotkaTeploty(round($r['MIN('.$a.'nejnizsi)'], 2), $u, 1).(round($r['MIN('.$a.'nejnizsi_vlhkost)'], 2) > 0 ? "<br>".round($r['MIN('.$a.'nejnizsi_vlhkost)'], 2)."%" : "")."</td>
-                        <td>".jednotkaTeploty(round($r['AVG('.$a.'prumer)'], 2), $u, 1).(round($r['AVG('.$a.'prumer_vlhkost)'], 2) > 0 ? "<br>".round($r['AVG('.$a.'prumer_vlhkost)'], 2)."%" : "")."</td>
-                        <td>".jednotkaTeploty(round($r['MAX('.$a.'nejvyssi)'], 2), $u, 1).(round($r['MAX('.$a.'nejvyssi_vlhkost)'], 2) > 0 ? "<br>".round($r['MAX('.$a.'nejvyssi_vlhkost)'], 2)."%" : "")."</td>
-                      </tr>
-                      </table>";
-              }
+        // MIN/AVG/MAX za dnesni den
+        $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'],2), $u, 1);
+        $prumernaDnes['teplota'] = jednotkaTeploty(round($prumernaDnes['teplota'],2), $u, 1);
+        $nejvyssiDnes['teplota'] = jednotkaTeploty(round($nejvyssiDnes['teplota'],2), $u, 1);
+        echo "<table class='tabulkaDnes'>
+          <tr>
+            <td class='radekDnes'>".substr($r['den'], 0, 4)."<br><span class='font25 zelena'>".mb_strtoupper($lang['mesic'.substr($r['den'], 5, 2)], "UTF-8")."</span></td>
+            <td class='radekDnes'>";
+        if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo "<div class='vpravo'>"; }
+        echo strtoupper($lang['teplota'])."<br>
+                      <span class='zelena'>{$lang['min2']}:</span> ".jednotkaTeploty(round($r['MIN(nejnizsi)'], 2), $u, 1)." |
+                      <span class='zelena'>{$lang['prumer']}:</span> ".jednotkaTeploty(round($r['AVG(prumer)'], 2), $u, 1)." |
+                      <span class='zelena'>{$lang['max2']}:</span> ".jednotkaTeploty(round($r['MAX(nejvyssi)'], 2), $u, 1);
+        if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo "</div>"; }
+        echo "</td>";
+        if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
+        {
+          $nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'],2);
+          $prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'],2);
+          $nejvyssiDnes['vlhkost'] = round($nejvyssiDnes['vlhkost'],2);
+          echo "<td class='radekDnes'>
+                      <div class='vpravo'>".strtoupper($lang['vlhkost'])."<br>
+                        <span class='zelena'>{$lang['min2']}:</span> ".round($r['MIN(nejnizsi_vlhkost)'], 2)."% |
+                        <span class='zelena'>{$lang['prumer']}:</span> ".round($r['AVG(prumer_vlhkost)'], 2)."% |
+                        <span class='zelena'>{$lang['max2']}:</span> ".round($r['MAX(nejvyssi_vlhkost)'], 2)."%&nbsp;
+                      </div>
+                    </td>";
+        }
+        echo "</tr>
+        </table>";
 
-              echo "
-                </td></tr>
+        echo "<table>
+                <tr>
+                  <td class='sedaBunka'>";
+
+        for($a = 0; $a < 24; $a++)
+        {
+
+          echo "<table class='mesicVDobe'>
+                <tr class='zelenyRadek'>
+                  <td class='radekVetsi' colspan='3'>{$a}:00 - {$a}:59</td>
+                </tr>
+                <tr class='modryRadek'>
+                  <td class='radek'>MIN</td>
+                  <td class='radek'>AVG</td>
+                  <td class='radek'>MAX</td>
+                </tr>
+                <tr>
+                  <td>".jednotkaTeploty(round($r['MIN('.$a.'nejnizsi)'], 2), $u, 1)."</td>
+                  <td>".jednotkaTeploty(round($r['AVG('.$a.'prumer)'], 2), $u, 1)."</td>
+                  <td>".jednotkaTeploty(round($r['MAX('.$a.'nejvyssi)'], 2), $u, 1)."</td>
+                </tr>";
+
+                  if(round($r['AVG('.$a.'prumer_vlhkost)'], 2) > 0)
+                  {
+                    echo "<tr>
+                            <td>".round($r['MIN('.$a.'nejnizsi_vlhkost)'], 2)."%</td>
+                            <td>".round($r['AVG('.$a.'prumer_vlhkost)'], 2)."%</td>
+                            <td>".round($r['MAX('.$a.'nejvyssi_vlhkost)'], 2)."%</td>
+                          </tr> ";
+                  }
+
+          echo "</td>
               </tr>
-          </table>";
+            </table>";
+
+        }
+
+        echo "</td></tr>
+            </tr>
+        </table>";
 
       }
 
-    }
+      }
 
   }
   else

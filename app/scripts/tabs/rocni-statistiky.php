@@ -26,6 +26,37 @@
                             LIMIT 1");
       $r = MySQLi_fetch_assoc($qStat);
 
+      // MIN/AVG/MAX za dnesni den
+      $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'],2), $u, 1);
+      $prumernaDnes['teplota'] = jednotkaTeploty(round($prumernaDnes['teplota'],2), $u, 1);
+      $nejvyssiDnes['teplota'] = jednotkaTeploty(round($nejvyssiDnes['teplota'],2), $u, 1);
+      echo "<table class='tabulkaDnes'>
+          <tr>
+            <td class='radekDnes'><a href='./scripts/modals/rocniGrafy.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;rok={$rok}' class='modal bilyOdkaz'><span class='font25 zelena'>{$rok}</a></span></td>
+            <td class='radekDnes'>";
+      if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo "<div class='vpravo'>"; }
+      echo strtoupper($lang['teplota'])."<br>
+                      <span class='zelena'>{$lang['min2']}:</span> ".jednotkaTeploty(round($r['MIN(nejnizsi)'], 2), $u, 1)." |
+                      <span class='zelena'>{$lang['prumer']}:</span> ".jednotkaTeploty(round($r['AVG(prumer)'], 2), $u, 1)." |
+                      <span class='zelena'>{$lang['max2']}:</span> ".jednotkaTeploty(round($r['MAX(nejvyssi)'], 2), $u, 1);
+      if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo "</div>"; }
+      echo "</td>";
+      if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
+      {
+        $nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'],2);
+        $prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'],2);
+        $nejvyssiDnes['vlhkost'] = round($nejvyssiDnes['vlhkost'],2);
+        echo "<td class='radekDnes'>
+                      <div class='vpravo'>".strtoupper($lang['vlhkost'])."<br>
+                        <span class='zelena'>{$lang['min2']}:</span> ".round($r['MIN(nejnizsi_vlhkost)'], 2)."% |
+                        <span class='zelena'>{$lang['prumer']}:</span> ".round($r['AVG(prumer_vlhkost)'], 2)."% |
+                        <span class='zelena'>{$lang['max2']}:</span> ".round($r['MAX(nejvyssi_vlhkost)'], 2)."%&nbsp;
+                      </div>
+                    </td>";
+      }
+      echo "</tr>
+        </table>";
+
       echo "<table class='tabulkaVHlavicce'>
               <tr>
                 <td class='radekVelky' colspan='12'><a href='./scripts/modals/rocniGrafy.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."&amp;rok={$rok}' class='modal bilyOdkaz'>{$rok}</a><br>

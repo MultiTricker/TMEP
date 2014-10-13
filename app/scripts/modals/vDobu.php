@@ -26,7 +26,7 @@
   // rozdeleni na sloupce
   echo "<center>
         <table><tr>
-         <td valign='top'>
+         <td valign='top' class='padding5'>
           <table class='tabulkaVHlavicce' width='190' style='margin: 0px 16px 0px 0px;'>";
 
     ///////////////////////////
@@ -60,7 +60,7 @@
 
       echo "</table>
           </td>
-          <td valign='top'>
+          <td valign='top' class='padding5'>
             <table class='tabulkaVHlavicce' width='190' style='margin: 0px 16px 0px 0px;'><tr>
               <td colspan='2' class='radek'><b>{$lang['nejvyssiteploty']}</b></td>
             </tr>";
@@ -81,7 +81,7 @@
   if($vlhkomer == 1)
   {
 
-    echo "<td valign='top'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 16px 0px 0px;'>";
+    echo "<td valign='top' class='padding5'><table class='tabulkaVHlavicce' width='190' style='margin: 0px 16px 0px 0px;'>";
 
       ///////////////////////////
       // nejnizsi
@@ -113,7 +113,7 @@
 
       echo "</table>
           </td>
-          <td valign='top'>
+          <td valign='top' class='padding5'>
             <table class='tabulkaVHlavicce' width='190' style='margin: 0px 16px 0px 0px;'><tr>
               <td colspan='2' class='radek'><b>{$lang['nejvyssivlhkost']}</b></td>
             </tr>";

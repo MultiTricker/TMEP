@@ -9,7 +9,7 @@
   // NEJNIZSI
   // Tabulka s hodnotami + krmeni dat pro graf
   $tabulka = "<center>
-              <table width='600'><tr><td width='300'>
+              <table width='600'><tr><td width='300' class='padding5'>
               <table width='260' class='tabulkaVHlavicce'>
               <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejnizsiteplota']}</b></td></tr>
               <tr class='radek modryRadek'>
@@ -83,7 +83,7 @@
   ////////////////////////////////////////////
   // Nejvyssi
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka .= "</td><td width='300'>
+  $tabulka .= "</td><td width='300' class='padding5'>
               <table width='260' class='tabulkaVHlavicce'>
               <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejvyssiteplota']}</b></td></tr>
               <tr class='radek modryRadek'>
