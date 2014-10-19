@@ -28,20 +28,20 @@
 
             $labels[] = substr($t['kdy'], 11, 5);
 
-            if($tep == 0 OR ($tep/12) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
+            if($tep == 0 OR ($tep/12) == 0){ $ydata[] = round(jednotkaTeploty(0, $u, 0), 1); }
 
             $a = 0;
             if($fr == 1)
             {
             $fr = 0;
-            $ydata[] = jednotkaTeploty($tep, $u, 0);
+            $ydata[] = round(jednotkaTeploty($tep, $u, 0), 1);
             }
             else
             {
 
-              if($tep == 0 OR ($tep/12) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
+              if($tep == 0 OR ($tep/12) == 0){ $ydata[] = round(jednotkaTeploty(0, $u, 0), 1); }
               else
-              { $ydata[] = jednotkaTeploty($tep/12, $u, 0); }
+              { $ydata[] = round(jednotkaTeploty($tep/12, $u, 0), 1); }
 
             }
             

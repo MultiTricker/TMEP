@@ -161,6 +161,13 @@
       while($t = MySQLi_fetch_assoc($qL))
       {
 
+            echo "<tr>
+              <td style='border-bottom: 1px solid darkgrey';"; if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0){ echo " rowspan='2'"; } echo "><b>{$lang['doba']} <font style='color: black;'>{$a}:00 - {$a}:59</font></td>
+              <td width='100'><b>{$lang['teplota']}:</b></td>
+              <td style='border-bottom: 1px solid darkgrey'><b>MIN:</b> ".jednotkaTeploty(round($r[$min], 2), $u, 1)."</td>
+              <td style='border-bottom: 1px solid darkgrey'><b>AVG:</b> ".jednotkaTeploty(round($r[$avg], 2), $u, 1)."</td>
+              <td style='border-bottom: 1px solid darkgrey'><b>MAX:</b> ".jednotkaTeploty(round($r[$max], 2), $u, 1)."</td>
+            </tr>";
         echo "<tr class='modryRadek'>
           <td class='radek' colspan='5'>&nbsp;&nbsp;".formatDnu($t['den'])."</td>
         </tr>
