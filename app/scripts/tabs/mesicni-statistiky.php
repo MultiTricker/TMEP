@@ -110,18 +110,18 @@
 
     echo "</table></div>";
 
-        ///////////////////////////
-        // Nejchladnejsi mesice
-        ///////////////////////////
-        echo "<div class='col-md-3 perc22'>
-              <table class='tabulkaVHlavicce'>
-              <tr class='zelenyRadek'>
-                <td colspan='2' ><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejsussimesice']}</a></td>
-              </tr>
-              <tr class='modryRadek'>
-                <td class='radek'>{$lang['mesic']}</td>
-                <td class='radek'>{$lang['prumernavlhkost']}</td>
-              </tr>";
+  ///////////////////////////
+  // Nejchladnejsi mesice
+  ///////////////////////////
+  echo "<div class='col-md-3 perc22'>
+        <table class='tabulkaVHlavicce'>
+        <tr class='zelenyRadek'>
+          <td colspan='2' ><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejsussimesice']}</a></td>
+        </tr>
+        <tr class='modryRadek'>
+          <td class='radek'>{$lang['mesic']}</td>
+          <td class='radek'>{$lang['prumernavlhkost']}</td>
+        </tr>";
 
   // nacteme
   $qStat = MySQLi_query($GLOBALS["DBC"], "SELECT den, AVG(prumer_vlhkost) as prumer
@@ -145,15 +145,15 @@
   else
   {
 
-        echo "<div class='col-md-3 perc22'>
-              <table class='tabulkaVHlavicce'>
-              <tr class='zelenyRadek'>
-                <td colspan='2' ><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejvicemereni']}</a></td>
-              </tr>
-              <tr class='modryRadek'>
-                <td class='radek'>{$lang['mesic']}</td>
-                <td class='radek'>{$lang['mereni']}</td>
-              </tr>";
+  echo "<div class='col-md-3 perc22'>
+        <table class='tabulkaVHlavicce'>
+        <tr class='zelenyRadek'>
+          <td colspan='2' ><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejvicemereni']}</a></td>
+        </tr>
+        <tr class='modryRadek'>
+          <td class='radek'>{$lang['mesic']}</td>
+          <td class='radek'>{$lang['mereni']}</td>
+        </tr>";
 
   ///////////////////////////
   // nacteme nejvice mereni
@@ -174,16 +174,15 @@
 
   echo "</table></div>";
 
-
-        echo "<div class='col-md-3 perc22'>
-              <table class='tabulkaVHlavicce'>
-              <tr class='zelenyRadek'>
-                <td colspan='2' ><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejmenemereni']}</a></td>
-              </tr>
-              <tr class='modryRadek'>
-                <td class='radek'>{$lang['mesic']}</td>
-                <td class='radek'>{$lang['mereni']}</td>
-              </tr>";
+  echo "<div class='col-md-3 perc22'>
+        <table class='tabulkaVHlavicce'>
+        <tr class='zelenyRadek'>
+          <td colspan='2' ><a href='./scripts/modals/mesicniStatistiky.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal bilyOdkaz'>{$lang['nejmenemereni']}</a></td>
+        </tr>
+        <tr class='modryRadek'>
+          <td class='radek'>{$lang['mesic']}</td>
+          <td class='radek'>{$lang['mereni']}</td>
+        </tr>";
 
   ///////////////////////////
   // nacteme nejmene mereni
@@ -196,10 +195,12 @@
 
     while($r = MySQLi_fetch_assoc($qStat))
     {
+
       echo "<tr>
               <td>".substr($r['den'], 0, 4)."/".substr($r['den'], 5, 2)."</td>
               <td>".number_format($r['mereni'], 0, "", " ")."</td>
             </tr>";
+
     }
 
   echo "</table></div>";
@@ -341,7 +342,7 @@
 
         }
 
-        echo "</td></tr>
+        echo "</td>
             </tr>
         </table>";
 

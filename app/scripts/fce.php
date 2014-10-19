@@ -323,14 +323,14 @@ function barvaRamecku($teplota)
 
   $trida = "teplota-30";
 
-  $skoky = array(-30, -25, -20, -15, -10, -5, 0, 5, 10 , 15, 20, 25, 30, 35);
+  $skoky = array(-30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35);
 
   foreach($skoky as $skok)
   {
-    if($teplota >= $skok){ $trida = "teplota".(string)$skok; }
+    if($teplota >= $skok){ $trida = " teplota".(string)$skok; }
   }
 
-  return " ".$trida;
+  return $trida;
 
 }
 
