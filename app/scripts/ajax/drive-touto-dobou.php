@@ -14,8 +14,8 @@
   header('Content-type: text/html; charset=UTF-8');
 
   echo "<table width='100%' class='tabulkaVHlavicce'>
-    <tr class='radek'>
-      <td colspan='3'><a href='./scripts/modals/driveToutoDobou.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'><b>{$lang['drivetoutodobou']}</b> <img src='./images/nw.png' title='{$lang['historie']}'></a></td>
+    <tr class='radek zelenyRadek'>
+      <td colspan='3'><a href='./scripts/modals/driveToutoDobou.php?je=".$_GET['je']."&amp;ja=".$_GET['ja']."' class='modal'>{$lang['drivetoutodobou']}</a></td>
     </tr>";
 
     // posledni dny do pole

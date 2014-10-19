@@ -18,9 +18,9 @@
 
     // jazyk
     if(isset($_GET['ja']) AND ($_GET['ja'] == "cz" OR $_GET['ja'] == "en" OR
-        $_GET['ja'] == "de" OR $_GET['ja'] == 'fr' OR $_GET['ja'] == 'pl') OR
+        $_GET['ja'] == "de" OR $_GET['ja'] == 'fr' OR $_GET['ja'] == 'pl' OR
         $_GET['ja'] == 'fi' OR $_GET['ja'] == 'sv' OR $_GET['ja'] == 'sk' OR
-        $_GET['ja'] == 'ru')
+        $_GET['ja'] == 'ru'))
     {
       $l = $_GET['ja'];
     }
@@ -54,7 +54,7 @@
     <meta NAME="author" CONTENT="Michal Ševčík (http://multi.tricker.cz), František Ševčík (f.sevcik@seznam.cz)">
     <script src="../js/jquery.tools.ui.timer.colorbox.tmep.highcharts.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="../../images/favicon.ico">
-    <style type="text/css">body{ background: url("../../images/modal-bcg.png") top center repeat-x #f4f3e5; }</style>
+    <style type="text/css">body { background: white; }</style>
   </head>
 
 <body>

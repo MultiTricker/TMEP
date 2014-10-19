@@ -41,7 +41,6 @@
       // vlhkost je null?
       if(!is_numeric($vlhkost)){ $vlhkost = "null"; }
 
-
       // kontrolujeme IP a sedi
       if(isset($ip) AND $ip != "" AND $ip == $_SERVER['REMOTE_ADDR'])
       {
@@ -111,11 +110,11 @@
     <script type="text/javascript">
     $(document).ready(function(){
      // po urcitem case AJAXove nacteni hodnot
-     $.timer(60000, function (timer) {
-       $.get('scripts/ajax/teplota.php<?php echo "?ja={$l}&je={$u}"; ?>', function(data) { $('.ajaxrefresh').html(data); });
+     $.timer(60000, function () {
+       $.get('scripts/ajax/aktualne.php<?php echo "?ja={$l}&je={$u}"; ?>', function(data) { $('.ajaxrefresh').html(data); });
        $.get('scripts/ajax/pocet-mereni.php', function(data) { $('.pocetmereni').html(data); });
       });
-     $.timer(120000, function (timer) {
+     $.timer(120000, function () {
        $.get('scripts/ajax/drive-touto-dobou.php<?php echo "?ja={$l}&je={$u}"; ?>', function(data) { $('.drivetoutodobouted').html(data); $('a.modal').colorbox({iframe:true, width: "890px", height: "80%"}); });
       });
      // jQuery UI - datepicker
@@ -136,37 +135,65 @@
 
 <body>
 
-  <div id='hlavni' class="container">
-    <?php
+<?php
 
-    // Hlavička
-    require_once "./scripts/head.php";
+  echo "<div class='roztahovak-modry'>
+        <div class='hlavicka container'>
+        <div id='nadpis'><h1>".$lang['hlavninadpis']."</h1></div>";
 
-    // Záložky
-    echo "<div id=\"oblastzalozek\">
-    <ul class=\"tabs\">
-      <li><a href=\"#aktualne\">{$lang['aktualne']}</a></li>
-      <li><a href=\"#denni\" onclick=\"loadTab('denni-statistiky');\">{$lang['dennistatistiky']}</a></li>
-      <li><a href=\"#mesicni\" onclick=\"loadTab('mesicni-statistiky');\">{$lang['mesicnistatistiky']}</a></li>
-      <li><a href=\"#rocni\" onclick=\"loadTab('rocni-statistiky');\">{$lang['rocnistatistiky']}</a></li>
-      <li><a href=\"#historie\">{$lang['historie']}</a></li>
-    </ul>
+  if($zobrazitNastaveni == 1)
+  {
 
-    <div class=\"panely\">";
-      echo "<div id=\"aktualneTab\">"; require "scripts/tabs/aktualne.php"; echo "</div>";
-      echo "<div id=\"denni-statistiky\"></div>";
-      echo "<div id=\"mesicni-statistiky\"></div>";
-      echo "<div id=\"rocni-statistiky\"></div>";
-      echo "<div id=\"historieTab\">"; require "scripts/tabs/historie.php"; echo "</div>";
-      echo "</div>
+    echo "<div id='menu'>
+      <nav>
+        <ul>
+          ".menuJazyky($jazyky, $l)."
+          ".menuJednotky($jednotky, $u)."
+        </ul>
+      </nav>
     </div>";
 
-    // Patička
-    echo "<div class='nohy'><p>{$lang['paticka']}</p></div>";
+  }
+
+echo "</div>
+      </div>";
+
+  // Tři sloupce
+  require_once "./scripts/head.php";
 
 ?>
 
-  </div> <!-- konec hlavni -->
+  <div id='hlavni' class="container">
+
+<?php
+
+  // Záložky
+  echo "<div id=\"oblastzalozek\">
+  <ul class=\"tabs\">
+    <li><a href=\"#aktualne\">{$lang['aktualne']}</a></li>
+    <li><a href=\"#denni\" onclick=\"loadTab('denni-statistiky');\">{$lang['dennistatistiky']}</a></li>
+    <li><a href=\"#mesicni\" onclick=\"loadTab('mesicni-statistiky');\">{$lang['mesicnistatistiky']}</a></li>
+    <li><a href=\"#rocni\" onclick=\"loadTab('rocni-statistiky');\">{$lang['rocnistatistiky']}</a></li>
+    <li><a href=\"#historie\">{$lang['historie']}</a></li>
+  </ul>
+
+  <div class=\"panely\">";
+    echo "<div id=\"aktualneTab\">"; require "scripts/tabs/aktualne.php"; echo "</div>";
+    echo "<div id=\"denni-statistiky\"></div>";
+    echo "<div id=\"mesicni-statistiky\"></div>";
+    echo "<div id=\"rocni-statistiky\"></div>";
+    echo "<div id=\"historieTab\">"; require "scripts/tabs/historie.php"; echo "</div>";
+    echo "</div>
+  </div>
+
+  </div>";
+
+  // Patička
+  echo "<div class='roztahovak-modry'>
+          <div class='paticka container'><p>{$lang['paticka']}</p></div>
+        </div>";
+
+?>
 
 </body>
 </html>

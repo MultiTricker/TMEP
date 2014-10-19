@@ -8,11 +8,11 @@
   ////////////////////////////////////////////
   // NEJNIZSI
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka = "<div class='row'>
-              <div class='col-md-5'>
-              <table class='tabulkaVHlavicceModalMensi'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejmenemereni']}</b></td></tr>
-              <tr class='radek'>
+  $tabulka = "<center>
+              <table width='600'><tr><td width='300' class='padding5'>
+              <table width='260' class='tabulkaVHlavicce'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejmenemereni']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['pocetmereni']}</b></td>";
     $tabulka .= "</tr>";
@@ -43,10 +43,10 @@
   ////////////////////////////////////////////
   // Nejvyssi
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka .= "</div><div class='col-md-5'>
+  $tabulka .= "</td><td width='300' class='padding5'>
               <table class='tabulkaVHlavicceModalMensi'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejvicemereni']}</b></td></tr>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejvicemereni']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['pocetmereni']}</b></td>";
     $tabulka .= "</tr>";
@@ -72,8 +72,8 @@
     }
 
   $tabulka .=  "</table>";
-   
-  $tabulka .= "</div></div>";
+
+  $tabulka .= "</td></tr></table></center>";
 
   // Tabulka s hodnotami
   echo $tabulka;

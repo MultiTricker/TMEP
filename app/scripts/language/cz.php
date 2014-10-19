@@ -11,13 +11,13 @@
   {
     $lang['titulekstranky'] = "TH2E - ethernetový teploměr a vlhkoměr";
     $lang['popisstranky'] = "Ethernetový teploměr a vlhkoměr TH2E - stránka s hodnotami a grafy.";
-    $lang['hlavninadpis'] = "TH2E - ethernetový teploměr a vlhkoměr";
+    $lang['hlavninadpis'] = "<span>TH2E</span> - ethernetový teploměr a vlhkoměr";
   }
   else
   {
     $lang['titulekstranky'] = "TME - ethernetový teploměr";
     $lang['popisstranky'] = "Ethernetový teploměr TME - stránka s hodnotami a grafy.";
-    $lang['hlavninadpis'] = "TME - ethernetový teploměr";
+    $lang['hlavninadpis'] = "<span>TME</span> - ethernetový teploměr";
   }
 
   // tmep v1-2
@@ -30,7 +30,7 @@
   $lang['cas'] = "Čas";
   $lang['den'] = "Den";
   $lang['teplota'] = "Teplota";
-  $lang['aktualniteplota'] = "aktuální teplota:";
+  $lang['aktualniteplota'] = "Aktuální teplota";
   $lang['paticka'] = "Výrobce TME/TH2E: <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, tvůrce této aplikace: <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, grafy tvořeny pomocí <a href='http://www.highcharts.com/'>Highcharts</a>.";
   $lang['teplota4hodiny'] = "Teplota za poslední 4 hodiny";
   $lang['teplota24hodin'] = "Teplota za posledních 24 hodin";
@@ -63,7 +63,7 @@
   $lang['mesicnistatistiky'] = "Měsíční statistiky";
   $lang['rocnistatistiky'] = "Roční statistiky";
   $lang['nejteplejsimesice'] = "Nejteplejší měsíce";
-  $lang['nejstudenejsimesice'] = "Nejchladnější měsíce";
+  $lang['nejchladnejsimesice'] = "Nejchladnější měsíce";
   $lang['prumernateplota'] = "Průměrná teplota";
   $lang['nejvicemereni'] = "Nejvíce měření";
   $lang['nejmenemereni'] = "Nejméně měření";

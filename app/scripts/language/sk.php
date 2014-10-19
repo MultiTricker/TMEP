@@ -32,7 +32,7 @@
   $lang['cas'] = "Čas";
   $lang['den'] = "Deň";
   $lang['teplota'] = "Teplota";
-  $lang['aktualniteplota'] = "aktuálna teplota:";
+  $lang['aktualniteplota'] = "Aktuálna teplota";
   $lang['paticka'] = "Výrobca TME/TH2E: <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, tvorca tejto aplikáce: <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, grafy tvorené pomocou <a href='http://www.highcharts.com/'>Highcharts</a>.";
   $lang['teplota4hodiny'] = "Teplota za posledné 4 hodiny";
   $lang['teplota24hodin'] = "Teplota za posledných 24 hodín";
@@ -65,7 +65,7 @@
   $lang['mesicnistatistiky'] = "Mesačné štatistiky";
   $lang['rocnistatistiky'] = "Ročné štatistiky";
   $lang['nejteplejsimesice'] = "Najteplejšie mesiace";
-  $lang['nejstudenejsimesice'] = "Najchladnejšie mesiace";
+  $lang['nejchladnejsimesice'] = "Najchladnejšie mesiace";
   $lang['prumernateplota'] = "Priemerná teplota";
   $lang['nejvicemereni'] = "Najviac meraní";
   $lang['nejmenemereni'] = "Najmenej meraní";

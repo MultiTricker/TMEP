@@ -51,12 +51,12 @@
   // rozdeleni na sloupce
 
         echo "<table class='tabulkaVHlavicceModalMensi'>
-          <tr>
-            <td colspan='2' class='radek'><b>{$lang['nejteplejsimesice']}</b></td>
+          <tr class='radek zelenyRadek'>
+            <td colspan='2'><b>{$lang['nejteplejsimesice']}</b></td>
           </tr>
-          <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['prumernateplota']}</b></td>
+          <tr class='radek modryRadek'>
+            <td><b>{$lang['mesic']}</b></td>
+            <td><b>{$lang['prumernateplota']}</b></td>
           </tr>";
 
     while($r = MySQLi_fetch_assoc($qStat))
@@ -73,12 +73,12 @@
         // Nejstudenejsi mesice
         ///////////////////////////
         echo "<table class='tabulkaVHlavicceModalMensi'>
-          <tr>
-            <td colspan='2' class='radek'><b>{$lang['nejstudenejsimesice']}</b></td>
+          <tr class='radek zelenyRadek'>
+            <td colspan='2'><b>{$lang['nejchladnejsimesice']}</b></td>
           </tr>
-          <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['prumernateplota']}</b></td>
+          <tr class='radek modryRadek'>
+            <td><b>{$lang['mesic']}</b></td>
+            <td><b>{$lang['prumernateplota']}</b></td>
           </tr>";
 
   // nacteme
@@ -110,12 +110,12 @@
                         LIMIT 50");
 
         echo "<table class='tabulkaVHlavicceModalMensi'>
-          <tr>
-            <td colspan='2' class='radek'><b>{$lang['nejvlhcimesice']}</b></td>
+          <tr class='radek zelenyRadek'>
+            <td colspan='2'><b>{$lang['nejvlhcimesice']}</b></td>
           </tr>
-          <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['prumernavlhkost']}</b></td>
+          <tr class='radek modryRadek'>
+            <td><b>{$lang['mesic']}</b></td>
+            <td><b>{$lang['prumernavlhkost']}</b></td>
           </tr>";
 
     while($r = MySQLi_fetch_assoc($qStat))
@@ -132,12 +132,12 @@
         // Nejstudenejsi mesice
         ///////////////////////////
         echo "<table class='tabulkaVHlavicceModalMensi'>
-          <tr>
-            <td colspan='2' class='radek'><b>{$lang['nejsussimesice']}</b></td>
+          <tr class='radek zelenyRadek'>
+            <td colspan='2'><b>{$lang['nejsussimesice']}</b></td>
           </tr>
-          <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['prumernavlhkost']}</b></td>
+          <tr class='radek modryRadek'>
+            <td><b>{$lang['mesic']}</b></td>
+            <td><b>{$lang['prumernavlhkost']}</b></td>
           </tr>";
 
   // nacteme
@@ -163,12 +163,12 @@
   {
 
         echo "<table class='tabulkaVHlavicceModalMensi'>
-          <tr>
-            <td colspan='2' class='radek'><b>{$lang['nejvicemereni']}</b></td>
+          <tr class='radek zelenyRadek'>
+            <td colspan='2'><b>{$lang['nejvicemereni']}</b></td>
           </tr>
-          <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['mereni']}</b></td>
+          <tr class='radek modryRadek'>
+            <td><b>{$lang['mesic']}</b></td>
+            <td><b>{$lang['mereni']}</b></td>
           </tr>";
 
   ///////////////////////////
@@ -192,12 +192,12 @@
 
 
         echo "<table class='tabulkaVHlavicceModalMensi'>
-          <tr>
-            <td colspan='2' class='radek'><b>{$lang['nejmenemereni']}</b></td>
+          <tr class='radek zelenyRadek'>
+            <td colspan='2'><b>{$lang['nejmenemereni']}</b></td>
           </tr>
-          <tr>
-            <td class='radek'><b>{$lang['mesic']}</b></td>
-            <td class='radek'><b>{$lang['mereni']}</b></td>
+          <tr class='radek modryRadek'>
+            <td><b>{$lang['mesic']}</b></td>
+            <td><b>{$lang['mereni']}</b></td>
           </tr>";
 
   ///////////////////////////

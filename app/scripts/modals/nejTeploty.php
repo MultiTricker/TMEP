@@ -9,10 +9,10 @@
   // NEJNIZSI
   // Tabulka s hodnotami + krmeni dat pro graf
   $tabulka = "<center>
-              <table width='600'><tr><td width='300'>
+              <table width='600'><tr><td width='300' class='padding5'>
               <table width='260' class='tabulkaVHlavicce'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejnizsiteplota']}</b></td></tr>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejnizsiteplota']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['teplota']} &nbsp;(&deg;{$u})</b></td>";
     $tabulka .= "</tr>";
@@ -51,8 +51,8 @@
     //////////////////
     // PRUMER
     $tabulka .= "<br><table width='260' class='tabulkaVHlavicce'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejnizsiteplota']} - {$lang['prumer']}</b></td></tr>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejnizsiteplota']} - {$lang['prumer']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['teplota']} &nbsp;(&deg;{$u})</b></td>";
     $tabulka .= "</tr>";
@@ -83,10 +83,10 @@
   ////////////////////////////////////////////
   // Nejvyssi
   // Tabulka s hodnotami + krmeni dat pro graf
-  $tabulka .= "</td><td width='300'>
+  $tabulka .= "</td><td width='300' class='padding5'>
               <table width='260' class='tabulkaVHlavicce'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejvyssiteplota']}</b></td></tr>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejvyssiteplota']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['teplota']} &nbsp;(&deg;{$u})</b></td>";
     $tabulka .= "</tr>";
@@ -122,8 +122,8 @@
     //////////////////
     // PRUMER
     $tabulka .= "<br><table width='260' class='tabulkaVHlavicce'>
-              <tr class='radek'><td colspan='2'>&nbsp;<b>{$lang['nejvyssiteplota']} - {$lang['prumer']}</b></td></tr>
-              <tr class='radek'>
+              <tr class='radek zelenyRadek'><td colspan='2'>&nbsp;<b>{$lang['nejvyssiteplota']} - {$lang['prumer']}</b></td></tr>
+              <tr class='radek modryRadek'>
                 <td>&nbsp;<b>{$lang['den']}</b></td>
                 <td>&nbsp;<b>{$lang['teplota']} &nbsp;(&deg;{$u})</b></td>";
     $tabulka .= "</tr>";

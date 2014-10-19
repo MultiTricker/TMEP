@@ -29,7 +29,7 @@
   $lang['den'] = "Tag";
   $lang['cas'] = "Uhrzeit";
   $lang['teplota'] = "Temperatur";
-  $lang['aktualniteplota'] = "aktuelle Temperatur:";
+  $lang['aktualniteplota'] = "Aktuelle Temperatur";
   $lang['paticka'] = "Hersteller des TME: <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, Gestalter dieser Applikation: <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, Diagramme erstellt <a href='http://www.highcharts.com/'>Highcharts</a>.";
   $lang['teplota4hodiny'] = "Temperatur der letzten 4 Stunden";
   $lang['teplota24hodin'] = "Temperatur der letzten 24 Stunden";
@@ -62,7 +62,7 @@
   $lang['mesicnistatistiky'] = "Monatliche Statistik";
   $lang['rocnistatistiky'] = "Jährliche Statistik";
   $lang['nejteplejsimesice'] = "Wärmste Monat";
-  $lang['nejstudenejsimesice'] = "Kältester Monat";
+  $lang['nejchladnejsimesice'] = "Kältester Monat";
   $lang['prumernateplota'] = "Durchschnittliche Temperatur";
   $lang['nejvicemereni'] = "Die meisten Messungen";
   $lang['nejmenemereni'] = "Minimale Messungen";
