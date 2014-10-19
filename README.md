@@ -11,7 +11,8 @@ Application demo: [roudnice.eu](http://www.roudnice.eu)
 
 Read tmep-info-en.html or tmep-info-cz.html for more information.
 
-  * **Version 7.0.4 released at 2014-03-22** (Bugfixes)
+  * **Version 8.0 released at 2014-10-19** (redesigned)
+  * Version 7.0.4 released at 2014-03-22 (Bugfixes)
   * Version 7.0 released at 2014-01-03 (Responsive and adaptive version of app! One code rule all devices. Mobile version was deleted.)
   * Version 6.5 released at 2013-12-31 (Performance tuning - tabs loaded with AJAX, CSS sprites; Hightcharts 3.0.7)
   * Version 6.4 released at 2013-12-29 (Just replaced MySQL with MySQLi extension)
