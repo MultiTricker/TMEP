@@ -167,9 +167,9 @@
 
         echo "<tr'>
           <td style='border-bottom: 1px solid darkgrey' width='100'><b>{$lang['teplota']}:</b></td>
-          <td style='border-bottom: 1px solid darkgrey'><b>MIN:</b> ".jednotkaTeploty(round($r[$min], 2), $u, 1)."</td>
-          <td style='border-bottom: 1px solid darkgrey'><b>AVG:</b> ".jednotkaTeploty(round($r[$avg], 2), $u, 1)."</td>
-          <td style='border-bottom: 1px solid darkgrey'><b>MAX:</b> ".jednotkaTeploty(round($r[$max], 2), $u, 1)."</td>
+          <td style='border-bottom: 1px solid darkgrey'><b>MIN:</b> ".jednotkaTeploty(round($t['MIN(nejnizsi)'], 2), $u, 1)."</td>
+          <td style='border-bottom: 1px solid darkgrey'><b>AVG:</b> ".jednotkaTeploty(round($t['AVG(prumer)'], 2), $u, 1)."</td>
+          <td style='border-bottom: 1px solid darkgrey'><b>MAX:</b> ".jednotkaTeploty(round($t['MAX(nejvyssi)'], 2), $u, 1)."</td>
         </tr>";
 
         if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
