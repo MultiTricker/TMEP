@@ -3,7 +3,7 @@
  /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
  ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- ***  Portugese translation by rui.lourenco@PLASFIL.PT                  ***
+ ***  Portuguese translation by rui.lourenco@PLASFIL.PT                 ***
  *************************************************************************/
 
   // nadpis
