@@ -12,7 +12,8 @@
                   "pl" => "pl",
                   "fr" => "fr",
                   "fi" => "fi",
-                  "sv" => "sv");
+                  "sv" => "sv",
+                  "pt" => "pt");
 
   $jednotky = Array("C" => "Celsius",
                     "F" => "Fahrenheit",
