@@ -11,7 +11,7 @@ Application demo: [roudnice.eu](http://www.roudnice.eu)
 
 Read tmep-info-en.html or tmep-info-cz.html for more information.
 
-  * **Version 8.1 released at 2015-04-20** (Portuguese translation)
+  * **Version 8.1 released at 2015-04-21** (Portuguese translation)
   * Version 8.0 released at 2014-10-19 (redesigned)
   * Version 7.0.4 released at 2014-03-22 (Bugfixes)
   * Version 7.0 released at 2014-01-03 (Responsive and adaptive version of app! One code rule all devices. Mobile version was deleted.)

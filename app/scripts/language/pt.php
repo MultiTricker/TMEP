@@ -2,7 +2,7 @@
 
  /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
+ ***  (c) Michal Ševčík 2007-2015 - multi@tricker.cz                    ***
  ***  Portuguese translation by rui.lourenco@PLASFIL.PT                 ***
  *************************************************************************/
 
@@ -19,23 +19,24 @@
     $lang['popisstranky'] = "Termómetro Ethernet TME - Página de estatísticas e gráficos.";
     $lang['hlavninadpis'] = "TME - Termómetro Ethernet";
   }
-  $lang['statistika'] = "Estatísticas";
+
+  $lang['statistika'] = "Dados Históricos";
   $lang['umisteni'] = "Localização:";
   $lang['pocetmereni'] = "Número de leituras:";
   $lang['nejvyssiteplota'] = "Temperatura mais elevada";
   $lang['nejnizsiteplota'] = "Temperatura mais baixa";
-  $lang['drivetoutodobou'] = "Antes a esta hora";
+  $lang['drivetoutodobou'] = "Dias anteriores a esta hora";
   $lang['cas'] = "Hora";
   $lang['den'] = "Dia";
   $lang['dnes'] = "Hoje";
   $lang['teplota'] = "Temperatura";
   $lang['aktualniteplota'] = "Temperatura Atual";
   $lang['paticka'] = "Fabricante TME: <a href='http://www.papouch.com' target='_blank'>www.papouch.com</a>, autor desta aplicação: <a href='http://multi.tricker.cz' target='_blank'>multi.tricker.cz</a>, gráficos gerados com <a href='http://www.highcharts.com/'>Highcharts</a>.";
-  $lang['teplota4hodiny'] = "Temperatura Últ 4 horas";
-  $lang['teplota24hodin'] = "Temperatura Últ 24 horas";
+  $lang['teplota4hodiny'] = "Temperatura últimas 4 horas";
+  $lang['teplota24hodin'] = "Temperatura últimas 24 horas";
   $lang['teplota3dny'] = "Últimos 3 dias - Curva detalhe";
   $lang['teploty31dni'] = "Últimos 31 dias";
-  $lang['prumernamesicnigraf'] = "Temperaturas Mês anterior";
+  $lang['prumernamesicnigraf'] = "Temperaturas no mês anterior";
   $lang['min'] = "Mínimo";
   $lang['max'] = "Máximo";
   $lang['avg'] = "Média";
@@ -43,6 +44,7 @@
   $lang['grafy'] = "Gráficos";
   $lang['jazyk'] = "Idioma";
   $lang['jednotka'] = "Escala Temp.";
+
   // TMEP v3
   $lang['mesic01'] = "Janeiro";
   $lang['mesic02'] = "Fevereiro";
@@ -74,18 +76,19 @@
   $lang['nejnizsiteploty'] = "A Temperatura mais baixa";
   $lang['nejvyssiteploty'] = "A Temperatura mais alta";
   $lang['teplotyzaposlednidny'] = "Temperaturas nos últimos dias";
+
   // TMEP v4
-  $lang['merenood'] = "Medido por";
+  $lang['merenood'] = "Registos desde";
   $lang['aktualnivlhkost'] = "Humidade atual:";
   $lang['grafyteploty'] = "Gráficos de Temperatura";
   $lang['grafyvlhkosti'] = "Gráficos de Humidade";
-  $lang['historie'] = "História";
+  $lang['historie'] = "Consulta Diária";
   $lang['vlhkost'] = "Humidade";
-  $lang['vlhkost4hodiny'] = "Humidade Últ 4 horas";
-  $lang['vlhkost24hodin'] = "Humidade Últ 24 horas";
-  $lang['vlhkost3dny'] = "Humidade últ 3 dias - curva detalhe";
-  $lang['vlhkost31dni'] = "Humidade Últ 31 dias";
-  $lang['mesicnivlhkostgraf'] = "Humidade Mensal";
+  $lang['vlhkost4hodiny'] = "Humidade últimas 4 horas";
+  $lang['vlhkost24hodin'] = "Humidade últimas 24 horas";
+  $lang['vlhkost3dny'] = "Humidade últimos 3 dias - curva detalhe";
+  $lang['vlhkost31dni'] = "Humidade últimos 31 dias";
+  $lang['mesicnivlhkostgraf'] = "Humidade no mês anterior";
   $lang['nejnizsivlhkost'] = "Humidade mais baixa";
   $lang['nejvyssivlhkost'] = "Humidade mais alta";
   $lang['prumernavlhkost'] = "Humidade média";
@@ -99,6 +102,7 @@
   $lang['nenalezenyzaznam'] = "Este dia não existe na base de dados";
   $lang['namerenehodnotyvprubehulet'] = "Leituras nos últimos anos";
   $lang['hodnotynamerenevjednotlivychdobach'] = "Valores medidos em diferentes períodos";
+
   // TMEP v4.1
   $lang['rosnybod'] = "Ponto de Orvalho";
   $lang['4hodiny'] = "Últimas 4 horas";
@@ -106,5 +110,6 @@
   $lang['3dny'] = "Últimos 3 dias";
   $lang['hodnota'] = "Valor";
   $lang['aktualne'] = "Atual";
+
   // TMEP 4.2
   $lang['kompletnistranky'] = "Vista completa";
