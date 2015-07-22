@@ -1,15 +1,5 @@
 <?php
 
- /*************************************************************************
- ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2013 - multi@tricker.cz                    ***
- ***  Soubor s funkcemi / File with functions (surprisingly :)          ***
- *************************************************************************/
-
- //////////////////////////////////////////////////////////////////////////
- //// FUNKCE / FUNCTIONS
- //////////////////////////////////////////////////////////////////////////
-
 /**
  * formatData() vrací datum a čas
  * @param $datum
@@ -286,13 +276,24 @@ function kolikRadek($co, $kde, $podminky="")
     // Above water    0 – 50°C    243.12     17.62
     // Above ice     -40 – 0°C    272.62     22.46
 
-    if($teplota > 0)
+    if(is_numeric($teplota) AND is_numeric($vlhkost) AND $teplota != 0 AND $vlhkost != 0)
     {
-      return round(243.12*((log($vlhkost/100)+((17.62*$teplota)/(243.12+$teplota)))/(17.62-log($vlhkost/100)-((17.62*$teplota)/(243.12+$teplota)))), 1);
+
+      if($teplota > 0)
+      {
+        return round(243.12*((log($vlhkost/100)+((17.62*$teplota)/(243.12+$teplota)))/(17.62-log($vlhkost/100)-((17.62*$teplota)/(243.12+$teplota)))), 1);
+      }
+      else
+      {
+        return round(272.62*((log($vlhkost/100)+((22.46*$teplota)/(272.62+$teplota)))/(22.46-log($vlhkost/100)-((22.46*$teplota)/(272.62+$teplota)))), 1);
+      }
+
     }
     else
     {
-      return round(272.62*((log($vlhkost/100)+((22.46*$teplota)/(272.62+$teplota)))/(22.46-log($vlhkost/100)-((22.46*$teplota)/(272.62+$teplota)))), 1);
+
+      return "null";
+
     }
 
     
