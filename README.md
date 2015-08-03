@@ -5,7 +5,7 @@ Simple application written in PHP using MySQL for visualising measured values fr
 
 Application was written very straightforwardly for our home usage, but owners of TME wanted to use this app as well. So I did released code and added more functionality later.
 
-TMEP use Highcharts JS for graph generation ([highcharts.com](http://www.highcharts.com), Free for Non-commercial) and jQuery for AJAX, datepicker and so on.
+TMEP use Highcharts JS for graph generation ([highcharts.com](http://www.highcharts.com), Free for Non-commercial) and jQuery for AJAX, datepicker and so on. TMEP itself is [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 Application demo: [roudnice.eu](http://www.roudnice.eu)
 
