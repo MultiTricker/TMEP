@@ -10,7 +10,7 @@
   if($vlhkomer == 1)
   {
     $lang['titulekstranky'] = "TH2E - Ethernetthermometer and Luftfeuchtigkeitmeter";
-    $lang['popisstranky'] = "Ethernet thermometer and hygrometerTH2E - stránka s hodnotami a grafy.";
+    $lang['popisstranky'] = "Ethernet thermometer and hygrometerTH2E - Seite mit Werten und Diagrammen";
     $lang['hlavninadpis'] = "TH2E - Ethernetthermometer and Luftfeuchtigkeitmeter";
   }
   else
