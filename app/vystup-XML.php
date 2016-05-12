@@ -61,7 +61,7 @@
 
 <root xmlns="http://www.papouch.com/xml/th2e/act">
   <sns id="1" type="1" status="0" unit="0" val="<?php echo round($posledni['teplota'], 1); ?>" w-min="" w-max="" e-min-val=" <?php echo round($nejnizsi['teplota'], 1); ?>" e-max-val=" <?php echo round($nejvyssi['teplota'], 1); ?>" e-min-dte="<?php echo datetimeToPapouch($nejnizsi['kdy']); ?>" e-max-dte="<?php echo datetimeToPapouch($nejvyssi['kdy']); ?>"/>
-  <sns id="2" type="2" status="0" unit="3" val="<?php echo round($posledni['vlhkost'], 1); ?>" w-min="" w-max="" e-min-val=" <?php echo round($nejnizsiVlhkost['vlhkost'], 1); ?>" e-max-val=" <?php echo round($nejnizsiVlhkost['vlhkost'], 1); ?>" e-min-dte="<?php echo datetimeToPapouch($nejnizsiVlhkost['kdy']); ?>" e-max-dte="<?php echo datetimeToPapouch($nejvyssiVlhkost['kdy']); ?>"/>
+  <sns id="2" type="2" status="0" unit="3" val="<?php echo round($posledni['vlhkost'], 1); ?>" w-min="" w-max="" e-min-val=" <?php echo round($nejnizsiVlhkost['vlhkost'], 1); ?>" e-max-val=" <?php echo round($nejvyssiVlhkost['vlhkost'], 1); ?>" e-min-dte="<?php echo datetimeToPapouch($nejnizsiVlhkost['kdy']); ?>" e-max-dte="<?php echo datetimeToPapouch($nejvyssiVlhkost['kdy']); ?>"/>
   <sns id="3" type="3" status="0" unit="0" val="<?php echo round(rosnyBod($posledni['teplota'], $posledni['vlhkost']), 1); ?>" w-min="" w-max="" e-min-val="" e-max-val="" e-min-dte="" e-max-dte=""/>
   <status frm="1" location="<?php echo $umisteni; ?>" time="<?php echo datetimeToPapouch($posledni['kdy']); ?>"/>
 </root>
