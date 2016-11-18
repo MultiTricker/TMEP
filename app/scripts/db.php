@@ -11,3 +11,6 @@ if(!((bool)mysqli_query($GLOBALS["DBC"], "USE `{$dbDb}`")))
         Chyba ve vybrani databaze \"{$dbDb}\". Prosim, zkontrolujte nastaveni.<br>
         Unable to select database \"{$dbDb}\". Please, check out your settings.
         </div>");
+
+// Nastavení kvůli sql_mode=only_full_group_by
+mysqli_query($GLOBALS["DBC"], "SET sql_mode = '';");
