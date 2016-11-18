@@ -11,7 +11,8 @@ Application demo: [roudnice.eu](http://www.roudnice.eu)
 
 Read tmep-info-en.html or tmep-info-cz.html for more information.
 
-  * **Version 8.1.1 released at 2016-05-09** (Small fixes)
+  * **Version 8.1.2 released at 2016-11-18** (Fix for MySQL 5.7)
+  * Version 8.1.1 released at 2016-05-09 (Small fixes)
   * Version 8.1 released at 2015-04-21 (Portuguese translation)
   * Version 8.0 released at 2014-10-19 (redesigned)
   * Version 7.0.4 released at 2014-03-22 (Bugfixes)
