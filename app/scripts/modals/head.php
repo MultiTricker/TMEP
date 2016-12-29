@@ -24,6 +24,10 @@
     {
       $l = $_GET['ja'];
     }
+    else
+    {
+        $_GET['ja'] = $l;
+    }
 
     require_once "../language/".$l.".php";       // skript s jazykovou mutaci    
 
@@ -33,6 +37,10 @@
      $_GET['je'] == 'N' OR $_GET['je'] == 'Ro' OR $_GET['je'] == 'Re'))
     {
       $u = $_GET['je'];
+    }
+    else
+    {
+        $_GET['je'] = $u;
     }
 
   }
