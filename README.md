@@ -11,7 +11,8 @@ Application demo: [roudnice.eu](http://www.roudnice.eu)
 
 Read tmep-info-en.html or tmep-info-cz.html for more information.
 
-  * **Version 8.1.3 released at 2016-12-20** (Fixed XSS vulnerability, thank you [@spazef0rze](https://www.michalspacek.cz)!)
+  * **Version 8.2 released at 2017-02-23** (New Highcharts library, better graphs on Actually tab)
+  * Version 8.1.3 released at 2016-12-20 (Fixed XSS vulnerability, thank you [@spazef0rze](https://www.michalspacek.cz)!)
   * Version 8.1.2 released at 2016-11-18 (Fix for MySQL 5.7)
   * Version 8.1.1 released at 2016-05-09 (Small fixes)
   * Version 8.1 released at 2015-04-21 (Portuguese translation)

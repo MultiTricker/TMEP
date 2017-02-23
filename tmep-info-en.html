@@ -24,7 +24,7 @@
   <b>Papouch</b> - <a href="http://www.papouch.com">http://www.papouch.com</a>, manufacturer of these great devices</p>
 
   <hr>
-  
+
   <h2>TOC</h2>
 
   <ol>
@@ -39,18 +39,18 @@
     <h2><a name="introduction">Introduction</a></h2>
 
  <p>Dear users,</p>
- 
+
   <p>what you have downloaded is a small web application written in PHP, which uses
-database (typically MySQL) and class JpGraph or Open flash chart for generating 
-graphs. It can nicely show ip some useful statistics from your ethernet 
+database (typically MySQL) and class JpGraph or Open flash chart for generating
+graphs. It can nicely show ip some useful statistics from your ethernet
 thermometer/hydrometer.</p>
 
   <p>How it works? Your TME with access to Internet (or local network) sends actual
-measurement to PHP script. Script writes this measurement into database for 
+measurement to PHP script. Script writes this measurement into database for
 future data generating.</p>
 
-  <p>For new versions and future informations, please check out 
-<a href="http://multi.tricker.cz">my blog</a> or <a href="http://www.papouch.com">Papouch website</a> and if 
+  <p>For new versions and future informations, please check out
+<a href="http://multi.tricker.cz">my blog</a> or <a href="http://www.papouch.com">Papouch website</a> and if
 you need some help or just want to say "thanks", you can give contact me <a href="mailto:multi@tricker.cz">multi@tricker.cz</a></p>
 
   <hr>
@@ -58,15 +58,15 @@ you need some help or just want to say "thanks", you can give contact me <a href
     <h2><a name="instalation">Installation</a></h2>
 
   <p>Now, let´s make it work:</p>
-  
+
   <h3>1) First, we need to setup TME/TH2E unit.</h3>
 
 <h4>Setting up TH2E</h4>
 
 <a href="nastaveni-th2e.gif" target="_blank"><img src="nastaveni-th2e.gif" alt="Nastaveni" title="Nastaveni" border="0" height="120" width="160"></a>
 
-<p>Connect onto TH2E website and choose settings. There is need to have correctly filled up parameters on tab "Network", 
-most importantly IP address, mask, gateway and DNS. Next, choose tab "Sending" and fill address of web server, port (80), 
+<p>Connect onto TH2E website and choose settings. There is need to have correctly filled up parameters on tab "Network",
+most importantly IP address, mask, gateway and DNS. Next, choose tab "Sending" and fill address of web server, port (80),
 scripts folder on server, period for sending GET (1 - once per minute) and fill script name (index.php). </p>
 
 <p>For example, if address of your app will be <i>http://moje.mereni.cz/aplikace/</i>, then fill:<br>
@@ -80,9 +80,9 @@ scripts folder on server, period for sending GET (1 - once per minute) and fill 
 
 <a href="nastaveni-tme.gif" target="_blank"><img src="nastaveni-tme.gif" alt="Nastaveni" title="Nastaveni" border="0" height="120" width="160"></a>
 
-<p>Connect onto TME website and choose settings. There is need to have correctly filled up parameters on tab "Network", 
-most importantly IP address, mask and gateway. Next, choose tab "Sending" and fill IP address of web server, 
-web server name (www.someting.com), port (80), scripts folder on server, period for sending (60 sec - once per minute) and check activation of HTTP GET sending and 
+<p>Connect onto TME website and choose settings. There is need to have correctly filled up parameters on tab "Network",
+most importantly IP address, mask and gateway. Next, choose tab "Sending" and fill IP address of web server,
+web server name (www.someting.com), port (80), scripts folder on server, period for sending (60 sec - once per minute) and check activation of HTTP GET sending and
 fill Script name (index.php). </p>
 
 <p>For example, if address of your app will be <i>http://moje.mereni.cz/aplikace/</i>, then fill:<br>
@@ -96,42 +96,42 @@ fill Script name (index.php). </p>
 
 <a href="nastaveni-tme-stare.gif" target="_blank"><img src="nastaveni-tme-stare.gif" alt="Nastaveni" title="Nastaveni" border="0" height="120" width="160"></a>
 
-  <p>Connect into TME via configuration utility from Papouch. (You can find configuration utility here: 
-<a href="http://www.papouch.com/cz/shop/product/tme-ethernetovy-teplomer/">http://www.papouch.com/cz/shop/product/tme-ethernetovy-teplomer/</a>). 
+  <p>Connect into TME via configuration utility from Papouch. (You can find configuration utility here:
+<a href="http://www.papouch.com/cz/shop/product/tme-ethernetovy-teplomer/">http://www.papouch.com/cz/shop/product/tme-ethernetovy-teplomer/</a>).
 On item HTTP GET check "Send temperature on HTTP server",
-into URL path write full path where web application will be located and file 
+into URL path write full path where web application will be located and file
 index.php, ie.: http://www.lojzuvweb.cz/tme/index.php<br>
   Into IP address write IP address of web server, where site is located.
 This address can be very easily filled up when you click onto "at" symbol.</p>
 
-  <p>Next, set up sending period 60 sec (once every minute, application counts with 
-this settings) and into GUID fill some random word without diacritics and spaces - 
+  <p>Next, set up sending period 60 sec (once every minute, application counts with
+this settings) and into GUID fill some random word without diacritics and spaces -
 you will need this on further step.</p>
 
   <p>Finally save settings.</p>
 
   <h3>2) Configuring TMEP</h3>
 
-  <p>In folder "app" are all needed files and there is also file 
+  <p>In folder "app" are all needed files and there is also file
 "config.php", where you must fill out values for connection to database
-(database server, username, password, database name). You should get these 
-values from your webhosting provider. If you are using oldest TME, then there is VERY IMPORTANT to set GUID 
+(database server, username, password, database name). You should get these
+values from your webhosting provider. If you are using oldest TME, then there is VERY IMPORTANT to set GUID
 and instead "teplota" fill your own string from first step.</p>
 
   <h3>3) Setting up database</h3>
 
-  <p>There is need to create proprietary tables in database, where scripts save 
-values from TME. Which program/web application for table create you use, is on 
+  <p>There is need to create proprietary tables in database, where scripts save
+values from TME. Which program/web application for table create you use, is on
 you. SQL code for execution is located in file "mysql-db-full.sql".</p>
 
   <h3>4) Uploading application on web</h3>
 
-  <p>Now, upload whole web application (everything what folder "app" 
+  <p>Now, upload whole web application (everything what folder "app"
 contains) on it´s place on internet. Path to "index.php" must be the exact path,
 that you set up in first step into TME/TH2E via configuration utility.</p>
 
-  <p>Now, everything should be set up and saved, how it supposed to be. 
-  Application now receive measured values and generate some text statistics and 
+  <p>Now, everything should be set up and saved, how it supposed to be.
+  Application now receive measured values and generate some text statistics and
 graphs.</p>
 
   <p>Thank you for attention and have fun</p>
@@ -141,32 +141,40 @@ graphs.</p>
     <h2><a name="update">Update to v8</a></h2>
 
  <p>How to UPDATE on TMEP v5/6.5/7/8:</p>
- 
+
   <p>It´s pretty simple. You need to:</p>
-  
+
   <p>1) Update database scheme, if you have v5 or older. To do that, just execute
 "mysql-db-update-v5.sql" on your database. It will do the necessary changes.
 You can use some simple database administration for that task.
 I recommend Adminer - http://www.adminer.org.</p>
 
-  <p>2) Overwrite old files with the new ones except "config.php", 
+  <p>2) Overwrite old files with the new ones except "config.php",
 located in "app" folder in archive you downloaded along with this update instructions.
 If you did any changes in old files, you will need to do them again (in CSS styles etc.).
-Rename file "nastaveni.php" to "config.php". 
-Add line with "$vlhkomer" in "config.php" to determine if you want to show measured 
+Rename file "nastaveni.php" to "config.php".
+Add line with "$vlhkomer" in "config.php" to determine if you want to show measured
 humidity. No need for this if you do not measure it.</p>
 
   <p>3) Delete "cache" folder in application. There is no need for it now.</p>
 
   <p>4) There is need to compute a lot of information about measurements from earlier days except actual day.
-  To do so, open script "scripts/dopocitat.php" in your browser from application website. Do it as long as needed - 
-  script will write what day has just been finished. This could take some time on slow servers with huge 
+  To do so, open script "scripts/dopocitat.php" in your browser from application website. Do it as long as needed -
+  script will write what day has just been finished. This could take some time on slow servers with huge
   database of measurements. These calculations are also realized when page of TMEP app is opened.
   For me, it took about 3 minutes to compute more than 3 years of measurements, so it should be very quick.</p>
 
   <hr>
 
     <h2><a name="chagelog">Changelog</a></h2>
+
+    <h4>version 8.2 (2017-02-23)</h4>
+
+    <ul>
+      <li>Better graphs on tab "Actually". Vertical visual delimiter for days (around midnight). Only truly latest 24 hours or 3 day values load - before was limited to number of records and not to time.</li>
+      <li>Highcharts v4.0.1 -> v5.0.7.</li>
+      <li>Fixed error when -0 was sent as temperature.</li>
+    </ul>
 
     <h4>version 8.1.3 (2016-12-20)</h4>
 
@@ -179,7 +187,7 @@ humidity. No need for this if you do not measure it.</p>
     <ul>
       <li>Fix for MySQL 5.7</li>
     </ul>
-    
+
     <h4>version 8.1.1 (2016-05-09)</h4>
 
     <ul>
@@ -327,7 +335,7 @@ humidity. No need for this if you do not measure it.</p>
     </ul>
 
     <h3>version 3 (2011-01-14)</h3>
-    
+
     <ul>
       <li>Better webpage layout with several tabs. New tabs: "Daily statistics", "Monthly statistics" and "Year statistics" with a lot additional informations about measured temperatures.</li>
       <li>In field "actual temperatur" are now present arrows to show how temperatur changed in last five minutes (it gets cold, warm or no change).</li>
@@ -341,7 +349,7 @@ humidity. No need for this if you do not measure it.</p>
     </ul>
 
     <h3>version 2</h3>
-    
+
     <ul>
       <li>New better design without redundant items.</li>
       <li>Ability to switch between static (JpGraph) and flash graphs (Open Flash Chart).</li>
