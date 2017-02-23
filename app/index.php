@@ -37,6 +37,11 @@
 
     if(is_numeric($teplota))
     {
+      // Opravdu se muze stat, ze zarizeni posle teplotu -0, ostreni
+      if($teplota == -0)
+      {
+        $teplota = 0;
+      }
 
       // vlhkost je null?
       if(!is_numeric($vlhkost)){ $vlhkost = "null"; }
@@ -55,13 +60,13 @@
       // problem? zrejme pozadavek z jine nez z povolene IP
       else
       {
-        echo "Chyba! Error! Fehler!";
+        echo "Chyba! Error! Fehler! IP address.";
       }
 
     }
     else
     {
-      echo "Teplota musí být číslo...";
+      echo "Teplota musí být číslo. Temperature must be a number.";
     }
 
   }
