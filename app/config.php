@@ -41,6 +41,10 @@
                 // (or your private local address, if webserver and TME are on the same
                 // local network)
 
+  $vlastniTitulekStranky = "";   // $lang['titulekstranky'] = "TH2E - ethernetový teploměr a vlhkoměr";
+
+  $vlastniHlavniNadpis = "";     // $lang['hlavninadpis'] = "<span>TH2E</span> - ethernetový teploměr a vlhkoměr";
+
   $umisteni = "Na zahradě"; // CZ: Umisteni teplomeru (text na strance teplomeru)
                       // EN: Thermoter location (showed as text on webpage)
 

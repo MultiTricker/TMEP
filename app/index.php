@@ -2,7 +2,7 @@
 
  /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
- ***  (c) Michal Ševčík 2007-2014 - multi@tricker.cz                    ***
+ ***  (c) Michal Ševčík 2007-2017 - multi@tricker.cz                    ***
  *************************************************************************/
 
  //////////////////////////////////////////////////////////////////////////
@@ -28,8 +28,10 @@
     if(isset($_GET[$GUID]) && $_GET[$GUID] != ""){ $teplota = $_GET[$GUID]; }
 
     // TH2E
-    if(isset($_GET['tempV']) AND $_GET['tempV'] != "")
-    { $teplota = $_GET['tempV']; if(strlen($_GET['humV']) < 7){ $vlhkost = $_GET['humV']; } }
+    if(isset($_GET['tempV']) AND $_GET['tempV'] != ""){ $teplota = $_GET['tempV']; }
+
+    // Vlhkost
+    if(isset($_GET['humV']) AND strlen($_GET['humV']) < 7){ $vlhkost = $_GET['humV']; }
 
     // nahrazeni carky teckou
     $teplota = str_replace(",", ".", $teplota);
@@ -104,7 +106,7 @@
 <html>
 
   <head>
-    <title><?php echo $lang['titulekstranky']; ?></title>
+      <title><?php if($vlastniTitulekStranky == ""){echo $lang['titulekstranky'];}else{echo $vlastniTitulekStranky;}; ?></title>
     <meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/css.css" type="text/css">
     <meta NAME="description" CONTENT="<?php echo $lang['popisstranky']; ?>">
@@ -144,7 +146,7 @@
 
   echo "<div class='roztahovak-modry'>
         <div class='hlavicka container'>
-        <div id='nadpis'><h1>".$lang['hlavninadpis']."</h1></div>";
+        <div id='nadpis'><h1>"; if($vlastniHlavniNadpis == ""){ echo $lang['hlavninadpis']; }else{ echo $vlastniHlavniNadpis; } echo "</h1></div>";
 
   if($zobrazitNastaveni == 1)
   {
