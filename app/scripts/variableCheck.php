@@ -12,7 +12,9 @@ $jazyky = array("cz" => "cz",
   "pl" => "pl",
   "fr" => "fr",
   "fi" => "fi",
-  "sv" => "sv");
+  "sv" => "sv",
+  "pt" => "pt",
+  "es" => "es");
 
 $jednotky = Array("C" => "Celsius",
   "F" => "Fahrenheit",
@@ -51,5 +53,5 @@ if($zobrazitNastaveni == 1)
 }
 else
 {
-  require_once dirname(__FILE__)."/language/".$l.".php";       // skript s jazykovou mutaci
+  require_once dirname(__FILE__)."/language/".$l.".php";       // skriptš s jazykovou mutaci
 }
