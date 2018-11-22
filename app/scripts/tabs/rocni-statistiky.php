@@ -34,7 +34,7 @@ if(MySQLi_num_rows($q) > 1)
               <td class='radekDnes'><a href='./scripts/modals/rocniGrafy.php?je=" . $_GET['je'] . "&amp;ja=" . $_GET['ja'] . "&amp;rok={$rok}' class='modal bilyOdkaz'><span class='font25 zelena'>{$rok}</a></span></td>
               <td class='radekDnes'>";
 
-        if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
+        if($vlhkomer == 1 && $r['AVG(prumer_vlhkost)'] != 0)
         {
             echo "<div class='vpravo'>";
         }
@@ -44,14 +44,14 @@ if(MySQLi_num_rows($q) > 1)
                               <span class='zelena'>{$lang['prumer']}:</span> " . jednotkaTeploty(round($r['AVG(prumer)'], 2), $u, 1) . " |
                               <span class='zelena'>{$lang['max2']}:</span> " . jednotkaTeploty(round($r['MAX(nejvyssi)'], 2), $u, 1);
 
-        if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
+        if($vlhkomer == 1 && $r['AVG(prumer_vlhkost)'] != 0)
         {
             echo "</div>";
         }
 
         echo "</td>";
 
-        if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
+        if($vlhkomer == 1 && $r['AVG(prumer_vlhkost)'] != 0)
         {
             $nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'], 2);
             $prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'], 2);
