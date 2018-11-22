@@ -3,7 +3,7 @@
 /*************************************************************************
  ***  Systém pro TME/TH2E - TMEP                                        ***
  ***  (c) Michal Ševčík 2007-2015 - multi@tricker.cz                    ***
- ***  Spanish translation by emicor@me.com                 	            ***
+ ***  Spanish translation by emicor@me.com                                ***
  *************************************************************************/
 
 // nadpis

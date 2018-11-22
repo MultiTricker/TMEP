@@ -1,109 +1,130 @@
 ﻿<?php
 
-  // INIT
-  require dirname(__FILE__)."/../../init.php";
+// INIT
+require dirname(__FILE__) . "/../../init.php";
 
-   // nacteme mesicni teploty      
-   $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den as mesic, AVG(prumer) as prumer, MIN(nejnizsi) as nejnizsi, MAX(nejvyssi) as nejvyssi
-                         FROM tme_denni 
-                         GROUP BY year(den), month(den) 
-                         ORDER BY den DESC
-                         LIMIT 1, 36");
+// nacteme mesicni teploty
+$dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT den as mesic, AVG(prumer) as prumer, MIN(nejnizsi) as nejnizsi, MAX(nejvyssi) as nejvyssi
+                                        FROM tme_denni 
+                                        GROUP BY year(den), month(den) 
+                                        ORDER BY den DESC
+                                        LIMIT 1, 36");
 
-   // hodime do pole
-   while($data = MySQLi_fetch_assoc($dotaz))
-   {
+// hodime do pole
+while($data = MySQLi_fetch_assoc($dotaz))
+{
+    if(round($data['nejvyssi'], 2) == 0)
+    {
+        $ydata[] = jednotkaTeploty(0, $u, 0);
+    }
+    else
+    {
+        $ydata[] = jednotkaTeploty(round($data['nejvyssi'], 2), $u, 0);
+    }
 
-     if(round($data['nejvyssi'], 2) == 0){ $ydata[] = jednotkaTeploty(0, $u, 0); }
-     else{ $ydata[] = jednotkaTeploty(round($data['nejvyssi'], 2), $u, 0); }
+    if(round($data['nejnizsi'], 2) == 0)
+    {
+        $ydata2[] = jednotkaTeploty(0, $u, 0);
+    }
+    else
+    {
+        $ydata2[] = jednotkaTeploty(round($data['nejnizsi'], 2), $u, 0);
+    }
 
-     if(round($data['nejnizsi'], 2) == 0){ $ydata2[] = jednotkaTeploty(0, $u, 0); }
-     else{ $ydata2[] = jednotkaTeploty(round($data['nejnizsi'], 2), $u, 0); }
+    if(round($data['prumer'], 2) == 0)
+    {
+        $ydata3[] = jednotkaTeploty(0, $u, 0);
+    }
+    else
+    {
+        $ydata3[] = jednotkaTeploty(round($data['prumer'], 2), $u, 0);
+    }
 
-     if(round($data['prumer'], 2) == 0){ $ydata3[] = jednotkaTeploty(0, $u, 0); }
-     else{ $ydata3[] = jednotkaTeploty(round($data['prumer'], 2), $u, 0); }
+    $labels[] = substr($data['mesic'], 0, 4) . "/" . substr($data['mesic'], 5, 2);
+}
 
-     $labels[] = substr($data['mesic'], 0, 4)."/".substr($data['mesic'], 5, 2);
-
-   }
-
-   // abychom ziskali spravnou posloupnoust udaju, tak obe pole obratime
-   $ydata = array_reverse($ydata);
-   $ydata2 = array_reverse($ydata2);
-   $ydata3 = array_reverse($ydata3);
-   $labels = array_reverse($labels);
+// abychom ziskali spravnou posloupnoust udaju, tak obe pole obratime
+$ydata = array_reverse($ydata);
+$ydata2 = array_reverse($ydata2);
+$ydata3 = array_reverse($ydata3);
+$labels = array_reverse($labels);
 
 ?>
 <script type="text/javascript">
-$(function () {
-    var chart;
-    $(document).ready(function() {
-        chart = new Highcharts.Chart({
-            chart: { renderTo: 'graf-mesicni-teplota', zoomType: 'x', backgroundColor: '#ffffff', borderRadius: 0 },
-            credits: { enabled: 0 },
-            title: { text: '<?php echo $lang['prumernamesicnigraf']; ?>' },
-            xAxis: { categories: ['<?php echo implode("','", $labels); ?>'],
-            labels: { rotation: -45, align: 'right' }
-            },
-            yAxis: [{ 
-                labels: {
-                    formatter: function() { return this.value +' <?php echo "$jednotka"; ?>'; },
-                    style: { color: '#c4423f' }
+    $(function () {
+        var chart;
+        $(document).ready(function () {
+            chart = new Highcharts.Chart({
+                chart: {renderTo: 'graf-mesicni-teplota', zoomType: 'x', backgroundColor: '#ffffff', borderRadius: 0},
+                credits: {enabled: 0},
+                title: {text: '<?php echo $lang['prumernamesicnigraf']; ?>'},
+                xAxis: {
+                    categories: ['<?php echo implode("','", $labels); ?>'],
+                    labels: {rotation: -45, align: 'right'}
                 },
-                title: {
-                    text: null,
-                    style: { color: '#c4423f' }
+                yAxis: [{
+                    labels: {
+                        formatter: function () {
+                            return this.value + ' <?php echo "$jednotka"; ?>';
+                        },
+                        style: {color: '#c4423f'}
+                    },
+                    title: {
+                        text: null,
+                        style: {color: '#c4423f'}
+                    },
+                    opposite: false
+                }],
+                tooltip: {
+                    formatter: function () {
+                        var unit = {
+                            '<?php echo $lang['max'] ?>': ' <?php echo "$jednotka"; ?>',
+                            '<?php echo $lang['avg'] ?>': ' <?php echo "$jednotka"; ?>',
+                            '<?php echo $lang['min'] ?>': ' <?php echo "$jednotka"; ?>'
+                        }[this.series.name];
+                        return '<b>' + this.x + '</b><br /><b>' + this.y + ' ' + unit + '</b>';
+                    },
+                    crosshairs: true,
                 },
-                opposite: false
-            }],
-            tooltip: {
-                formatter: function() {
-                    var unit = {
-                        '<?php echo $lang['max'] ?>': ' <?php echo "$jednotka"; ?>',
-                        '<?php echo $lang['avg'] ?>': ' <?php echo "$jednotka"; ?>',
-                        '<?php echo $lang['min'] ?>': ' <?php echo "$jednotka"; ?>'
-                    }[this.series.name];
-                    return '<b>'+ this.x +'</b><br /><b>'+ this.y +' '+ unit + '</b>';
+                legend: {
+                    layout: 'horizontal',
+                    align: 'left',
+                    x: 6,
+                    verticalAlign: 'top',
+                    y: -5,
+                    floating: true,
+                    backgroundColor: '#FFFFFF'
                 },
-                crosshairs: true,
-            },
-            legend: {
-                layout: 'horizontal',
-                align: 'left',
-                x: 6,
-                verticalAlign: 'top',
-                y: -5,
-                floating: true,
-                backgroundColor: '#FFFFFF'
-            },
-            series: [{
-                name: '<?php echo $lang['max'] ?>',
-                type: 'spline',
-                color: '#c01212',
-                yAxis: 0,
-                data: [<?php echo implode(", ", $ydata); ?>],
-                marker: { enabled: false }
-            }, {
-                name: '<?php echo $lang['avg'] ?>',
-                type: 'spline',
-                color: '#ebb91f',
-                yAxis: 0,
-                data: [<?php echo implode(", ", $ydata3); ?>],
-                marker: { enabled: false }
-    
-            }, {
-                name: '<?php echo $lang['min'] ?>',
-                type: 'spline',
-                color: '#1260c0',
-                yAxis: 0,
-                data: [<?php echo implode(", ", $ydata2); ?>],
-                marker: { enabled: false }
-            }]
+                series: [{
+                    name: '<?php echo $lang['max'] ?>',
+                    type: 'spline',
+                    color: '#c01212',
+                    yAxis: 0,
+                    data: [<?php echo implode(", ", $ydata); ?>],
+                    marker: {enabled: false}
+                }, {
+                    name: '<?php echo $lang['avg'] ?>',
+                    type: 'spline',
+                    color: '#ebb91f',
+                    yAxis: 0,
+                    data: [<?php echo implode(", ", $ydata3); ?>],
+                    marker: {enabled: false}
+
+                }, {
+                    name: '<?php echo $lang['min'] ?>',
+                    type: 'spline',
+                    color: '#1260c0',
+                    yAxis: 0,
+                    data: [<?php echo implode(", ", $ydata2); ?>],
+                    marker: {enabled: false}
+                }]
+            });
+
+            $(".tabs > li").click(function () {
+                chart.reflow();
+            });
+
         });
 
-        $(".tabs > li").click(function () { chart.reflow(); });
-
     });
-    
-});
 </script>

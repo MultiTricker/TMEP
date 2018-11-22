@@ -1,30 +1,30 @@
 <?php
 
-  // Hlavicka
-  require "head.php";
+// Hlavicka
+require "head.php";
 
-  // Osetreni vstupu
-  if(!isset($_GET['rok']) OR !is_numeric($_GET['rok']))
-  { $_GET['rok'] = date("Y");}
+// Osetreni vstupu
+if(!isset($_GET['rok']) OR !is_numeric($_GET['rok']))
+{
+    $_GET['rok'] = date("Y");
+}
 
-  echo "<h3>{$_GET['rok']}</h3>";
+echo "<h3>{$_GET['rok']}</h3>";
 
-  //////////////////////////
-  // GRAF TEPLOTA
-  
-  echo "<div id='rocniTeplota' class='grafModal'></div>";
-  require "../grafy/teplota/rocni.php";
+//////////////////////////
+// GRAF TEPLOTA
 
-  //////////////////////////
-  // GRAF VLHKOST
+echo "<div id='rocniTeplota' class='grafModal'></div>";
+require "../grafy/teplota/rocni.php";
 
-  if($vlhkomer == 1)
-  {
+//////////////////////////
+// GRAF VLHKOST
 
+if($vlhkomer == 1)
+{
     echo "<div id='rocniVlhkost' class='grafModal'></div>";
     require "../grafy/vlhkost/rocni.php";
+}
 
-  }
-
-  // Paticka
-  require "foot.php";
+// Paticka
+require "foot.php";
