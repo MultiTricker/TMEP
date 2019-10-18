@@ -20,6 +20,10 @@ require "./scripts/fce.php";       // skript s nekolika funkcemi
 // pokud stranku vola teplomer, ulozime hodnotu
 if(isset($_GET['temp']) OR isset($_GET[$GUID]) OR isset($_GET['tempV']))
 {
+    //vychozi hodnoty
+    $teplota = "";
+    $vlhkost = "";
+    
     // novejsi TME
     if(isset($_GET['temp']) && $_GET['temp'] != "")
     {
