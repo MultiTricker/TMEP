@@ -1,6 +1,10 @@
 <?php
 
 // jednoduche osetreni vstupu
+if (!isset($_GET['jenden']))$_GET['jenden'] = "";
+if (!isset($_GET['rozsahod']))$_GET['rozsahod'] = "";
+if (!isset($_GET['rozsahdo']))$_GET['rozsahdo'] = "";
+
 if(strlen($_GET['jenden']) > 10 OR !is_numeric(substr($_GET['jenden'], 0, 4)) OR !is_numeric(substr($_GET['jenden'], 5, 2)))
 {
     $_GET['jenden'] = date("Y-m-d", mktime(date("H"), date("i"), date("s"), date("m"), date("d") - 1, date("Y")));
