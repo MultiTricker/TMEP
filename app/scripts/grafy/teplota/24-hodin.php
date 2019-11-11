@@ -20,7 +20,7 @@ while($t = MySQLi_fetch_assoc($q))
 {
     // budeme za tu dobu pocitat prumernou teplotu,
     // abychom meli graf "uhlazenejsi" (vypada to lepe)
-    $teplota = $teplota + $t['teplota'];
+    $teplota = (float)$teplota + (float)$t['teplota'];
     $count++;
 
     if($predchoziTeplota != "")
