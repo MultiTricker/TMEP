@@ -298,9 +298,9 @@ if(MySQLi_num_rows($qStat) > 2)
             echo "</td>";
             if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
             {
-                $nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'], 2);
-                $prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'], 2);
-                $nejvyssiDnes['vlhkost'] = round($nejvyssiDnes['vlhkost'], 2);
+                if (isset($nejnizsiDnes['vlhkost']))$nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'], 2);
+                if (isset($prumernaDnes['vlhkost']))$prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'], 2);
+                if (isset($nejvyssiDnes['vlhkost']))$nejvyssiDnes['vlhkost'] = round($nejvyssiDnes['vlhkost'], 2);
 
                 echo "<td class='radekDnes'>
                       <div class='vpravo'>" . strtoupper($lang['vlhkost']) . "<br>
