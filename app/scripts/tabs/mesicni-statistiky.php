@@ -275,9 +275,9 @@ if(MySQLi_num_rows($qStat) > 2)
         while($r = MySQLi_fetch_assoc($qStat))
         {
             // MIN/AVG/MAX za dnesni den
-            $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'], 2), $u, 1);
-            $prumernaDnes['teplota'] = jednotkaTeploty(round($prumernaDnes['teplota'], 2), $u, 1);
-            $nejvyssiDnes['teplota'] = jednotkaTeploty(round($nejvyssiDnes['teplota'], 2), $u, 1);
+            if (isset($nejnizsiDnes['teplota'])) $nejnizsiDnes['teplota'] = jednotkaTeploty(round($nejnizsiDnes['teplota'], 2), $u, 1);
+            if (isset($prumernaDnes['teplota'])) $prumernaDnes['teplota'] = jednotkaTeploty(round($prumernaDnes['teplota'], 2), $u, 1);
+            if (isset($nejvyssiDnes['teplota'])) $nejvyssiDnes['teplota'] = jednotkaTeploty(round($nejvyssiDnes['teplota'], 2), $u, 1);
 
             echo "<table class='tabulkaDnes'>
           <tr>
@@ -298,9 +298,9 @@ if(MySQLi_num_rows($qStat) > 2)
             echo "</td>";
             if($vlhkomer == 1 && $r['MIN(nejnizsi_vlhkost)'] != 0)
             {
-                $nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'], 2);
-                $prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'], 2);
-                $nejvyssiDnes['vlhkost'] = round($nejvyssiDnes['vlhkost'], 2);
+                if (isset($nejnizsiDnes['vlhkost']))$nejnizsiDnes['vlhkost'] = round($nejnizsiDnes['vlhkost'], 2);
+                if (isset($prumernaDnes['vlhkost']))$prumernaDnes['vlhkost'] = round($prumernaDnes['vlhkost'], 2);
+                if (isset($nejvyssiDnes['vlhkost']))$nejvyssiDnes['vlhkost'] = round($nejvyssiDnes['vlhkost'], 2);
 
                 echo "<td class='radekDnes'>
                       <div class='vpravo'>" . strtoupper($lang['vlhkost']) . "<br>
