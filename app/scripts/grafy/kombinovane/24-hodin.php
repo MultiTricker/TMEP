@@ -18,12 +18,11 @@ $zobrazuj = 1;
 
 while($t = MySQLi_fetch_assoc($q))
 {
-
     // budeme za tu dobu pocitat prumernou teplotu,
     // abychom meli graf "uhlazenejsi" (vypada to lepe)
-    $teplota = $teplota + $t['teplota'];
-    $vlhkost = $vlhkost + $t['vlhkost'];
-    $rosnyBod = $rosnyBod + rosnybod($t['teplota'], $t['vlhkost']);
+    $teplota = (float)$teplota + $t['teplota'];
+    $vlhkost = (float)$vlhkost + $t['vlhkost'];
+    $rosnyBod = (float)$rosnyBod + rosnybod($t['teplota'], $t['vlhkost']);
     $count++;
 
     if($predchoziTeplota != "")
