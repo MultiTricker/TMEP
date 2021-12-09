@@ -1,6 +1,12 @@
 TMEP
 ====
 
+----
+
+Český hosting inovované aplikace TMEP s administrací, novými funkcemi a širokou podporou čidel včetně mnoha dalších vychytávek naleznete na [https://www.tmep.cz](https://www.tmep.cz).
+
+----
+
 Simple application written in PHP using MySQL for visualising measured values from TME - ethernet thermometer or TH2E - Ethernet thermometer and hygrometer (from [papouch.com](http://www.papouch.com)) or basically from any thermomether/hygrometer if you can save every minute value into database from it.
 
 Application was written very straightforwardly for our home usage, but owners of TME wanted to use this app as well. So I did released code and added more functionality later.
