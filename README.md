@@ -17,7 +17,8 @@ Application demo: [roudnice.eu](http://www.roudnice.eu)
 
 Read tmep-info-en.html or tmep-info-cz.html for more information.
 
-  * **Version 8.4 released at 2021-10-05** Small fix to be compatible with PHP 8 and some other code improvements along the way
+  * **Version 8.4.1 released at 2022-02-02** Another tiny fix to be compatible with PHP 8, tested also on PHP 8.1.1
+  * Version 8.4 released at 2021-10-05 Small fix to be compatible with PHP 8 and some other code improvements along the way
   * Version 8.3 released at 2018-11-22 (Added spanish translation - thank you [Emilio Cortés Martínez](emicor@me.com), fixed measured humidity detection on Yearly statistics tab, minimum version of PHP is 5.4.0+)
   * Version 8.2.1 released at 2017-05-09 (Minor changes - custom page heading in config, humidity detected separately from temperature, proposed by [mikrom](http://www.mikrom.cz))
   * Version 8.2 released at 2017-02-23 (New Highcharts library, better graphs on Actually tab)

@@ -3,11 +3,11 @@
 // INIT
 require dirname(__FILE__) . "/../../init.php";
 
-$od = Array();
-$do = Array();
+$od = [];
+$do = [];
 // posledni dny do pole
-$dny2 = Array();
-$od = date("Y-m-d H:00:00", mktime(date("H"), date("i"), date("s"), date("m"), date("d")-3, date("Y")));
+$dny2 = [];
+$od = date("Y-m-d H:00:00", mktime(date("H"), date("i"), date("s"), date("m"), date("d") - 3, date("Y")));
 $do = date("Y-m-d H:m:s");
 
 // Posledni zaznamy vcera
@@ -22,21 +22,20 @@ $a = 12;
 
 while($t = MySQLi_fetch_assoc($q))
 {
-
     // budeme za tu dobu, aktualne 10 minut, pocitat prumernou teplotu,
     // abychom meli graf "uhlazenejsi" (vypada to lepe)
-    $teplota = (float)$teplota+$t['teplota'];
-    $vlhkost = (float)$vlhkost+$t['vlhkost'];
-    $rosnyBod = (float)$rosnyBod+rosnybod($t['teplota'], $t['vlhkost']);
+    $teplota = (float)$teplota + $t['teplota'];
+    $vlhkost = (float)$vlhkost + $t['vlhkost'];
+    $rosnyBod = (float)$rosnyBod + (float)rosnybod($t['teplota'], $t['vlhkost']);
     $count++;
 
     // uz mame dostatek mereni?
     if($a == 12)
     {
         // pridame teplotu do pole
-        $ydata[] = round(jednotkaTeploty($teplota/$count, $u, 0), 1);
-        $ydata2[] = round($vlhkost/$count, 1);
-        $ydata3[] = round($rosnyBod/$count, 1);
+        $ydata[] = round(jednotkaTeploty($teplota / $count, $u, 0), 1);
+        $ydata2[] = round($vlhkost / $count, 1);
+        $ydata3[] = round($rosnyBod / $count, 1);
 
         // pridame popisek do pole
         $labels[] = $t['kdy'];
@@ -50,9 +49,7 @@ while($t = MySQLi_fetch_assoc($q))
         $a = 0;
     }
 
-    // iterujeme
     $a++;
-
 }
 
 // abychom ziskali spravnou posloupnoust udaju, tak obe pole obratime
@@ -67,7 +64,7 @@ $latestLabel = "";
 
 foreach($labels as $index => $label)
 {
-    if((substr($label, 0, 10) != substr($latestLabel, 0, 10)) AND $latestLabel != "")
+    if((substr($label, 0, 10) != substr($latestLabel, 0, 10)) and $latestLabel != "")
     {
         $plotLines[] = $mereni;
     }
@@ -81,7 +78,7 @@ if(count($plotLines) > 0)
 {
     $toOutput = [];
 
-    foreach($plotLines AS $position)
+    foreach($plotLines as $position)
     {
         $toOutput[] = "{ color: 'lightgrey', dashStyle: 'solid', value: {$position}, width: 1 }";
     }
@@ -92,35 +89,39 @@ if(count($plotLines) > 0)
 <script type="text/javascript">
     $(function () {
         var chart;
-        $(document).ready(function() {
+        $(document).ready(function () {
             chart = new Highcharts.Chart({
-                chart: { renderTo: 'graf-3-dny', zoomType: 'x', backgroundColor: '#ffffff', borderRadius: 0 },
-                credits: { enabled: 0 },
-                title: { text: '<?php echo $lang['3dny']; ?>' },
+                chart: {renderTo: 'graf-3-dny', zoomType: 'x', backgroundColor: '#ffffff', borderRadius: 0},
+                credits: {enabled: 0},
+                title: {text: '<?php echo $lang['3dny']; ?>'},
                 xAxis: {
                     categories: ['<?php echo implode("','", $labels); ?>'],
-                    labels: { rotation: -45, align: 'right', step: 12 },
+                    labels: {rotation: -45, align: 'right', step: 12},
                     plotLines: [<?php echo $plotLinesOutput; ?>]
                 },
                 yAxis: [{
                     labels: {
-                        formatter: function() { return this.value +' <?php echo "$jednotka"; ?>'; },
-                        style: { color: '#c4423f' }
+                        formatter: function () {
+                            return this.value + ' <?php echo "$jednotka"; ?>';
+                        },
+                        style: {color: '#c4423f'}
                     },
                     title: {
                         text: null,
-                        style: { color: '#c4423f' }
+                        style: {color: '#c4423f'}
                     },
                     opposite: false
                 }, {
                     gridLineWidth: 0,
                     title: {
                         text: null,
-                        style: { color: '#4572a7' }
+                        style: {color: '#4572a7'}
                     },
                     labels: {
-                        formatter: function() { return this.value +' %'; },
-                        style: { color: '#4572a7' }
+                        formatter: function () {
+                            return this.value + ' %';
+                        },
+                        style: {color: '#4572a7'}
                     },
                     opposite: true,
                     max: 100
@@ -128,22 +129,24 @@ if(count($plotLines) > 0)
                     gridLineWidth: 0,
                     title: {
                         text: null,
-                        style: { color: '#6ba54e' }
+                        style: {color: '#6ba54e'}
                     },
                     labels: {
-                        formatter: function() { return this.value +' <?php echo "$jednotka"; ?>'; },
-                        style: { color: '#6ba54e' }
+                        formatter: function () {
+                            return this.value + ' <?php echo "$jednotka"; ?>';
+                        },
+                        style: {color: '#6ba54e'}
                     },
                     opposite: true
                 }],
                 tooltip: {
-                    formatter: function() {
+                    formatter: function () {
                         var unit = {
                             '<?php echo $lang['teplota'] ?>': '<?php echo "$jednotka"; ?>',
                             '<?php echo $lang['vlhkost'] ?>': '%',
                             '<?php echo $lang['rosnybod'] ?>': '<?php echo "$jednotka"; ?>'
                         }[this.series.name];
-                        return '<b>'+ this.x +'</b><br /><b>'+ this.y +' '+ unit + '</b>';
+                        return '<b>' + this.x + '</b><br /><b>' + this.y + ' ' + unit + '</b>';
                     },
                     crosshairs: true,
                 },
@@ -162,14 +165,14 @@ if(count($plotLines) > 0)
                     color: '#c4423f',
                     yAxis: 0,
                     data: [<?php echo implode(", ", $ydata); ?>],
-                    marker: { enabled: false }
+                    marker: {enabled: false}
                 }, {
                     name: '<?php echo $lang['vlhkost'] ?>',
                     type: 'spline',
                     color: '#4572a7',
                     yAxis: 1,
                     data: [<?php echo implode(", ", $ydata2); ?>],
-                    marker: { enabled: false }
+                    marker: {enabled: false}
 
                 }, {
                     name: '<?php echo $lang['rosnybod'] ?>',
@@ -177,12 +180,14 @@ if(count($plotLines) > 0)
                     color: '#6ba54e',
                     yAxis: 2,
                     data: [<?php echo implode(", ", $ydata3); ?>],
-                    marker: { enabled: false },
+                    marker: {enabled: false},
                     visible: false
                 }]
             });
 
-            $(".tabs > li").click(function () { chart.reflow(); });
+            $(".tabs > li").click(function () {
+                chart.reflow();
+            });
 
         });
 

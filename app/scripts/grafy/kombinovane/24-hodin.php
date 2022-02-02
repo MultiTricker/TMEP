@@ -22,7 +22,7 @@ while($t = MySQLi_fetch_assoc($q))
     // abychom meli graf "uhlazenejsi" (vypada to lepe)
     $teplota = (float)$teplota + $t['teplota'];
     $vlhkost = (float)$vlhkost + $t['vlhkost'];
-    $rosnyBod = (float)$rosnyBod + rosnybod($t['teplota'], $t['vlhkost']);
+    $rosnyBod = (float)$rosnyBod + (float)rosnybod($t['teplota'], $t['vlhkost']);
     $count++;
 
     if($predchoziTeplota != "")
@@ -44,9 +44,8 @@ while($t = MySQLi_fetch_assoc($q))
     }
 
     // uz mame dostatek mereni?
-    if(($a == 10 OR $delejUpdate == 1) AND $zobrazuj == 1)
+    if(($a == 10 or $delejUpdate == 1) and $zobrazuj == 1)
     {
-
         // pridame teplotu do pole
         $ydata[] = round(jednotkaTeploty($teplota / $count, $u, 0), 1);
         $ydata2[] = round($vlhkost / $count, 1);
@@ -62,14 +61,11 @@ while($t = MySQLi_fetch_assoc($q))
         // vynulujeme pocitadla
         $count = 0;
         $a = 0;
-
     }
 
-    // iterujeme
     $a++;
 
     $predchoziTeplota = $t['kdy'];
-
 }
 
 // abychom ziskali spravnou posloupnoust udaju, tak obe pole obratime
@@ -84,7 +80,7 @@ $latestLabel = "";
 
 foreach($labels as $index => $label)
 {
-    if((substr($label, 0, 10) != substr($latestLabel, 0, 10)) AND $latestLabel != "")
+    if((substr($label, 0, 10) != substr($latestLabel, 0, 10)) and $latestLabel != "")
     {
         $plotLines[] = $mereni;
     }
@@ -98,7 +94,7 @@ if(count($plotLines) > 0)
 {
     $toOutput = [];
 
-    foreach($plotLines AS $position)
+    foreach($plotLines as $position)
     {
         $toOutput[] = "{ color: 'lightgrey', dashStyle: 'solid', value: {$position}, width: 1 }";
     }
