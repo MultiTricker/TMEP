@@ -32,6 +32,11 @@ if(MySQLi_num_rows($q) == 0 OR $h['den'] != $vcera)
         $h['den2'] = $h['den'] . " 23:59:59";
     }
 
+    if($h['den2'] == "" OR $h['den2'] === null)
+    {
+        $h['den2'] = "0000-00-00";
+    }
+
     $q = MySQLi_query($GLOBALS["DBC"], "SELECT kdy
                                         FROM tme 
                                         WHERE kdy > '{$h['den2']}' AND kdy < '" . date("Y-m-d") . "' 
