@@ -154,7 +154,17 @@ else
                 });
                 // jQuery UI - datepicker
                 $("#jenden").datepicker($.datepicker.regional["<?php echo $l;  ?>"]);
-                $.datepicker.setDefaults({dateFormat: "yy-mm-dd", maxDate: -1, minDate: new Date(<?php echo substr($pocetMereni['kdy'], 0, 4) . ", " . (substr($pocetMereni['kdy'], 5, 2) - 1) . ", " . substr($pocetMereni['kdy'], 8, 2); ?>), changeMonth: true, changeYear: true});
+                <?php
+                if(!is_null($pocetMereni['kdy']) AND is_numeric(substr($pocetMereni['kdy'], 5, 2)))
+                {
+                    $mindate = "minDate: new Date(" . substr($pocetMereni['kdy'], 0, 4) . ", " . (substr($pocetMereni['kdy'], 5, 2) - 1) . ", " . substr($pocetMereni['kdy'], 8, 2) . "),";
+                }
+                else
+                {
+                    $mindate = "";
+                }
+                ?>
+                $.datepicker.setDefaults({dateFormat: "yy-mm-dd", maxDate: -1,$minDate changeMonth: true, changeYear: true});
             });
             var loadingImage = '<p><img src="./images/loading.gif"></p>';
 
