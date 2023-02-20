@@ -3,7 +3,9 @@ TMEP
 
 ----
 
-Český hosting inovované aplikace TMEP s administrací, novými funkcemi a širokou podporou čidel včetně mnoha dalších vychytávek naleznete na [https://www.tmep.cz](https://www.tmep.cz).
+EN: Hosting of the upgraded TMEP app with administration, mobile phone apps, lots of new features and extensive sensor support including many other enhancements can be found at [https://www.tmep.cz](https://www.tmep.cz). 
+
+CZ: Hosting inovované aplikace TMEP s administrací, aplikacemi do mobilních telefonů, spoustou nových funkcí a širokou podporou čidel včetně mnoha dalších vychytávek naleznete na [https://www.tmep.cz](https://www.tmep.cz).
 
 ----
 
@@ -13,7 +15,7 @@ Application was written very straightforwardly for our home usage, but owners of
 
 TMEP use Highcharts JS for graph generation ([highcharts.com](http://www.highcharts.com), Free for Non-commercial) and jQuery for AJAX, datepicker and so on. TMEP itself is [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-Application demo: [roudnice.eu](http://www.roudnice.eu)
+App demo: [roudnice.eu](http://www.roudnice.eu)
 
 Read tmep-info-en.html or tmep-info-cz.html for more information.
 

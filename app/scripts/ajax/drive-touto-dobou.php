@@ -33,20 +33,35 @@ for($a = 1; $a < 6; $a++)
 for($a = 0; $a < count($dny2); $a++)
 {
     $dotaz = MySQLi_query($GLOBALS["DBC"], "SELECT kdy, teplota, vlhkost
-                            FROM tme 
-                            WHERE kdy >= CAST('" . substr($dny2[$a], 0, 15) . "0' AS datetime)
-                                  AND kdy <= CAST('" . substr($dny2[$a], 0, 15) . "9' AS datetime)
-                            LIMIT 1");
-    $hod = MySQLi_fetch_assoc($dotaz);
+                                            FROM tme 
+                                            WHERE kdy >= CAST('" . substr($dny2[$a], 0, 15) . "0' AS datetime)
+                                                  AND kdy <= CAST('" . substr($dny2[$a], 0, 15) . "9' AS datetime)
+                                            LIMIT 1");
 
-    echo "<tr>
-              <td>" . formatDnu($dny2[$a]) . "</td>
-              <td><abbr title='" . substr($hod['kdy'], 11, 5) . "'>" . jednotkaTeploty($hod['teplota'], $u, 1) . "</abbr></td>";
-    if($vlhkomer == 1)
+    if(mysqli_num_rows($dotaz) == 0)
     {
-        echo "<td>" . ($hod['vlhkost'] != 0 ? "{$hod['vlhkost']}%" : "") . "</td>";
+        echo "<tr>
+              <td>" . formatDnu($dny2[$a]) . "</td>
+              <td>-</td>";
+        if($vlhkomer == 1)
+        {
+            echo "<td>-</td>";
+        }
+        echo "</tr>";
     }
-    echo "</tr>";
+    else
+    {
+        $hod = MySQLi_fetch_assoc($dotaz);
+
+        echo "<tr>
+                  <td>" . formatDnu($dny2[$a]) . "</td>
+                  <td><abbr title='" . substr($hod['kdy'], 11, 5) . "'>" . jednotkaTeploty($hod['teplota'], $u, 1) . "</abbr></td>";
+        if($vlhkomer == 1)
+        {
+            echo "<td>" . (is_numeric($hod['vlhkost']) ? "{$hod['vlhkost']}%" : "-") . "</td>";
+        }
+        echo "</tr>";
+    }
 }
 
 echo "</table>";
