@@ -41,8 +41,8 @@ for($a = 0; $a < count($dny2); $a++)
     if(mysqli_num_rows($dotaz) == 0)
     {
         echo "<tr>
-              <td>" . formatDnu($dny2[$a]) . "</td>
-              <td>-</td>";
+                  <td>" . formatDnu($dny2[$a]) . "</td>
+                  <td>-</td>";
         if($vlhkomer == 1)
         {
             echo "<td>-</td>";
