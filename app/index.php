@@ -157,11 +157,11 @@ else
                 <?php
                 if(!is_null($pocetMereni['kdy']) AND is_numeric(substr($pocetMereni['kdy'], 5, 2)))
                 {
-                    $mindate = "minDate: new Date(" . substr($pocetMereni['kdy'], 0, 4) . ", " . (substr($pocetMereni['kdy'], 5, 2) - 1) . ", " . substr($pocetMereni['kdy'], 8, 2) . "), ";
+                    $minDate = "minDate: new Date(" . substr($pocetMereni['kdy'], 0, 4) . ", " . (substr($pocetMereni['kdy'], 5, 2) - 1) . ", " . substr($pocetMereni['kdy'], 8, 2) . "), ";
                 }
                 else
                 {
-                    $mindate = "";
+                    $minDate = "";
                 }
                 ?>
                 $.datepicker.setDefaults({dateFormat: "yy-mm-dd", maxDate: -1, <?php echo $minDate; ?>changeMonth: true, changeYear: true});
