@@ -29,7 +29,6 @@ TMEP app is licensed under a [Creative Commons Attribution-NonCommercial-ShareAl
 
 Attribution—Noncommercial—Share Alike  
 ✖ | Sharing without ATTRIBUTION  
-✔ | Remix Culture allowed  
 ✖ | Commercial Use  
 ✖ | Free Cultural Works  
 ✖ | Meets Open Definition
