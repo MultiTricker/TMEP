@@ -19,6 +19,25 @@ App demo: [roudnice.eu](http://www.roudnice.eu)
 
 Read tmep-info-en.html or tmep-info-cz.html for more information.
 
+----
+
+### License info 
+
+![CC BY-NC-SA 4.0](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+
+TMEP app is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/):
+
+Attribution—Noncommercial—Share Alike  
+✖ | Sharing without ATTRIBUTION  
+✔ | Remix Culture allowed  
+✖ | Commercial Use  
+✖ | Free Cultural Works  
+✖ | Meets Open Definition
+
+----
+
+### Version history
+
   * **Version 8.4.3 released at 2023-06-22** Fixed bug with $minDate initialization.
   * Version 8.4.2 released at 2023-02-20 Yet another tiny fix to be compatible with PHP 8.
   * Version 8.4.1 released at 2022-02-02 Another tiny fix to be compatible with PHP 8, tested also on PHP 8.1.1
